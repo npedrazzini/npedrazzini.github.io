@@ -9,7 +9,7 @@
 locale                   : "en-UK"
 title                    : "Nilo Pedrazzini"
 title_separator          : "-"
-name                     : &name "Nilo Pedrazzini"
+name                     : &name "Nilo"
 description              : &description "personal description"
 url                      : https://npedrazzini.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -80,9 +80,9 @@ analytics:
 
 # Site Author
 author:
-  name             : "Nilo Pedrazzini"
-  avatar           : "profile.png"
-  bio              : "Your biography for the left-hand sidebar"
+  name             : "Nilo"
+  avatar           : "nilo-profile.jpeg"
+  bio              : "Linguist, etc."
   location         : "Oxford, UK"
   employer         :
   pubmed           : 
@@ -110,7 +110,7 @@ author:
   stackoverflow    : # http://stackoverflow.com/users/123456/username
   steam            :
   tumblr           :
-  twitter          : "npedrazzini"
+  twitter          : "nilo_pedrazzini"
   vine             :
   weibo            :
   xing             :

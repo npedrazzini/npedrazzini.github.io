@@ -10,6 +10,8 @@
   padding-right: 1em;
   animation: intro 0.3s both;
   animation-delay: 0.35s;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 16px;
 
   @include breakpoint($x-large) {
     max-width: $x-large;
@@ -74,9 +76,12 @@
 
   a {
     text-decoration: underline;
+    color: teal;
 
     &:hover {
-      text-decoration: underline;
+        font-weight: 900;
+        color: black;
+        text-decoration: none;
 
       img {
         box-shadow: 0 0 10px rgba(#000, 0.25);

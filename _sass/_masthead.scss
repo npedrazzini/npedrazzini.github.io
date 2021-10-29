@@ -10,6 +10,7 @@
   -webkit-animation-delay: 0.15s;
           animation-delay: 0.15s;
   z-index: 20;
+  font-family: 'Courier New', Courier, monospace;
 
   &__inner-wrap {
     @include container;
@@ -27,6 +28,7 @@
 
     a {
       text-decoration: none;
+      font-family: 'Courier New', Courier, monospace;
     }
   }
 }
