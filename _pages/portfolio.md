@@ -17,10 +17,10 @@ Some of the areas I work on are:
     <li><i class="fa-li fa fa-sign-language"></i>temporal semantics across sentences</li>
 </ul>
 
-I also can't get enough of:
+I am also very fond of:
 <ul class="fa-ul">
     <li><i class="fa-li fa fa-sign-language"></i>the history of Church Slavonic and of individual Slavic literary languages</li>
-    <li><i class="fa-li fa fa-sign-language"></i>interaction between Church Slavonic and pre-modern Slavic vernaculars</li>
+    <li><i class="fa-li fa fa-sign-language"></i>the interaction between Church Slavonic and pre-modern Slavic vernaculars</li>
 </ul>
 
 <i class="fas fa-hand-point-right"></i> My <a href="https://www.granduniondtp.ac.uk/people/nilo-pedrazzini">doctoral project</a> looks (mostly quantitatively, through treebank data) into the competition between finite and non-finite temporal subordinates in Early Slavic.
@@ -67,7 +67,7 @@ I mainly dealt with data processing, developing R scripts to make corpus data re
 Starting from mid-2020, I was first Research Assistant <a href="https://imcc.web.ox.ac.uk/people/mr-nilo-pedrazzini"><i class="fas fa-external-link-alt"></i></a>, then collaborated with the International Multimodal Communication Centre (IMCC) <a href="https://imcc.web.ox.ac.uk"><i class="fas fa-external-link-alt"></i></a> based within the Oxford School of Global and Area Studies (OSGA) at the University of Oxford. I carried out annotation and correlation analyses of speech-gesture co-occurrences in Russian and American media, largely within the project <i>Depictions of Post-COVID-19 Futures in Russian International Media: Multimodal Viewpoint Analysis</i> <a href="https://imcc.web.ox.ac.uk/projects"><i class="fas fa-external-link-alt"></i></a>. 
 
 ### British Library
-In 2015, I spent two months as a trainee Assistant Curator-Cataloguer for Slavonic Collection at The British Library <a href="https://www.bl.uk/subjects/slavonic-studies#"><i class="fas fa-external-link-alt"></i></a>. During that time, I enhanced the online catalogue of all Slavonic early-printed Cyrillic books held at the British Library (and fuelled my interest for all-things data and pre-modern Slavic). Check out two posts I wrote for the British Library's European Studies Blog:
+In 2015, I spent two months as a trainee Assistant Curator-Cataloguer for the Slavonic Collections at The British Library <a href="https://www.bl.uk/subjects/slavonic-studies#"><i class="fas fa-external-link-alt"></i></a>. During that time, I enhanced the online catalogue of all Slavonic early-printed Cyrillic books held at the British Library (and fuelled my interest for all-things data and pre-modern Slavic). Check out two posts I wrote for the British Library's European Studies Blog:
 
 <ul class="fa-ul">
     <li><i class="fa-li fa fa-paper-plane"></i><i> Fairytales on trial: the Good and the Beautiful in early-Soviet children’s literature</i> (26th March 2019) <a href="https://blogs.bl.uk/european/2019/03/fairytales-on-trial.html"><i class="fas fa-external-link-alt"></i></a></li>
