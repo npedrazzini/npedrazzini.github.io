@@ -9,7 +9,7 @@ redirect_from:
 
 {% include base_path %}
 
-<a href="/images/Curriculum_Vitae___FINAL-2.pdf"><i class="fas fa-file-pdf"></i></a> Extended PDF version
+<a href="/images/CV-Pedrazzini.pdf"><i class="fas fa-file-pdf"></i></a> Extended PDF version
 
 ## Education
 * **ongoing**: DPhil in Linguistics, University of Oxford
