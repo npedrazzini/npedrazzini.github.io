@@ -39,13 +39,14 @@ redirect_from:
 
 ## Skills
 * Coding
-	* Advanced skills in Python, R, XML, Bash scripting and LaTeX. 
-  * Intermediate skills in Ruby.
-* Databases
-	* Introductory skills in MySQL
+	* Solid skills in Python, R, XML, Bash and TeX. 
+  * Intermediate skills in Ruby and SQL.
+* Data handling and NLP
+	* Experience with Pandas, NumPy, BeautifulSoup, SpaCy, NLTK, CLTK
 * Web Development
-	* Intermediate skills in CSS and HTML. 
-  * Introductory knowledge of JavaScript.
+	* Intermediate skills in HTML/CSS and JavaScript. 
+* Data Visualisation
+	* Experience with Plotly (& Plotly Dash for web app deployment) and ggplot2. Good skills in Seaborn and Matplotlib.  
 * Languages
 	* Italian (native)
   * English (C2)
@@ -55,10 +56,10 @@ redirect_from:
   * German (Goethe-Zertifikat B1)
   * Norwegian (Bokmål) (A2-B1)
   * Good reading knowledge of French and Bulgarian.
+  * Working knowledge of Ancient Greek, Latin, Hittite, Old Church Slavonic
 * Misc
 	* Corpus building and linguistic annotation
   * Digital Humanities
-  * Historical languages (Early Slavic, Ancient Greek, Latin, Hittite)
   * NLP for historical languages
   * Teaching (Linguistics and Digital Humanities)
   * Copyediting
