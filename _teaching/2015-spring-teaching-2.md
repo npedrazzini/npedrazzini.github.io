@@ -1,5 +1,5 @@
 ---
-title: "Paper VIII (General Linguistics)"
+title: "Paper VIII (General Linguistics), Parts 3-4"
 collection: teaching
 type: "Undergraduate tutorials"
 permalink: /teaching/2014-spring-teaching-1

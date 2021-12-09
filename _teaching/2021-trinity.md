@@ -1,5 +1,5 @@
 ---
-title: "Paper VIII (General Linguistics)"
+title: "Paper VIII (General Linguistics), Part 5"
 collection: teaching
 type: "Undergraduate tutorials"
 permalink: /teaching/2021-trinity
