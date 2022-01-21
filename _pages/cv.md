@@ -21,6 +21,7 @@ redirect_from:
 * **2020**: Guest Researcher, Department of Linguistics and Scandinavian Studies, Universitetet i Oslo (Norway), supervised by [Dag T.T. Haug](https://en.wikipedia.org/wiki/Dag_Haug)
 
 ## Work experience
+* **Jan 2022-**: Research Assistant in Corpus-Based Digital Humanities, *Living with Machines*, The Alan Turing Institute (London)
 * **2020-2021**: Research Assistant, International Multimodal Communication Centre (IMCC), Oxford School of Global and Area Studies (University of Oxford)
 * **2020**: Research Assistant, ReadOxford Research Group, Department of Experimental Psychology (University of Oxford)
 * **2018-2020**: IT/AV Support Assistant, Somerville College (University of Oxford)
@@ -33,6 +34,7 @@ redirect_from:
   {% endfor %}</ul>
 
 ## Other Scientific and Academic Activities
+* **2022**: Main organizer of the Open Humanities Seminar Series (OHSS) <a href="https://openhumanitiesseminar.github.io"><i class="fas fa-external-link-alt"></i></a>
 * **2020-now**: Editorial Assistant for the Journal of Open Humanities Data (JOHD) <a href="https://openhumanitiesdata.metajnl.com"><i class="fas fa-external-link-alt"></i></a>
 * **2021-now**: Fellow at RROx (UK Reproducibility Network) <a href="https://ox.ukrn.org/people/#NiloPedrazzini"><i class="fas fa-external-link-alt"></i></a>
 * **2019-now**: Linguistic annotator for the Tromsø Old Russian and Old Church Slavonic Treebank (TOROT) <a href="https://nestor.uit.no/"><i class="fas fa-external-link-alt"></i></a> project

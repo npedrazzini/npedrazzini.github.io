@@ -9,7 +9,7 @@
 locale                   : "en-UK"
 title                    : "Nilo Pedrazzini"
 title_separator          : "-"
-name                     : &name "Nilo"
+name                     : &name "Nilo Pedrazzini"
 description              : &description "personal description"
 url                      : https://npedrazzini.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -80,43 +80,22 @@ analytics:
 
 # Site Author
 author:
-  name             : "Nilo"
+  name             : "Nilo Pedrazzini"
   avatar           : "nilo-profile.jpeg"
-  bio              : "PhD Student in Linguistics"
-  location         : "Oxford, UK"
-  employer         :
-  pubmed           : 
+  #bio              : ""
+  employer         : "Alan Turing Institute"
+  location         : "University of Oxford"
+  twitter          : "nilo_pedrazzini"
   googlescholar    : "https://scholar.google.com/citations?user=oTcaDKsAAAAJ&hl=en"
   email            : "nilo.pedrazzini@ling-phil.ox.ac.uk"
   email            : "nilo.pedrazzini@gmail.com"
   researchgate     : "https://www.researchgate.net/profile/Nilo-Pedrazzini"
-  uri              :
-  bitbucket        :
-  codepen          :
-  dribbble         :
-  flickr           :
-  facebook         :
-  foursquare       :
   github           : "npedrazzini"
-  google_plus      :
-  keybase          :
-  instagram        :
-  impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
-  lastfm           :
-  linkedin         :
+  linkedin         : "https://linkedin.com/in/nilopedrazzini"
   orcid            : "https://orcid.org/0000-0003-3757-2961"
-  pinterest        :
-  soundcloud       :
-  stackoverflow    : # http://stackoverflow.com/users/123456/username
-  steam            :
-  tumblr           :
-  twitter          : "nilo_pedrazzini"
-  vine             :
-  weibo            :
-  xing             :
-  youtube          :
-  wikipedia        :
-
+  academia         : "https://oxford.academia.edu/NiloPedrazzini"
+  figshare         : "https://figshare.com/authors/Nilo_Pedrazzini/8860664"
+  osf              : "https://osf.io/qzb4f/"
 
 # Reading Files
 include:
