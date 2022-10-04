@@ -1,0 +1,154 @@
+---
+layout: archive
+title: "OldSlavNet"
+permalink: /oldslavnet/
+author_profile: true
+---
+
+<ul class="fa-ul">
+
+  <li><i class="fa-li fa fa-bullseye"></i><h2>Challenge</h2><br>
+   Training good-quality dependency parsers for historical languages is a difficult task, 
+      since they normally provide very little data with very high levels of linguistic variation (lack of orthographic
+      standards, dialectal dispersedness), which in machine learning easily translates into high levels of noise. 
+      Dependency parsing, however, is important in many downstream natural language processing (NLP) tasks, including event extraction, 
+      word vector representation enhancement, and text classification and summarization: solving this bottleneck
+      can open new avenues in NLP for historical languages. Pre-modern Slavic is ideal to explore this issue, because of 
+      the multiple varieties it is represented by, each with their own orthographic conventions and 
+      scribal practices (i.e. sub-varieties are not necessarily homogeneous themselves) (see <a href="#earlyslavic">?</a> for an overview on Early Slavic).
+  </li> 
+
+  <li><i class="fa-li fa fa-question"></i> <h2>Questions</h2> <br>
+    <ol>
+      <li>To what extent can the performance of specialized (i.e. variety-specific) dependency parsers
+        be improved by expanding the training set with data from other varieties and dialect areas?</li>
+      <li>Is it possible to obtain a ‘generic’ parser, a tool which is relatively dialect-agnostic 
+        and more flexible with respect to genres and historical stages?</li>
+      <li>Starting from expert knowledge on how Early Slavic varieties have evolved into modern Slavic languages, is
+        it possible to leverage the much larger amount of data for the latter by normalizing/harmonizing their orthography and morphology
+        to 'imitate' Early Slavic (as additional source of 'pre-modern' data)?
+      </li>
+    </ol>
+  </li>
+  
+  <li><i class="fa-li fa fa-table"></i><h2>Data</h2><br>
+    Early Slavic and Modern Russian data was obtained from 
+    the <a href="#torot">Tromsø Old Church Slavonic and Old Russian Treebanks</a> (TOROT) 
+    (specifically the entirety of its Church Slavonic and Old Russian subcorpus, 
+    and part of <a href="#syntagrus">SynTagRus</a> from its Modern Russian one), 
+    whereas Modern Serbian data was collected from the Universal Dependencies (UD) <a href="#serbianset">Serbian-SET treebank</a>.
+    <a href="https://npedrazzini.github.io/OldSlavNet/data/">Here</a> you can find a detailed 
+    breakdown of the number of tokens for each subvariety (or 'dialect') in the corpus.
+  </li>
+
+  <li><i class="fa-li fa fa-table"></i><h2>Parser architecture</h2><br>
+  The parser is trained on CoNLL-U input files (of the UD framework), one of the most widely employed formats for dependency parsing.
+  The tool’s neural-network architecture is based on jPTDP, since it was thought precisely for morphology-rich languages,
+  such as Early Slavic, with a few adaptations:
+  <ol>
+    <li>`ArgParse` substitutes the older `OptParse` to allow for wider reusability of our code.</li>
+    <li> `RMSProp` [8] is employed instead of `Adam` [9] as optimizer to avoid exploding gradients.</li>
+    <li>The initial learning rate was set to `0.1` instead of None.</li>
+  </ol>
+  </li>
+
+
+  <li><i class="fa-li fa fa-random"></i> <h2>Preprocessing and train-dev-test split</h2> <br>
+    <ol>
+      <li>To reach representativeness and limit overfitting, 10% of each text was set
+        aside as development data, 10% as test data and 80% as training data. Texts with fewer than 400 tokens were exclusively
+        employed for training. </li>
+      <li>TOROT treebanks come in two formats: the standard PROIEL XML format and the
+        CoNLL-X format of UD. The datasets were converted from PROIEL XML to CoNLL-U using the script included in the Ruby
+        utility proiel-cli, which can be used for the manipulation of PROIEL treebanks. 
+        The main differences between CoNLL-U and CoNLL-X are the treatment of multiword tokens as
+        integer ranges and the insertion of comments before each new sentence, besides the
+        different order and outlook of their morphotags (e.g. NUMBs|GENDn|CASEn in
+        CoNLL-X and Case=Nom|Gender=Neut|Number=Sing in CoNLL-U).</li>
+      <li>Modern Serbian and Modern Russian texts were normalized (or 'harmonized') using the scripts I provided <a href="">here</a>.</li>
+    </ol>
+  </li>
+  
+  <li><i class="fa-li fa fa-sort-numeric-desc"></i> <h2>Models trained</h2> <br>
+    Three main models were trained, to check whether a parser trained on a specific language variety would perform better than a generic one: 
+    <ol>
+      <li>A specialized East-Slavic model, trained only on data from East Slavic texts (see breakdown).</li>
+      <li>A specialized South-Slavic model, trained only on data from South Slavic texts (see breakdown).</li>
+      <li>A generic model, trained on mixed data from both varieties, including normalized modern texts.</li>
+    </ol>
+  </li>
+  
+  <li><i class="fa-li fa fa-code-branch"></i><h2>Results</h2> <br>
+  The generic model performs better across the board, indicating that, because of data sparsity, Early Slavic dependency parsing is best achieved
+  without training specialized models for separate varieties. See the performance of `OldSlavnet` compared to previous experiments:
+
+
+  Note that on East Slavic texts, the generic parser superseded the specialized one in performance only after the addition of normalized modern texts.
+  You can follow this rather complex discussion by reading (in order) Pedrazzini (2020) and Pedrazzini & Eckhoff (2021).
+  </li>
+  
+  <li><i class="fa-li fa fa-sitemap"></i><h2>From universals to language-internal variation</h2> <br>
+  
+  </li>
+  
+  
+  </li>
+  
+  <li><i class="fa-li fa fa-bullhorn"></i><h2>Credits</h2> <br>
+  
+  The normalization scripts from Modern Russian and Modern Serbian to Early Slavic were
+  written in collaboration with <a href="">Dr Hanne Eckhoff</a> (Oxford).
+  </li>
+  
+  
+  <li><i class="fa-li fa fa-bookmark"></i><h2>References</h2> <br>
+  
+  <p id="#earlyslavic">sdcsdcsdcsdcsdc</p>
+  <p id="#torot">ssdcsdcsdcsdcsdcsdcsdc</p>
+  <p id="#syntagrus">rververververve</p>
+  <p id="#serbianset">qwqwqwqwq</p>
+  <p id="#pedrazzini1">qwqwqwqwq</p>
+  <p id="#pedrazzini2">qwqwqwqwq</p>
+  </li>
+  
+  
+  <li><i class="fa fa-angle-down fa-2x animated"></i><h2>Check out other projects</h2> <br>
+  
+    <div class="row">
+      <div class="column">
+        <div class="container">
+          <a href="/massparallelbibles/"><img src="/images/massparall.gif" width="500" height="600"></a>
+          <a href="/massparallelbibles/"><div class="proj-title">Parallel Bibles</div></a>
+          <div class="proj-subtitle">Temporal subordination in 1400+ languages of the world</div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="container">
+          <a href="/langofmech/"><img src="/images/machine.gif" width="500" height="600"></a>
+          <a href="/langofmech/"><div class="proj-title">Machines in the media</div></a>
+          <div class="proj-subtitle">Semantic change in the era of mechanization</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="column">
+        <div class="container">
+          <a href="/oldslavnet/"><img src="/images/oldslavnet.gif" width="500" height="600"></a>
+          <a href="/oldslavnet/"><div class="proj-title">OldSlavNet</div></a>
+          <div class="proj-subtitle">A scalable dependency parser for pre-modern Slavic</div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="container">
+          <a href="/agwemb/"><img src="/images/supergrc.gif" width="500" height="600"></a>
+          <a href="/agwemb/"><div class="proj-title">Ancient Greek graph-based syntactic embeddings</div></a>
+          <div class="proj-subtitle">Syntactic word representations for Ancient Greek</div>
+        </div>
+      </div>
+    </div>
+  
+  </li>
+  
+  </ul>
+    

@@ -1,0 +1,164 @@
+---
+layout: archive
+title: "Parallel Bibles"
+permalink: /massparallelbibles/
+author_profile: true
+---
+
+<ul class="fa-ul">
+
+<li><i class="fa-li fa fa-question"></i> <h2>Question</h2> <br>
+How do the languages of the world encode situations which English expresses with <i>when</i>-subordinates? How do we explain cases in which both language <i>x</i> and language <i>y</i> have a literal translation for <i>when</i>, but it cannot <i>always</i> be used to translate the one in the other language? Can we find a finite number of 'patterns' among the world's (7000+!) languages within which variation in usage can occur? 
+</li>
+
+<li><i class="fa-li fa fa-bullseye"></i><h2>Challenge</h2><br>
+ 
+Traditionally, we rely on a corpus of parallel sentences in <i>n</i> languages, each manually annotated for the linguistic categories of interest. 
+<ol>
+  <li>How to scale up to much more than the handful of languages which one could manually annotate? </li> 
+  <li>How do we use a corpus to investigate a phenomenon (e.g. <i>when</i>-clauses worldwide) in a data-driven way, i.e. without prior hypotheses constraining the type of outcomes we could get (as would be the case if we annotated all <i>when</i>-clauses with a pre-determined set of semantic tags)?  </li> 
+  <li>It would be impossible, for an individual researcher, to be familiar with all the languages in a very large dataset. Can we discover patterns and group language types also among languages which the researcher is not familiar with?  </li> 
+</ol>
+</li>
+
+<li><i class="fa-li fa fa-table"></i><h2>Data</h2><br>
+
+The Bible is the most widely translated book in history. To scale up to as many languages as currently possible, I used <a href="#mayercysouw">Mayer & Cysouw</a>'s (2014) 'massively parallel' Bible corpus, which contains the New Testament in more than 1400 languages. To add some representativeness from ancient languages as well, I have also included the Latin, Classic Armenian, Gothic, and Old Church Slavonic translations of the New Testament from <a href="#haugjohndal">Haug & Jøhndal</a>'s (2008) <i>Pragmatic Resources in Old Indo-European Languages</i> (PROIEL <a href="https://github.com/proiel" target="_blank"><i class="fas fa-external-link-alt"></i></a>) treebank. 
+Several of the roughly 1400 languages in the corpus had multiple translations and some contain only (or predominantly) the Old Testament. Only languages that had at least some coverage for the New Testament were considered. The dataset creation process consisted of the following steps:
+<ol>
+  <li>Filter out languages that only have the Old Testament.</li>
+  <li>Include all other languages with only one translation of the New Testament.</li>
+  <li> Of all languages with multiple New Testament versions, include the version with the broadest coverage (with a deviation of more than 2000 verses).  </li>
+  <li>If multiple versions with a similar coverage exist, than take the most recent one.</li>
+</ol>
+</li>
+
+<li><i class="fa-li fa fa-random"></i> <h2>(Pre-)processing and alignment at token-level</h2> <br>
+  For each of the target languages a word-alignment model was trained using <a href="#symgiza">Dowmunt & Szał</a>'s (2012) SyMGIZA++ <a href="https://github.com/emjotde/symgiza-pp"><i class="fas fa-external-link-alt"></i></a>, after testing its performance against that of other alignment algorithm, such as GIZA++ and FastText. Minimal preprocessing (lowercasing and punctuation removal) was applied before training.
+</li>
+
+<li><i class="fa-li fa fa-sort-numeric-desc"></i> <h2>Similarity matrix and dimensionality reduction</h2> <br>
+  After extracting <i>when</i> and its parallels in all the target languages, Hamming distance was used as a measure of similarity between pairs of contexts, leveraging the number of times a language uses two different linguistic means where English uses one. Multidimensional scaling (MDS) was then applied to the resulting matrix to visualize the distance between each occurrence of <i>when</i> two- and three-dimensionally. Below is the 3D example for Spanish. Toggle on/off individual words to include or exclude them from the map, hover the data points to see the English-Spanish parallel contexts, and drag the plot to see it from different perspectives:
+  <p align="center">
+  <br><br>
+  <iframe width="700" height="600" frameborder="2" scrolling="no" src="//plotly.com/~npedrazzini/1.embed"></iframe>
+  <br><br>
+  </p>
+  To see the map for more languages, in both 3D and 2D, you can visit the app I deployed with Plotly Dash via Heroku <a href="https://parallelbibles.herokuapp.com/" target="_blank">here</a> (NB: it builds on the fly, so it might take a while to load).
+
+</li>
+
+<li><i class="fa-li fa fa-code-branch"></i><h2>From individual data points to universals</h2> <br>
+
+<p>Clusters of semantically similar observations were identified in two main ways. First, by fitting Gaussian Mixture Model (GMM) to the MDS matrix, to identify clusters which are more likely to correspond to separate universal functions of <i>when</i>, regardless of how much variation a particular language shows within any of the clusters (which could go from no variation across the whole map or across one cluster, to several linguistic means in a single cluster):</p>
+
+<img src="/images/gmm.png" style="float: none; width: max-content; height: max-content;margin-left: auto; margin-right: auto;">
+
+<p>The number of clusters in GMM are chosen with the help of different heuristics. In the graphs below we can see that the optimal number (based on the first two dimensions of the MDS matrix) is 3, although in our methodology Elbow methods must be employed more flexibly than in classic classification tasks. These methods are meant to indicate how many clusters can be considered maximally separate from each other. However, empirically, we know that the temporal constructions under consideration are always competing with each other to some extent and that their scopes are not at all clear-cut. In fact, for at least two of the three methods (the Silhouette and Davies Bouldin scores), we can see that it is only after 6 that the clustering would become more clearly overfitted to the data, while a third method (Distortion score) does not even clearly suggest so until 9 (the slope becomes less steep, but does not rise!). </p>
+
+<br>
+<br>
+<div class="row">
+  <div class="column">
+    <div class="container">
+      <img src="/images/elbow1.png" width="500" height="600">
+    </div>
+  </div>
+  <div class="column">
+    <div class="container">
+      <img src="/images/elbow2.png" width="500" height="600">
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="column">
+    <div class="container">
+      <img src="/images/elbow3.png" width="500" height="600">
+    </div>
+  </div>
+  <div class="column">
+    <div class="container">
+      <img src="/images/elbow4.png" width="500" height="600">
+    </div>
+  </div>
+</div>
+
+</li>
+
+<li><i class="fa-li fa fa-sitemap"></i><h2>From universals to language-internal variation</h2> <br>
+Starting once again from the MDS matrix, we can apply Kriging as an interpolation method that uses a limited set of sampled data points (each observation in the target languages) to estimate the value of a variable in an unsampled location. Unlike the GMM clustering, which predicts distinct clusters regardless of individual languages, Kriging helps identify areas that are likely to be the domain of a specific linguistic means in a particular language. The degree to which an area identified by Kriging overlaps with a GMM-identified cluster can tell us if that particular language has a dedicated means for the function of that particular cluster, whether it uses more than one means, whether one means extends over more than one cluster, or whether it has no dedicated means at all. As a minimal example, compare the maps for Norwegian and Kako below: the former co-lexicalizes the clusters corresponding to Kako <i>ma</i> and <i>NgimO</i>, which in turn correspond to separate clusters in any of the Gaussian Mixture Models plots with <i>k</i> > 3.
+
+<div class="row">
+  <div class="column">
+    <div class="container">
+      <img src="/images/elbow3.png" width="500" height="600">
+    </div>
+  </div>
+  <div class="column">
+    <div class="container">
+      <img src="/images/elbow4.png" width="500" height="600">
+    </div>
+  </div>
+</div>
+
+</li>
+
+
+</li>
+
+<li><i class="fa-li fa fa-bullhorn"></i><h2>Credits</h2> <br>
+
+This is a project in collaboration with Prof. <a href="https://www.hf.uio.no/ifikk/english/people/aca/classics/tenured/daghaug/">Dag Haug</a> (Oslo).
+</li>
+
+
+<li><i class="fa-li fa fa-bookmark"></i><h2>References</h2> <br>
+
+
+<p id="mayercysouw">Thomas Mayer and Michael Cysouw. 2014. Creating a massively parallel Bible corpus. In Proceedings of the Ninth International Conference on Language Resources and Evaluation (LREC'14), pages 3158–3163, Reykjavik, Iceland. European Language Resources Association (ELRA).</p>
+<p id="haugjohndal">Haug, Dag T. T. & Marius L. Jøhndal. 2008. Creating a parallel treebank of the old Indo-European Bible translations. In ,<i>Proceedings of the Second Workshop on Language Technology for Cultural Heritage Data (LaTeCH 2008)</i>, 27–34.</p>
+<p id="symgiza">Junczys-Dowmunt, Marcin & Arkadiusz Szał. 2012. <a href='http://emjotde.github.io/publications/pdf/mjd2011siis.pdf' target="_blank">Symgiza++: Symmetrized word alignment models for machine translation</a>. In Pascal Bouvry, Mieczyslaw A. Klopotek, Franck Leprévost, Malgorzata Marciniak, Agnieszka Mykowiecka & Henryk Rybinski (eds.), <i>Security and Intelligent Information Systems (SIIS) 7053</i> (Lecture Notes in Computer Science), 379–390. Warsaw, Poland: Springer.</p>
+</li>
+
+
+<li><i class="fa fa-angle-down fa-2x animated"></i><h2>Check out other projects</h2> <br>
+
+  <div class="row">
+    <div class="column">
+      <div class="container">
+        <a href="/massparallelbibles/"><img src="/images/massparall.gif" width="500" height="600"></a>
+        <a href="/massparallelbibles/"><div class="proj-title">Parallel Bibles</div></a>
+        <div class="proj-subtitle">Temporal subordination in 1400+ languages of the world</div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="container">
+        <a href="/langofmech/"><img src="/images/machine.gif" width="500" height="600"></a>
+        <a href="/langofmech/"><div class="proj-title">Machines in the media</div></a>
+        <div class="proj-subtitle">Semantic change in the era of mechanization</div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="column">
+      <div class="container">
+        <a href="/oldslavnet/"><img src="/images/oldslavnet.gif" width="500" height="600"></a>
+        <a href="/oldslavnet/"><div class="proj-title">OldSlavNet</div></a>
+        <div class="proj-subtitle">A scalable dependency parser for pre-modern Slavic</div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="container">
+        <a href="/agwemb/"><img src="/images/supergrc.gif" width="500" height="600"></a>
+        <a href="/agwemb/"><div class="proj-title">Ancient Greek graph-based syntactic embeddings</div></a>
+        <div class="proj-subtitle">Syntactic word representations for Ancient Greek</div>
+      </div>
+    </div>
+  </div>
+
+</li>
+
+</ul>
+  

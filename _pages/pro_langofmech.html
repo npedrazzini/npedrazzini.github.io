@@ -1,0 +1,129 @@
+---
+layout: archive
+title: "Machines in the Media"
+permalink: /langofmech/
+author_profile: true
+---
+
+<ul class="fa-ul">
+
+  <li><i class="fa-li fa fa-question"></i> <h2>Questions</h2> <br>
+    <ol>
+      <li>Started in the 18th century in Great Britain, 
+        the industrial mechanization saw a dramatic acceleration in the 
+        19th century. Given large enough datasets, is it possible to automatically 
+        detect changes in the meaning of words associated with this process? And... </li> 
+        <li>... Would the changes detected reflect what the traditional scholarship on the subject (e.g. ???)
+          say on the matter?</li>
+    </ol>
+  </li>
+  
+  <li><i class="fa-li fa fa-bullseye"></i><h2>Challenge</h2><br>
+  Historical data is messy, full of orthographic variation, and, most often than not, comes from OCR'd material (i.e. it
+      is full of OCR errors). This could make language models trained on it not very high-quality.
+  </li>
+  
+  <li><i class="fa-li fa fa-table"></i><h2>Data</h2><br>
+    Digitized 19th-century newspaper collection comprising a total of ca. 4.5 billion tokens, spanning the period 1800-1920.
+  </li>
+  
+  <li><i class="fa-li fa fa-random"></i> <h2>(Pre-)processing</h2> <br>
+    The corpus was divided into bins of 10 years each, to obtain models each representing one decade in the 19th century.
+    Each bin was preprocessed by lowercasing the text, removing punctuation and any word with less than 2 characters. 
+  </li>
+  
+  <li><i class="fa-li fa fa-sort-numeric-desc"></i> <h2>Training</h2> <br>
+    The embeddings were trained using `Word2Vec` as implemented in `Gensim`. After a grid-search for the most important parameters,
+    the models were trained using the following:
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </li>
+  
+  <li><i class="fa-li fa fa-code-branch"></i><h2>Alignment</h2> <br>
+  In order for the semantic spaces to be comparable, the models were aligned using Orthogonal Procrustes (i.e. obtaining diachrnonic embeddings).
+  The most recent decade (1910s) was kept fixed, with all other decades aligned to it.
+
+  </li>
+  
+  <li><i class="fa-li fa fa-sitemap"></i><h2>Change point detection</h2> <br>
+  
+  </li>
+
+  <li><i class="fa-li fa fa-sitemap"></i><h2>Semantic trajectory visualization</h2> <br>
+  
+  </li>
+
+  <li><i class="fa-li fa fa-sitemap"></i><h2>Time-series clustering with Dynamic Time Warping</h2> <br>
+  
+  </li>
+  
+  
+  <li><i class="fa-li fa fa-sitemap"></i><h2>Evaluation</h2> <br>
+  The results from change point detecetion were compared to the semantic changes indicated by the traditional literature, showing that, in fact, 
+  our diachronic models largely reflected what claimed there. The clustering with DTW is still experimental and there is currently no well-established
+  validation method for it. Change point detection on its own, however, suggests that, given their good-quality and the positive confirmation 
+  from the scholarship, diachronic models as the ones described can be used to explore new research questions not yet asked by the traditional literature.
+  </li>
+
+  </li>
+  
+  <li><i class="fa-li fa fa-bullhorn"></i><h2>Credits</h2> <br>
+  
+  This is a project carried out within the <a href="">Living with Machines</a> project (The Alan Turing Institute).
+  </li>
+  
+  
+  <li><i class="fa-li fa fa-bookmark"></i><h2>References</h2> <br>
+  
+  <p id="ID"></p>
+  <p id="ID"></p>
+  <p id="ID"></p>
+  </li>
+  
+  
+  <li><i class="fa fa-angle-down fa-2x animated"></i><h2>Check out other projects</h2> <br>
+  
+    <div class="row">
+      <div class="column">
+        <div class="container">
+          <a href="/massparallelbibles/"><img src="/images/massparall.gif" width="500" height="600"></a>
+          <a href="/massparallelbibles/"><div class="proj-title">Parallel Bibles</div></a>
+          <div class="proj-subtitle">Temporal subordination in 1400+ languages of the world</div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="container">
+          <a href="/langofmech/"><img src="/images/machine.gif" width="500" height="600"></a>
+          <a href="/langofmech/"><div class="proj-title">Machines in the media</div></a>
+          <div class="proj-subtitle">Semantic change in the era of mechanization</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="column">
+        <div class="container">
+          <a href="/oldslavnet/"><img src="/images/oldslavnet.gif" width="500" height="600"></a>
+          <a href="/oldslavnet/"><div class="proj-title">OldSlavNet</div></a>
+          <div class="proj-subtitle">A scalable dependency parser for pre-modern Slavic</div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="container">
+          <a href="/agwemb/"><img src="/images/supergrc.gif" width="500" height="600"></a>
+          <a href="/agwemb/"><div class="proj-title">Ancient Greek graph-based syntactic embeddings</div></a>
+          <div class="proj-subtitle">Syntactic word representations for Ancient Greek</div>
+        </div>
+      </div>
+    </div>
+  
+  </li>
+  
+  </ul>
+    
