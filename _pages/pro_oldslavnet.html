@@ -41,7 +41,7 @@ author_profile: true
     breakdown of the number of tokens for each subvariety (or 'dialect') in the corpus.
   </li>
 
-  <li><i class="fa-li fa fa-table"></i><h2>Parser architecture</h2><br>
+  <li><i class="fa-li fa fa-tree"></i><h2>Parser architecture</h2><br>
   The parser is trained on CoNLL-U input files (of the UD framework), one of the most widely employed formats for dependency parsing.
   The tool’s neural-network architecture is based on jPTDP, since it was thought precisely for morphology-rich languages,
   such as Early Slavic, with a few adaptations:
@@ -69,7 +69,7 @@ author_profile: true
     </ol>
   </li>
   
-  <li><i class="fa-li fa fa-sort-numeric-desc"></i> <h2>Models trained</h2> <br>
+  <li><i class="fa-li fa fa-clipboard-list"></i> <h2>Models trained</h2> <br>
     Three main models were trained, to check whether a parser trained on a specific language variety would perform better than a generic one: 
     <ol>
       <li>A specialized East-Slavic model, trained only on data from East Slavic texts.</li>
@@ -78,7 +78,7 @@ author_profile: true
     </ol>
   </li>
   
-  <li><i class="fa-li fa fa-code-branch"></i><h2>Results</h2> <br>
+  <li><i class="fa-li fa fa-location-arrow"></i><h2>Results</h2> <br>
   The generic model performs better across the board, indicating that, because of data sparsity, Early Slavic dependency parsing is best achieved
   without training specialized models for separate varieties. See the performance of <samp>OldSlavnet</samp> compared to previous experiments:
 

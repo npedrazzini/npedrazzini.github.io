@@ -31,7 +31,7 @@ author_profile: true
   </ol>
   </li>
   
-  <li><i class="fa-li fa fa-table"></i><h2>Syntactic embedding architecture</h2><br>
+  <li><i class="fa-li fa fa-tree"></i><h2>Syntactic embedding architecture</h2><br>
     <p>The framework I used is roughly the one described in <a href="#alghezi">Al-Ghezi & Kurimo</a>'s (2020) <i>Graph-based Syntactic Word Embeddings</i>. You
     can read more about this architecture <a href="">here</a>, but in sum, given a series of consituency parse tree in parenthetical form
     (each corresponding to a sentence in a treebank), we generate a <i>supergraph</i> consisting of the union of all graph-converted
@@ -68,12 +68,12 @@ author_profile: true
     The preprocessing scripts can be found <a href="https://github.com/npedrazzini/ancientgreek-syntactic-embeddings/tree/main/scripts/preprocess">here</a>.
   </li>
   
-  <li><i class="fa-li fa fa-sort-numeric-desc"></i> <h2>Training</h2> <br>
+  <li><i class="fa-li fa fa-flask"></i> <h2>Training</h2> <br>
     <samp>node2vec</samp> is then used to train word embeddings from the large graph-based structure. Different parameters should be tried as is good practice,
     but the snippet below is created by training a model using a <samp>window</samp> of <samp>5</samp> and a <samp>min_count</samp> of <samp>1</samp>.
   </li>
   
-  <li><i class="fa-li fa fa-code-branch"></i><h2>Results</h2> <br>
+  <li><i class="fa-li fa fa-location-arrow"></i><h2>Results</h2> <br>
     Below is an example comparing the 5-nearest neighbours of <i>ἐλεύθερος</i>, 
     ‘free/freedom’, from the syntactic embedding model and from a count-based model (with PPMI).
     We can see our count-based model returned all words that are in 

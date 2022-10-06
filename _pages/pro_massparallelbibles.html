@@ -37,7 +37,7 @@ Several of the roughly 1400 languages in the corpus had multiple translations an
   For each of the target languages a word-alignment model was trained using <a href="#symgiza">Dowmunt & Szał</a>'s (2012) SyMGIZA++ <a href="https://github.com/emjotde/symgiza-pp"><i class="fas fa-external-link-alt"></i></a>, after testing its performance against that of other alignment algorithm, such as GIZA++ and FastText. Minimal preprocessing (lowercasing and punctuation removal) was applied before training.
 </li>
 
-<li><i class="fa-li fa fa-sort-numeric-desc"></i> <h2>Similarity matrix and dimensionality reduction</h2> <br>
+<li><i class="fa-li fa fa-flask"></i> <h2>Similarity matrix and dimensionality reduction</h2> <br>
   After extracting <i>when</i> and its parallels in all the target languages, Hamming distance was used as a measure of similarity between pairs of contexts, leveraging the number of times a language uses two different linguistic means where English uses one. Multidimensional scaling (MDS) was then applied to the resulting matrix to visualize the distance between each occurrence of <i>when</i> two- and three-dimensionally. Below is the 3D example for Spanish. Toggle on/off individual words to include or exclude them from the map, hover the data points to see the English-Spanish parallel contexts, and drag the plot to see it from different perspectives:
   <p align="center">
   <br><br>

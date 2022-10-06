@@ -51,7 +51,7 @@ author_profile: true
     Each bin was preprocessed by lowercasing the text, removing punctuation and any word with less than 2 characters. 
   </li>
   
-  <li><i class="fa-li fa fa-sort-numeric-desc"></i> <h2>Training</h2> <br>
+  <li><i class="fa-li fa fa-flask"></i> <h2>Training</h2> <br>
     The embeddings were trained using <samp>Word2Vec</samp> (<a href="#word2vec">Mikolov et al.</a> 2013) as implemented in <samp>Gensim</samp> (<a href="#gensim">Řehůřek & Sojka 2010</a>). After a grid-search for the most important parameters,
     the final models were trained using the following:
 
@@ -71,7 +71,7 @@ author_profile: true
 
   </li>
   
-  <li><i class="fa-li fa fa-sitemap"></i><h2>Change point detection</h2> <br>
+  <li><i class="fa-li fa fa-chart-line"></i><h2>Change point detection</h2> <br>
     Given a word (o set thereof), first calculate the cosine similarity between the vector of the same word in the most
     recent time slice (in this case the 1910s) and the vector of the same word in each of the previous time slices. Then structure the 
     resulting list of cosine similarity scores in a dataframe like the following: <br><br>
@@ -119,7 +119,7 @@ author_profile: true
 
   </li>
 
-  <li><i class="fa-li fa fa-sitemap"></i><h2>Semantic trajectory visualization</h2> <br>
+  <li><i class="fa-li fa fa-chart-area"></i><h2>Semantic trajectory visualization</h2> <br>
 
     <p>Leveraging the information gathered from the change point detection method, we can also extract the <i>k</i>-nearest neighbours 
     of a word for which a change point
@@ -146,7 +146,7 @@ author_profile: true
 
   </li>
   
-  <li><i class="fa-li fa fa-sitemap"></i><h2>Evaluation</h2> <br>
+  <li><i class="fa-li fa fa-book-reader"></i><h2>Evaluation</h2> <br>
   The results from change point detecetion were compared to the semantic changes indicated by the traditional literature, showing that, in fact, 
   our diachronic models largely reflected what claimed there. Change point detection suggests that, given their good-quality and the positive confirmation 
   from the scholarship, diachronic models as the ones described can be used to explore new research questions not yet asked by the traditional literature.
