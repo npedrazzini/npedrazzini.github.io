@@ -98,7 +98,6 @@ blockquote {
   margin: 2em 1em 2em 0;
   padding-left: 1em;
   padding-right: 1em;
-  font-style: italic;
   border-left: 0.25em solid $primary-color;
 
   cite {
@@ -128,7 +127,10 @@ a {
 /* code */
 
 tt, code, kbd, samp, pre {
-  font-family: $monospace;
+    font-family: Consolas,"courier new";
+    color: black;
+    padding: 0px;
+    font-size: 105%;
 }
 
 pre {
@@ -402,4 +404,8 @@ img:hover {
   filter: none;
   -webkit-filter: grayscale(0);
   cursor: crosshair;
+}
+
+table, th, td {
+  border:1px solid black;
 }

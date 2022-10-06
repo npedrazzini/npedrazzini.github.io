@@ -16,8 +16,8 @@ I'm currently a Research Assistant at **The Alan Turing Institute** <a href="htt
 ## Current work and main project areas
 
 <ul class="fa-ul">
- <li><i class="fa-li fa fa-code"></i><a href="researchareas/#digital-humanities">Digital Humanities</a></li>
  <li><i class="fa-li fa fa-sign-language"></i><a href="researchareas/#linguistics">Linguistics</a></li>
+<li><i class="fa-li fa fa-code"></i><a href="researchareas/#digital-humanities">Digital Humanities</a></li>
  <li><i class="fa-li fa fa-code-branch"></i><a href="researchareas/#open-scholarship-in-the-humanities">Open Scholarship in the Humanities</a></li>
 </ul>
 

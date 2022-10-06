@@ -15,7 +15,7 @@ author_profile: true
       word vector representation enhancement, and text classification and summarization: solving this bottleneck
       can open new avenues in NLP for historical languages. Pre-modern Slavic is ideal to explore this issue, because of 
       the multiple varieties it is represented by, each with their own orthographic conventions and 
-      scribal practices (i.e. sub-varieties are not necessarily homogeneous themselves) (see <a href="#earlyslavic">?</a> for an overview on Early Slavic).
+      scribal practices (i.e. sub-varieties are not necessarily homogeneous themselves) (see <a href="#earlyslavic">Schenker</a> (1995) for an overview on Early Slavic).
   </li> 
 
   <li><i class="fa-li fa fa-question"></i> <h2>Questions</h2> <br>
@@ -46,9 +46,9 @@ author_profile: true
   The tool’s neural-network architecture is based on jPTDP, since it was thought precisely for morphology-rich languages,
   such as Early Slavic, with a few adaptations:
   <ol>
-    <li>`ArgParse` substitutes the older `OptParse` to allow for wider reusability of our code.</li>
-    <li> `RMSProp` [8] is employed instead of `Adam` [9] as optimizer to avoid exploding gradients.</li>
-    <li>The initial learning rate was set to `0.1` instead of None.</li>
+    <li><samp>ArgParse</samp> substitutes the older <samp>OptParse</samp> to allow for wider reusability of our code.</li>
+    <li> <samp>RMSProp</samp> [8] is employed instead of <samp>Adam</samp> [9] as optimizer to avoid exploding gradients.</li>
+    <li>The initial learning rate was set to <samp>0.1</samp> instead of None.</li>
   </ol>
   </li>
 
@@ -63,8 +63,8 @@ author_profile: true
         utility proiel-cli, which can be used for the manipulation of PROIEL treebanks. 
         The main differences between CoNLL-U and CoNLL-X are the treatment of multiword tokens as
         integer ranges and the insertion of comments before each new sentence, besides the
-        different order and outlook of their morphotags (e.g. NUMBs|GENDn|CASEn in
-        CoNLL-X and Case=Nom|Gender=Neut|Number=Sing in CoNLL-U).</li>
+        different order and outlook of their morphotags (e.g. <samp>NUMBs|GENDn|CASEn</samp> in
+        CoNLL-X and <samp>Case=Nom|Gender=Neut|Number=Sing</samp> in CoNLL-U).</li>
       <li>Modern Serbian and Modern Russian texts were normalized (or 'harmonized') using the scripts I provided <a href="">here</a>.</li>
     </ol>
   </li>
@@ -72,43 +72,38 @@ author_profile: true
   <li><i class="fa-li fa fa-sort-numeric-desc"></i> <h2>Models trained</h2> <br>
     Three main models were trained, to check whether a parser trained on a specific language variety would perform better than a generic one: 
     <ol>
-      <li>A specialized East-Slavic model, trained only on data from East Slavic texts (see breakdown).</li>
-      <li>A specialized South-Slavic model, trained only on data from South Slavic texts (see breakdown).</li>
+      <li>A specialized East-Slavic model, trained only on data from East Slavic texts.</li>
+      <li>A specialized South-Slavic model, trained only on data from South Slavic texts.</li>
       <li>A generic model, trained on mixed data from both varieties, including normalized modern texts.</li>
     </ol>
   </li>
   
   <li><i class="fa-li fa fa-code-branch"></i><h2>Results</h2> <br>
   The generic model performs better across the board, indicating that, because of data sparsity, Early Slavic dependency parsing is best achieved
-  without training specialized models for separate varieties. See the performance of `OldSlavnet` compared to previous experiments:
+  without training specialized models for separate varieties. See the performance of <samp>OldSlavnet</samp> compared to previous experiments:
 
 
   Note that on East Slavic texts, the generic parser superseded the specialized one in performance only after the addition of normalized modern texts.
-  You can follow this rather complex discussion by reading (in order) Pedrazzini (2020) and Pedrazzini & Eckhoff (2021).
+  You can follow this rather complex discussion by reading (in order) <a href="#pedrazzini1">Pedrazzini</a> (2020) and <a href="#pedrazzini2">Pedrazzini & Eckhoff</a> (2021).
   </li>
-  
-  <li><i class="fa-li fa fa-sitemap"></i><h2>From universals to language-internal variation</h2> <br>
-  
-  </li>
-  
   
   </li>
   
   <li><i class="fa-li fa fa-bullhorn"></i><h2>Credits</h2> <br>
   
   The normalization scripts from Modern Russian and Modern Serbian to Early Slavic were
-  written in collaboration with <a href="">Dr Hanne Eckhoff</a> (Oxford).
+  written in collaboration with <a href="https://www.lmh.ox.ac.uk/our-academics/fellows/dr-hanne-eckhoff">Dr Hanne Eckhoff</a> (Oxford).
   </li>
   
   
   <li><i class="fa-li fa fa-bookmark"></i><h2>References</h2> <br>
   
-  <p id="#earlyslavic">sdcsdcsdcsdcsdc</p>
-  <p id="#torot">ssdcsdcsdcsdcsdcsdcsdc</p>
-  <p id="#syntagrus">rververververve</p>
-  <p id="#serbianset">qwqwqwqwq</p>
-  <p id="#pedrazzini1">qwqwqwqwq</p>
-  <p id="#pedrazzini2">qwqwqwqwq</p>
+  <p id="#earlyslavic">A. M. Schenker. 1995. <i>The Dawn of Slavic: An Introduction to Slavic Philology</i>. Yale University Press.</p>
+  <p id="#torot">H. M. Eckhoff and A. Berdicevskis. 2015. 'Linguistics vs. digital editions: The Tromsø Old Russian and OCS Treebank'. <i>Scripta & e-Scripta</i> 14–15, pp. 9-25.</p>
+  <p id="#syntagrus">A. Berdičevskis, H. M. Eckhoff. 2020. A Diachronic Treebank of Russian spanning more than a thousand years. <i>Proceedings of the 12th Language Resources and Evaluation Conference</i>, European Language Resources Association, Marseille, France, pp. 5251-5256.</p>
+  <p id="#serbianset">T. Samardžić, M. Starović, Ž. Agić, N. Ljubešić. 2017. Universal Dependencies for Serbian in comparison with Croatian and other Slavic languages. <i>Proceedings of the 6th Workshop on Balto-Slavic Natural Language Processing</i>, Association for Computational Linguistics, Valencia, Spain, pp. 39-44</p>
+  <p id="#pedrazzini1"> N. Pedrazzini. 2020. Exploiting cross-dialectal gold syntax for low-resource historical languages: Towards a generic parser for pre-modern Slavic. In F. Karsdorp, B. McGillivray, A. Nerghes, & M. Wevers (Eds.), <i>Proceedings of the Workshop on Computational Humanities Research (CHR 2020)</i> (Vol. 2723, pp. 237–247). Amsterdam, Netherlands: CEUR Workshop Proceedings</p>
+  <p id="#pedrazzini2">N. Pedrazzini, & H. M. Eckhoff. 2021. OldSlavNet: A scalable Early Slavic dependency parser trained on modern language data. <i>Software Impacts</i>, 100063. </p>
   </li>
   
   

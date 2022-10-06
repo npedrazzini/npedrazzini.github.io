@@ -6,25 +6,44 @@ author_profile: true
 ---
 
 <ul class="fa-ul">
-
+  
   <li><i class="fa-li fa fa-question"></i> <h2>Questions</h2> <br>
+  Started in the 18th century in Great Britain, 
+  the industrial mechanization saw a dramatic acceleration in the 
+  19th century. English, as exptected, refelects these changes at different linguistic levels,
+  particularly in the lexicon, because of the unprecedented speed with which technological innovations
+  took place. 
     <ol>
-      <li>Started in the 18th century in Great Britain, 
-        the industrial mechanization saw a dramatic acceleration in the 
-        19th century. Given large enough datasets, is it possible to automatically 
-        detect changes in the meaning of words associated with this process? And... </li> 
-        <li>... Would the changes detected reflect what the traditional scholarship on the subject (e.g. ???)
+      <li>Given large enough datasets, is it possible to automatically 
+        detect changes in the meaning of words associated with this process? </li> 
+        <li>Would the changes detected reflect what the traditional scholarship on the subject 
+          (e.g. <a href="#gorlach">Görlach</a> 1999, <a href="#kayallan">Kay & Allan</a> 2015, <a href="#kyto">Kytö et al.</a> 2006)
           say on the matter?</li>
     </ol>
   </li>
-  
+
   <li><i class="fa-li fa fa-bullseye"></i><h2>Challenge</h2><br>
-  Historical data is messy, full of orthographic variation, and, most often than not, comes from OCR'd material (i.e. it
-      is full of OCR errors). This could make language models trained on it not very high-quality.
+    One of the main reasons why Big Historical Data need specific tools compared to Big Data 
+    in general is mainly that more often than historical data is messy, full of orthographic variation,
+    and, most often than not, comes from OCR'd material (i.e. it is full of OCR errors). 
+    This makes training good-quality language models trained on it very challenging. Together with the 
+    granularity-speed trade-off needed during preprocessing (common to Big Data in general), we thus also need extra 
+    steps to make sure that OCR errors are dealt with and that they figure in any evaluation 
+    framework we might choose to adopt when training embeddings from them. Compared to smaller historical text collections, 
+    Big Historical Data and Big Data in general, because of their mere size, will typically undergo minimal preprocessing, 
+    since NLP tasks such as  lemmatization, PoS tagging, morphological analysis or dependency annotation (used as 'preprocessing' 
+    steps in embedding architectures such as <a href="#alghezi">Al-Ghezi & Kurimo</a> (2020) and <a href="#levygold">Levy & Goldberg</a> (2014) may be computationally unfeasible unless we 
+    subsample our corpus beyond the temporal variable. In fact, even minimal preprocessing may not be 
+    feasible by sticking only to one specific popular library (e.g. <samp>spaCy</samp>): instead, each preprocessing 
+    step will need to be optimized for computational costs by combining specific pipelines from 
+    different external libraries, as well as bespoke methods. 
   </li>
   
   <li><i class="fa-li fa fa-table"></i><h2>Data</h2><br>
-    Digitized 19th-century newspaper collection comprising a total of ca. 4.5 billion tokens, spanning the period 1800-1920.
+    Digitized 19th-century newspaper collection comprising a total of ca. 4.5 billion tokens, 
+    spanning the period 1800-1920. Around half of the tokens come from the <a href="https://www.bl.uk/projects/heritage-made-digital">Heritage Made Digital</a> digitization project
+    and can be downloaded <a href="https://github.com/Living-with-machines/hmd_newspaper_dl">here</a>. The other half were specially
+    digitized within the <a href="https://www.turing.ac.uk/research/research-projects/living-machines">Living with Machines</a> project, but are not publicly available yet.
   </li>
   
   <li><i class="fa-li fa fa-random"></i> <h2>(Pre-)processing</h2> <br>
@@ -33,58 +52,124 @@ author_profile: true
   </li>
   
   <li><i class="fa-li fa fa-sort-numeric-desc"></i> <h2>Training</h2> <br>
-    The embeddings were trained using `Word2Vec` as implemented in `Gensim`. After a grid-search for the most important parameters,
-    the models were trained using the following:
+    The embeddings were trained using <samp>Word2Vec</samp> (<a href="#word2vec">Mikolov et al.</a> 2013) as implemented in <samp>Gensim</samp> (<a href="#gensim">Řehůřek & Sojka 2010</a>). After a grid-search for the most important parameters,
+    the final models were trained using the following:
+
     <ul>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
+      <li><samp>sg</samp>: 1 (i.e. <i>SkipGram</i> rather than <i>Continuous Bag-of-Words</i>)</li>
+      <li><samp>epochs</samp>: 5</li>
+      <li><samp>vector_size</samp>: 200</li>
+      <li><samp>window</samp>: 3</li>
+      <li><samp>min_count</samp>: 1</li>
     </ul>
+
   </li>
   
   <li><i class="fa-li fa fa-code-branch"></i><h2>Alignment</h2> <br>
-  In order for the semantic spaces to be comparable, the models were aligned using Orthogonal Procrustes (i.e. obtaining diachrnonic embeddings).
+  In order for the semantic spaces to be comparable, the models were aligned using Orthogonal Procrustes (<a href="#procrustes">Schönemann</a> 1966) (i.e. obtaining diachrnonic embeddings).
   The most recent decade (1910s) was kept fixed, with all other decades aligned to it.
 
   </li>
   
   <li><i class="fa-li fa fa-sitemap"></i><h2>Change point detection</h2> <br>
-  
+    Given a word (o set thereof), first calculate the cosine similarity between the vector of the same word in the most
+    recent time slice (in this case the 1910s) and the vector of the same word in each of the previous time slices. Then structure the 
+    resulting list of cosine similarity scores in a dataframe like the following: <br><br>
+
+    <style type="text/css">
+      table.tableizer-table {
+        font-size: 12px;
+        border: 1px solid #CCC; 
+        font-family: 'Roboto Condensed', sans-serif;
+      } 
+      .tableizer-table td {
+        padding: 4px;
+        margin: 3px;
+        border: 1px solid #CCC;
+      }
+      .tableizer-table th {
+        background-color: rgb(23, 117, 118); 
+        color: #FFF;
+        font-weight: bold;
+      }
+    </style>
+    <table class="tableizer-table">
+    <thead><tr class="tableizer-firstrow"><th>timeslice</th><th>traffic</th><th>train</th><th>coach</th><th>wheel</th><th>fellow</th><th>railway</th><th>match</th></tr></thead><tbody>
+     <tr><td>1800s</td><td>0.42065081000328100</td><td>0.3247864842414860</td><td>0.48939988017082200</td><td>0.40280336141586300</td><td>0.4793526530265810</td><td>0.45957744121551500</td><td>0.5546759963035580</td></tr>
+     <tr><td>1810s</td><td>0.44998985528945900</td><td>0.37257763743400600</td><td>0.4604988396167760</td><td>0.4593697786331180</td><td>0.5891557335853580</td><td>0.47077488899231000</td><td>0.527800440788269</td></tr>
+     <tr><td>1820s</td><td>0.4821169972419740</td><td>0.3287739157676700</td><td>0.4415084719657900</td><td>0.5199856162071230</td><td>0.5828660130500790</td><td>0.414533793926239</td><td>0.5771894454956060</td></tr>
+     <tr><td>1830s</td><td>0.5448930859565740</td><td>0.5837113261222840</td><td>0.6515539884567260</td><td>0.634568989276886</td><td>0.6111024618148800</td><td>0.5849509239196780</td><td>0.5492534637451170</td></tr>
+     <tr><td>1840s</td><td>0.6072453856468200</td><td>0.7486659288406370</td><td>0.6239444613456730</td><td>0.6725128889083860</td><td>0.623650848865509</td><td>0.5770826935768130</td><td>0.5812575817108150</td></tr>
+     <tr><td>1850s</td><td>0.6091518402099610</td><td>0.7796339988708500</td><td>0.5971360206604000</td><td>0.4985277056694030</td><td>0.6289939284324650</td><td>0.6734532713890080</td><td>0.5770257711410520</td></tr>
+     <tr><td>1860s</td><td>0.6446579694747930</td><td>0.7618392705917360</td><td>0.603736162185669</td><td>0.5436286926269530</td><td>0.6926408410072330</td><td>0.609641432762146</td><td>0.6728477478027340</td></tr>
+     <tr><td>1870s</td><td>0.7729555368423460</td><td>0.8115466833114620</td><td>0.6379809379577640</td><td>0.652446448802948</td><td>0.7293833494186400</td><td>0.7228521108627320</td><td>0.6857554316520690</td></tr>
+     <tr><td>1880s</td><td>0.7656214237213140</td><td>0.8313593864440920</td><td>0.6118263006210330</td><td>0.5638831257820130</td><td>0.7863538861274720</td><td>0.7955769300460820</td><td>0.757251501083374</td></tr>
+     <tr><td>1890s</td><td>0.8245968818664550</td><td>0.8599095344543460</td><td>0.6886460185050960</td><td>0.7133383750915530</td><td>0.8441230058670040</td><td>0.8329502940177920</td><td>0.8200661540031430</td></tr>
+     <tr><td>1900s</td><td>0.8344136476516720</td><td>0.854633092880249</td><td>0.7280615568161010</td><td>0.7398968935012820</td><td>0.8377308249473570</td><td>0.8479636907577520</td><td>0.9051868915557860</td></tr>
+     <tr><td>1910s</td><td>1.0</td><td>1.0</td><td>1.0</td><td>1.0</td><td>1.0</td><td>1.0</td><td>1.0</td></tr>
+    </tbody></table>
+    
+    <p>Obviously the cosine similarity between the vector of a word in a decade and itself is equal to 1, which is what we see for the whole of the last row.
+    You can then detect potentially significative change points in each of the columns, that is, an abrupt change in the semantic trajectory of a word.
+    We can apply the <i>PELT</i> algorithm, as implemented in the <a href="https://centre-borelli.github.io/ruptures-docs/user-guide/detection/pelt/"><samp>ruptures</samp></a> library.
+    The algorithm returns timeslices where a changepoint is detected (if any). A change point, for instance, was detected for <i>train</i> and <i>traffic</i>, in the 1820s and in the 1860s, respectively.
+    We can visualize these to make it more intuitive (changepoint is the vertical line):</p>
+
+    <img src="/images/cpdetection.png" style="float: none; width: 100%; height: 100%; margin-left: auto; margin-right: auto;">
+
   </li>
 
   <li><i class="fa-li fa fa-sitemap"></i><h2>Semantic trajectory visualization</h2> <br>
-  
-  </li>
 
-  <li><i class="fa-li fa fa-sitemap"></i><h2>Time-series clustering with Dynamic Time Warping</h2> <br>
-  
+    <p>Leveraging the information gathered from the change point detection method, we can also extract the <i>k</i>-nearest neighbours 
+    of a word for which a change point
+    has been detected in the decades surrounding the change point and visualize its semantic trajectory to see how the set of most similar words have
+    changed over time. For example, we can extract 30 neighbours for three or four decades for <i>train</i> and <i>traffic</i>. We then keep only the neighbours that are
+    present in the vocabulary of the model for the most recent decade being visualized. Before doing so, however, we make sure that the word vectors corresponding
+    to OCR errors are gotten rid of (I use the <a href="https://pypi.org/project/pyspellchecker/"><samp>pyspellchecker</samp></a> package to identify these), or averaged with the vector for the word with the correct
+    spelling. To the list of vectors being visualized we also add the ones for the word itself
+    (<i>train</i> or <i>traffic</i>) for each of the decade being represented. We then apply <a href="http://scikit-learn.org/stable/modules/generated/sklearn.manifold.TSNE.html"><samp>TSNE</samp></a> as a dimensionality reduction technique
+    so that we can visualize the vectors in a two-dimensional space. We highlight the relevant words and join them for clarity. The result is the following: </p>
+
+    <div class="row">
+      <div class="column">
+        <div class="container">
+          <img src="/images/train.png" width="500" height="600">
+        </div>
+      </div>
+      <div class="column">
+        <div class="container">
+          <img src="/images/traffic.png" width="500" height="600">
+        </div>
+      </div>
+    </div>
+
   </li>
-  
   
   <li><i class="fa-li fa fa-sitemap"></i><h2>Evaluation</h2> <br>
   The results from change point detecetion were compared to the semantic changes indicated by the traditional literature, showing that, in fact, 
-  our diachronic models largely reflected what claimed there. The clustering with DTW is still experimental and there is currently no well-established
-  validation method for it. Change point detection on its own, however, suggests that, given their good-quality and the positive confirmation 
+  our diachronic models largely reflected what claimed there. Change point detection suggests that, given their good-quality and the positive confirmation 
   from the scholarship, diachronic models as the ones described can be used to explore new research questions not yet asked by the traditional literature.
-  </li>
-
   </li>
   
   <li><i class="fa-li fa fa-bullhorn"></i><h2>Credits</h2> <br>
   
-  This is a project carried out within the <a href="">Living with Machines</a> project (The Alan Turing Institute).
+  This is a project carried out within <a href="">Living with Machines</a> (The Alan Turing Institute).
   </li>
   
   
   <li><i class="fa-li fa fa-bookmark"></i><h2>References</h2> <br>
   
-  <p id="ID"></p>
-  <p id="ID"></p>
-  <p id="ID"></p>
-  </li>
+  <p id="#gorlach">M. Görlach. 1999. <i>English in Nineteenth-Century England: An Introduction.</i> Cambridge University Press, Cambridge.</p>
+  <p id="#kayallan">C. Kay and K. Allan. 2015. <i>English Historical Semantics.</i> Edinburgh University Press, Edinburgh.</p>
+  <p id="#kyto">M. Kytö, M. Rydén, and E. Smitterberg, editors. 2006. <i>Nineteenth-century English: Stability and change.</i> Cambridge University Press, Cambridge.</p>
+  <p id="#word2vec">T. Mikolov, K. Chen, G. Corrado, and J. Dean. 2013. <i>Efficient estimation of word representations in vector space.</i></p>
+  <p id="#gensim">R. Řehůřek and P. Sojka. 2010. Software Framework for Topic Modelling with Large Corpora. In <i>Proceedings of the LREC 2010 Workshop on New Challenges for NLP Frameworks</i>, 45–50, Valletta, Malta. ELRA. <a href="http://is.muni.cz/publication/884893/en"><i class="fas fa-external-link-alt"></i></a></p>
+  <p id="#procrustes">P. H. Schönemann. 1966. A generalized solution of the orthogonal procrustes problem. <i>Psychometrika</i>, 31: 1–10.</p>
+  <p id="#alghezi">R. Al-Ghezi and M. Kurimo. 2020. Graph-based Syntactic Word Embeddings. In <i>Proceedings of the Graph-based Methods for Natural Language Processing (TextGraphs)</i>, pages 72–78, Barcelona, Spain (Online). Association for Computational Linguistics.<a href="http://dx.doi.org/10.18653/v1/2020.textgraphs-1.8"><i class="fas fa-external-link-alt"></i></a></p>
+  <p id="#levygold">O. Levy and Y. Goldberg. 2014. Dependency-Based Word Embeddings. In <i>Proceedings of the 52nd Annual Meeting of the Association for Computational Linguistics</i> (Volume 2: Short Papers), pages 302–308, Baltimore, Maryland. Association for Computational Linguistics.<a href=" http://dx.doi.org/10.3115/v1/P14-2050"><i class="fas fa-external-link-alt"></i></a></p>
+
+</li>
   
   
   <li><i class="fa fa-angle-down fa-2x animated"></i><h2>Check out other projects</h2> <br>

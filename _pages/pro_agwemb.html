@@ -7,51 +7,126 @@ author_profile: true
 <ul class="fa-ul">
 
   <li><i class="fa-li fa fa-question"></i> <h2>Questions</h2> <br>
-    
+    Since at least <a href="#levygold">Levy & Goldberg</a>'s (2014) <i>Dependency-Based Word Embeddings</i>, it has been noted how incorporating syntactic information
+    in the training of word embeddings can change the type of linguistic relations encoded by
+    the resulting representations. Experiments on Ancient Greek vector space modelling (e.g. <a href="#roddaetal">Rodda et al.</a> 2019)
+    have not yet exploited the relative wealth of synctactically annotated data available for it
+    (compared to most other historical languages). The questions are therefore:
+    <ol>
+      <li>Can we use dependency information in Ancient Greek treebanks to train decent-quality 
+        syntactic word embeddings?
+      </li> 
+      <li>Would the trained spaces reflect a different kind of relation between words than the ones reflected in
+        classic word embeddings?
+      </li> 
+    </ol>
   </li>
   
   <li><i class="fa-li fa fa-bullseye"></i><h2>Challenge</h2><br>
-   
   <ol>
-    <li> </li> 
+    <li>Ancient Greek, as an historical language, shows much more linguistic variation than English, on which most syntactic-embedding
+      experiments are based. This may be a problem when it comes to token frequency.</li>
+    <li>Ancient Greek treebanks not only follow different annotation schemes, but, since there is no native speaker of it, their annotation
+      is very subjective, so that the parsing of a sentence could differ widely from annotator to annotator.</li>  
   </ol>
   </li>
   
+  <li><i class="fa-li fa fa-table"></i><h2>Syntactic embedding architecture</h2><br>
+    <p>The framework I used is roughly the one described in <a href="#alghezi">Al-Ghezi & Kurimo</a>'s (2020) <i>Graph-based Syntactic Word Embeddings</i>. You
+    can read more about this architecture <a href="">here</a>, but in sum, given a series of consituency parse tree in parenthetical form
+    (each corresponding to a sentence in a treebank), we generate a <i>supergraph</i> consisting of the union of all graph-converted
+    trees. The supergraph is then given as input to <samp>node2vec</samp>, which trains word vectors for the nodes in the graph. For example, 
+    given the following two sentences:</p>
+
+    <blockquote>Τί δύσκολον; Τὸ ἑαυτὸν γνῶναι.<br>'What is hard? To know yourself.'</blockquote>
+    
+    and 
+
+    <blockquote>τί εὔκολον; Τὸ ἄλλῳ ὑποτίθεσθαι.<br>'What is easy? To advise another.'</blockquote>
+
+    <p>The <i>supergraph</i> method would give the following as input to <samp>node2vec</samp>: </p>
+
+    <img src="/images/aggraph.png" style="float: none; width: 50%; height: 50%;margin-left: auto; margin-right: auto;">
+
+  </li>
+
   <li><i class="fa-li fa fa-table"></i><h2>Data</h2><br>
-  
+  Five sources have been used to train the models, all providing the treebanks in XML format. The following four, in the <a href="https://github.com/PerseusDL/treebank_data/blob/master/AGDT2/guidelines/Greek_guidelines.md">AGDT annotation scheme</a>:
   <ol>
-    <li> </li> 
+    <li>Gorman Treebanks <a href="https://perseids-publications.github.io/gorman-trees/"><i class="fas fa-external-link-alt"></i></a> </li> 
+    <li>PapyGreek Treebanks <a href="https://zenodo.org/record/5074307#.Yz2j4S8w0bw"><i class="fas fa-external-link-alt"></i></a></li>
+    <li>Pedalion Treebanks <a href="http://en.pedalion.org/treebanks"><i class="fas fa-external-link-alt"></i></a></li>
+    <li>The Ancient Greek Dependency Treebank (PerseusDL) <a href="http://perseusdl.github.io/treebank_data/"><i class="fas fa-external-link-alt"></i></a></li>
   </ol>
+
+  Plus the Ancient Greek portion of the PROIEL Treebanks <a href="http://dev.syntacticus.org/proiel.html"><i class="fas fa-external-link-alt"></i></a>, in the <a href="https://link.springer.com/article/10.1007/s10579-017-9388-5">PROIEL annotation scheme</a>.
   </li>
   
-  <li><i class="fa-li fa fa-random"></i> <h2>(Pre-)processing and alignment at token-level</h2> <br>
+  <li><i class="fa-li fa fa-random"></i> <h2>Preprocessing</h2> <br>
+    The dependency information (head-dependents) in each of the treebank files is first used to generate parenthetical trees, with bespoke methods
+    for the PROIEL and the AGDT schemes. Stopwords are removed and lemmata are use rather than token forms. The resulting trees are then processed following the supergraph framework to create one large graph-based structure.
+    The preprocessing scripts can be found <a href="https://github.com/npedrazzini/ancientgreek-syntactic-embeddings/tree/main/scripts/preprocess">here</a>.
+  </li>
+  
+  <li><i class="fa-li fa fa-sort-numeric-desc"></i> <h2>Training</h2> <br>
+    <samp>node2vec</samp> is then used to train word embeddings from the large graph-based structure. Different parameters should be tried as is good practice,
+    but the snippet below is created by training a model using a <samp>window</samp> of <samp>5</samp> and a <samp>min_count</samp> of <samp>1</samp>.
+  </li>
+  
+  <li><i class="fa-li fa fa-code-branch"></i><h2>Results</h2> <br>
+    Below is an example comparing the 5-nearest neighbours of <i>ἐλεύθερος</i>, 
+    ‘free/freedom’, from the syntactic embedding model and from a count-based model (with PPMI).
+    We can see our count-based model returned all words that are in 
+    the semantic field of 'free/freedom' or in its topical scope. On the other hand, although the 
+    neighbours from the syntactic model can also be considered 
+    to be broadly within the semantic field of 'free/freedom', their relation is more functional than topical, 
+    as they’re all adjectives which we can be expected to be found in similar distributions as <i>ἐλεύθερος</i>. 
+
+    <p align="center">5-nearest neighbours for ἐλεύθερος ‘free, freedom’</p>
+
+    <table style="float: none; width: 25%;margin-left: auto; margin-right: auto;">
+      <tr>
+        <th>Traditional count-based model</th>
+        <th>Syntactic embeddings</th>
+      </tr>
+      <tr>
+        <td>δοῦλος</td>
+        <td>αἰσχρός</td>
+      <tr>
+        <td>ἐλευθερία</td>
+        <td>λωίων</td>
+      </tr>
+      <tr>
+        <td>δουλεύω</td>
+        <td>εὐσχήμων</td>
+      </tr>
+      <tr>
+        <td>πολίτης</td>
+        <td>εὐτελής</td>
+      </tr>
+      <tr>
+        <td>δεσπότης</td>
+        <td>πλούσιος</td>
+      </tr>
+    </table>
+    
+  </li>
+    
+  <li><i class="fa-li fa fa-bullhorn"></i><h2>Credits</h2> <br>
+  The neighbours from the count-based model shown in the table above were extracted by Silvia Stopponi from a model
+  she trained. The method presented here and other results from this experiment were presented in more details at the International Conference of 
+  Historical Linguistics (ICHL25, August 2022, Oxford, United Kingdom), in a paper titled
+  <i>Evaluating Language Models for Ancient Greek: Design, Challenges, and Future Directions </i> 
+  (by myself and Barbara McGillivray, Silvia Stopponi, Malvina Nissim & 
+  Saskia Peels-Matthey).
 
   </li>
   
-  <li><i class="fa-li fa fa-sort-numeric-desc"></i> <h2>Similarity matrix and dimensionality reduction</h2> <br>
-  </li>
-  
-  <li><i class="fa-li fa fa-code-branch"></i><h2>From individual data points to universals</h2> <br>
-    
-  </li>
-  
-  <li><i class="fa-li fa fa-sitemap"></i><h2>From universals to language-internal variation</h2> <br>
-  
-  </li>
-  
-  
-  </li>
-  
-  <li><i class="fa-li fa fa-bullhorn"></i><h2>Credits</h2> <br>
-  
-  </li>
-  
-  
   <li><i class="fa-li fa fa-bookmark"></i><h2>References</h2> <br>
   
-  <p id="ID"></p>
-  <p id="ID"></p>
-  <p id="ID"></p>
+  <p id="#roddaetal">M. Rodda, P. Probert, & B. McGillivray, B. 2019. Vector space models of Ancient Greek word meaning, and a case study on Homer. <i>Traitement Automatique Des Langues</i>, 60(3), 63–87.</p>
+  <p id="#alghezi">R. Al-Ghezi and M. Kurimo. 2020. Graph-based Syntactic Word Embeddings. In <i>Proceedings of the Graph-based Methods for Natural Language Processing (TextGraphs)</i>, pages 72–78, Barcelona, Spain (Online). Association for Computational Linguistics.<a href="http://dx.doi.org/10.18653/v1/2020.textgraphs-1.8"><i class="fas fa-external-link-alt"></i></a></p>
+  <p id="#levygold">O. Levy and Y. Goldberg. 2014. Dependency-Based Word Embeddings. In <i>Proceedings of the 52nd Annual Meeting of the Association for Computational Linguistics</i> (Volume 2: Short Papers), pages 302–308, Baltimore, Maryland. Association for Computational Linguistics.<a href=" http://dx.doi.org/10.3115/v1/P14-2050"><i class="fas fa-external-link-alt"></i></a></p>
   </li>
   
   

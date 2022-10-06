@@ -87,20 +87,19 @@ Several of the roughly 1400 languages in the corpus had multiple translations an
 </li>
 
 <li><i class="fa-li fa fa-sitemap"></i><h2>From universals to language-internal variation</h2> <br>
-Starting once again from the MDS matrix, we can apply Kriging as an interpolation method that uses a limited set of sampled data points (each observation in the target languages) to estimate the value of a variable in an unsampled location. Unlike the GMM clustering, which predicts distinct clusters regardless of individual languages, Kriging helps identify areas that are likely to be the domain of a specific linguistic means in a particular language. The degree to which an area identified by Kriging overlaps with a GMM-identified cluster can tell us if that particular language has a dedicated means for the function of that particular cluster, whether it uses more than one means, whether one means extends over more than one cluster, or whether it has no dedicated means at all. As a minimal example, compare the maps for Norwegian and Kako below: the former co-lexicalizes the clusters corresponding to Kako <i>ma</i> and <i>NgimO</i>, which in turn correspond to separate clusters in any of the Gaussian Mixture Models plots with <i>k</i> > 3.
+<p>Starting once again from the MDS matrix, we can apply Kriging as an interpolation method that uses a 
+  limited set of sampled data points (each observation in the target languages) to estimate the value of 
+  a variable in an unsampled location. Unlike the GMM clustering, which predicts distinct clusters 
+  regardless of individual languages, Kriging helps identify areas that are likely to be the domain of 
+  a specific linguistic means in a particular language. The degree to which an area identified by Kriging 
+  overlaps with a GMM-identified cluster can tell us if that particular language has a dedicated means for 
+  the function of that particular cluster, whether it uses more than one means, whether one means extends 
+  over more than one cluster, or whether it has no dedicated means at all. As a minimal example, compare 
+  the maps for Norwegian and Kako below: the former co-lexicalizes the clusters corresponding to Kako 
+  <i>ma</i> and <i>ŋgimɔ</i>, which in turn correspond to separate clusters in any of the Gaussian 
+  Mixture Models plots with <i>k</i> > 3.</p>
 
-<div class="row">
-  <div class="column">
-    <div class="container">
-      <img src="/images/elbow3.png" width="500" height="600">
-    </div>
-  </div>
-  <div class="column">
-    <div class="container">
-      <img src="/images/elbow4.png" width="500" height="600">
-    </div>
-  </div>
-</div>
+<img src="/images/kako-nob.png" style="float: none; width: 100%; height: 100%; margin-left: auto; margin-right: auto;">
 
 </li>
 

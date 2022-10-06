@@ -45,19 +45,19 @@ redirect_from:
 * Computer languages
   * Solid programming skills in Python, R and Bash. Intermediate skills in Ruby.
 * Operating systems
-  * [In order of preference] macOS, Linux, Windows
+  * [In order of preference] macOS, Linux (Ubuntu, ChromeOS), Windows
 * Cloud skills 
   * Experience working with Microsoft Azure virtual machines, storage/blobs.
 * Data handling and NLP
   * In no particular order, good knowledge of Gensim (e.g. Word2Vec/KeyedVectors and ldamodel), SpaCy, NLTK, Sci-kit Learn, Pandas, NumPy, BeautifulSoup.
 * Web Development
-  * Solid skills in HTML/CSS, and XML. Intermediate skills in JavaScript. One-year experience with SQL and Django for database management.
+  * Solid skills in HTML/CSS, and XML. Intermediate skills in JavaScript. Recently introduced to SQL and Django for database management.
 * Version Control
-  * Solid Git knowledge.
+  * Solid Git knowledge. Experience with both GitFlow and trunk-based systems (CI)
 * Data Visualisation
   * Extensive experience with several Python libraries, particularly Matplotlib, Seaborn and Plotly (& Plotly Dash for web app deployment). Solid skills in base R plotting and ggplot2.
 * Languages
-  * Italian (native), English (C2), Russian (C1), Serbian (reading C1, speaking and listening B2), Spanish (Dele B2), German (Goethe-Zerti kat B1), Norwegian (Bokmål) (A2-B1). Good reading knowledge of French and Bulgarian. Working knowledge of Ancient Greek, Latin, Hittite, Old Church Slavonic.
+  * Italian (native), English (C2), Russian (C1), Serbian, Croatian and Bosnian (reading C1, speaking and listening B2), Spanish (Dele B2), German (Goethe-Zertifikat B1), Norwegian (Bokmål) (A2-B1). Good reading knowledge of French and Bulgarian. Basic reading skills in Korean and Te Reo Māori. Working knowledge of Ancient Greek, Latin, Hittite, Old Church Slavonic.
 * Misc.
   * Software sustainability. Collaborative software development (GitFlow). Corpus building and linguistic annotation. Linguistic Data Analysis. Development of digital and computational tools for historical languages. Teaching (Linguistics and Digital Humanities). Copyediting. TEX.
 
