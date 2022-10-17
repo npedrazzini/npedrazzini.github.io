@@ -14,13 +14,10 @@
     {% endif %}
   </div>
 
-  <div class="author__content">
-    <h3 class="author__name">{{ author.name }}<br><br></h3>
-    {% if author.bio %}<p class="author__bio">{{ author.bio }}</p>{% endif %}
-  </div>
+  <p><br><br><br><br><br><br><br><br></p>
   
   <div class="author__urls-wrapper">
-    <button class="btn btn--inverse">Follow</button>
+    <!-- <button class="btn btn--inverse">Follow</button> -->
     <ul class="author__urls social-icons">
       {% if author.employer %}
         <li><i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> {{ author.employer }}</li>
@@ -125,8 +122,8 @@
       <li><a href="{{ author.figshare }}"><i class="ai ai-figshare-square ai-fw"></i> Figshare</a></li>
       {% endif %}
       {% if author.wikipedia %}
-        <li><a href="https://en.wikipedia.org/wiki/User:{{ author.wikipedia }}"><i class="fab fa-fw fa-wikipedia-w" aria-hidden="true"></i> Wikipedia</a></li>
-{% endif %}
+      <li><a href="https://en.wikipedia.org/wiki/User:{{ author.wikipedia }}"><i class="fab fa-fw fa-wikipedia-w" aria-hidden="true"></i> Wikipedia</a></li>
+      {% endif %}
     </ul>
   </div>
 </div>

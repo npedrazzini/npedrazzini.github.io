@@ -76,7 +76,7 @@
   // set width only, for non-square avatars
   // height: 36px;
 
-  @include breakpoint($small) {
+  @include breakpoint($x-small) {
     display: block;
     width: auto;
     height: auto;
@@ -114,7 +114,7 @@
 .author__name {
   margin: 10px;
 
-  @include breakpoint($large) {
+  @include breakpoint($x-small) {
     margin-top: 10px;
     margin-bottom: 10px;
   }
@@ -128,19 +128,19 @@
 .author__bio {
   margin: 10px;
 
-  @include breakpoint($large) {
+  @include breakpoint($x-small) {
     margin-top: 10px;
     margin-bottom: 20px;
   }
 }
 
 .author__urls-wrapper {
-  position: relative;
+  position: absolute;
   display: table-cell;
   vertical-align: middle;
   font-family: $sans-serif;
   z-index: 10;
-  position: relative;
+  position: absolute;
   cursor: pointer;
 
   li:last-child {
