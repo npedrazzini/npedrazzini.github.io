@@ -62,11 +62,11 @@ redirect_from:
   * Software sustainability. Collaborative software development (GitFlow). Corpus building and linguistic annotation. Linguistic Data Analysis. Development of digital and computational tools for historical languages. Teaching (Linguistics and Digital Humanities). Copyediting. TEX.
 
 ## Publications
-  <ul>{% for post in site.publications %}
+  <ul>{% for post in site.publications reversed %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
   
 ## Talks
-  <ul>{% for post in site.talks %}
+  <ul>{% for post in site.talks reversed %}
     {% include archive-single-talk-cv.html %}
   {% endfor %}</ul>
