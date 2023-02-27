@@ -9,7 +9,7 @@ redirect_from:
 
 {% include base_path %}
 
-<p><i> Updated 06-08-2022</i></p>
+<p><i> Updated 27-02-2023</i></p>
 
 <a href="/images/CV-Pedrazzini.pdf"><i class="fas fa-file-pdf"></i></a> Extended PDF version
 
@@ -23,7 +23,8 @@ redirect_from:
 * **2020**: Guest Researcher, Department of Linguistics and Scandinavian Studies, Universitetet i Oslo (Norway), supervised by [Dag T.T. Haug](https://en.wikipedia.org/wiki/Dag_Haug)
 
 ## Work experience
-* **Jan 2022-**: Research Assistant in Corpus-Based Digital Humanities, *Living with Machines*, The Alan Turing Institute (London)
+* **Feb 2023-**: Research Software Engineer, *Digital scholarship @ Oxford* ([DiSc](https://digitalscholarship.web.ox.ac.uk/what-digital-scholarship-oxford), University of Oxford)
+* **Jan 2022-**: Research Associate in Corpus-Based Digital Humanities, *Living with Machines*, The Alan Turing Institute (London)
 * **2020-2021**: Research Assistant, International Multimodal Communication Centre (IMCC), Oxford School of Global and Area Studies (University of Oxford)
 * **2020**: Research Assistant, ReadOxford Research Group, Department of Experimental Psychology (University of Oxford)
 * **2018-2020**: IT/AV Support Assistant, Somerville College (University of Oxford)
@@ -36,10 +37,10 @@ redirect_from:
   {% endfor %}</ul>
 
 ## Other Scientific and Academic Activities
-* **2022**: Main organizer of the Open Humanities Seminar Series (OHSS) <a href="https://openhumanitiesseminar.github.io"><i class="fas fa-external-link-alt"></i></a>
-* **2020-now**: Editorial Assistant for the Journal of Open Humanities Data (JOHD) <a href="https://openhumanitiesdata.metajnl.com"><i class="fas fa-external-link-alt"></i></a>
 * **2021-now**: Fellow at RROx (UK Reproducibility Network) <a href="https://ox.ukrn.org/people/#NiloPedrazzini"><i class="fas fa-external-link-alt"></i></a>
-* **2019-now**: Linguistic annotator for the Tromsø Old Russian and Old Church Slavonic Treebank (TOROT) <a href="https://nestor.uit.no/"><i class="fas fa-external-link-alt"></i></a> project
+* **2022**: Organizer of the Open Humanities Seminar Series (OHSS) <a href="https://openhumanitiesseminar.github.io"><i class="fas fa-external-link-alt"></i></a>
+* **2020-2023**: Editorial Assistant for the Journal of Open Humanities Data (JOHD) <a href="https://openhumanitiesdata.metajnl.com"><i class="fas fa-external-link-alt"></i></a>
+* **2019-now**: Linguistic annotation for the Tromsø Old Russian and Old Church Slavonic Treebank (TOROT) <a href="http://torottreebank.github.io"><i class="fas fa-external-link-alt"></i></a> project
 
 ## Skills
 * Computer languages
@@ -47,7 +48,7 @@ redirect_from:
 * Operating systems
   * [In order of preference] macOS, Linux (Ubuntu, ChromeOS), Windows
 * Cloud skills 
-  * Experience working with Microsoft Azure virtual machines, storage/blobs.
+  * Experience working with Microsoft Azure virtual machines and storage/blobs.
 * Data handling and NLP
   * In no particular order, good knowledge of Gensim (e.g. Word2Vec/KeyedVectors and ldamodel), SpaCy, NLTK, Sci-kit Learn, Pandas, NumPy, BeautifulSoup.
 * Web Development
