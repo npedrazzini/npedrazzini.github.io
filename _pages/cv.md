@@ -9,7 +9,7 @@ redirect_from:
 
 {% include base_path %}
 
-<p><i> Updated 27-02-2023</i></p>
+<p><i> Updated 24-03-2023</i></p>
 
 <a href="/images/CV-Pedrazzini.pdf"><i class="fas fa-file-pdf"></i></a> Extended PDF version
 
@@ -20,7 +20,7 @@ redirect_from:
 * **2015**: BA in Russian and English, Università di Pavia
 
 ## Visiting
-* **2020**: Guest Researcher, Department of Linguistics and Scandinavian Studies, Universitetet i Oslo (Norway), supervised by [Dag T.T. Haug](https://en.wikipedia.org/wiki/Dag_Haug)
+* **2020**: Guest Researcher, Department of Linguistics and Scandinavian Studies, Universitetet i Oslo (Norway).
 
 ## Work experience
 * **Feb 2023-**: Research Software Engineer, *Digital scholarship @ Oxford* ([DiSc](https://digitalscholarship.web.ox.ac.uk/what-digital-scholarship-oxford), University of Oxford)
@@ -44,21 +44,34 @@ redirect_from:
 
 ## Skills
 * Computer languages
-  * Solid programming skills in Python, R and Bash. Intermediate skills in Ruby.
+  * Solid Python, R and Bash. 
+  * Intermediate Ruby
 * Operating systems
   * [In order of preference] macOS, Linux (Ubuntu, ChromeOS), Windows
 * Cloud skills 
-  * Experience working with Microsoft Azure virtual machines and storage/blobs.
+  * Microsoft Azure.
 * Data handling and NLP
-  * In no particular order, good knowledge of Gensim (e.g. Word2Vec/KeyedVectors and ldamodel), SpaCy, NLTK, Sci-kit Learn, Pandas, NumPy, BeautifulSoup.
+  * Extensive experience with Gensim, SpaCy, NLTK, Sci-kit Learn, Pandas, NumPy, BeautifulSoup.
 * Web Development
-  * Solid skills in HTML/CSS, and XML. Intermediate skills in JavaScript. Recently introduced to SQL and Django for database management.
+  * Solid HTML/CSS, XML. 
+  * Basic JavaScript, SQL and Django (for database management).
 * Version Control
-  * Solid Git knowledge. Experience with both GitFlow and trunk-based systems (CI)
+  * Solid Git knowledge. 
+  * GitFlow and trunk-based systems (CI).
 * Data Visualisation
-  * Extensive experience with several Python libraries, particularly Matplotlib, Seaborn and Plotly (& Plotly Dash for web app deployment). Solid skills in base R plotting and ggplot2.
+  * [Python] Extensive experience with Matplotlib, Seaborn and Plotly (& Plotly Dash for web app deployment). 
+  * [R] Base R plotting, ggplot2.
 * Languages
-  * Italian (native), English (C2), Russian (C1), Serbian, Croatian and Bosnian (reading C1, speaking and listening B2), Spanish (Dele B2), German (Goethe-Zertifikat B1), Norwegian (Bokmål) (A2-B1). Good reading knowledge of French and Bulgarian. Basic reading skills in Korean and Te Reo Māori. Working knowledge of Ancient Greek, Latin, Hittite, Old Church Slavonic.
+  * Italian (native) 
+  * English (C2)
+  * Russian (C1)
+  * Serbian, Croatian and Bosnian (reading C1, speaking and listening B2)
+  * Spanish (Dele B2)
+  * German (Goethe-Zertifikat B1)
+  * Norwegian (Bokmål) (A2-B1). 
+  * Good reading knowledge of French and Bulgarian. 
+  * Basic reading skills in Korean and Te Reo Māori. 
+  * Working knowledge of Ancient Greek, Latin, Hittite, Old Church Slavonic.
 * Misc.
   * Software sustainability. Collaborative software development (GitFlow). Corpus building and linguistic annotation. Linguistic Data Analysis. Development of digital and computational tools for historical languages. Teaching (Linguistics and Digital Humanities). Copyediting. TEX.
 
