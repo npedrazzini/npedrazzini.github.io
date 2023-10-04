@@ -9,9 +9,21 @@ redirect_from:
 
 {% include base_path %}
 
-<p><i> Updated 24-03-2023</i></p>
+<p><i> Updated 4-10-2023</i></p>
 
 <a href="/images/CV-Pedrazzini.pdf"><i class="fas fa-file-pdf"></i></a> Extended PDF version
+
+## Current position
+* **Aug 2023-**: Turing Research Fellow, The Alan Turing Institute (London)
+
+## Past experience
+* **Feb 2023-July 2023**: Research Software Engineer, *Digital scholarship @ Oxford* ([DiSc](https://digitalscholarship.web.ox.ac.uk/what-digital-scholarship-oxford), University of Oxford)
+* **Jan 2022-July 2023**: Research Associate in Corpus-Based Digital Humanities, *Living with Machines*, The Alan Turing Institute (London)
+* **2020-2021**: Research Assistant, International Multimodal Communication Centre (IMCC), Oxford School of Global and Area Studies (University of Oxford)
+* **2020**: Research Assistant, ReadOxford Research Group, Department of Experimental Psychology (University of Oxford)
+* **2018-2020**: IT/AV Support Assistant, Somerville College (University of Oxford)
+* **2014-2019**: Supervisor & Assistant Manager, Le Pain Quotidien (London & Oxford)
+* **2015**: Trainee Assistant Curator/Cataloguer, British Library (London)
 
 ## Education
 * **ongoing**: DPhil in Linguistics, University of Oxford
@@ -22,14 +34,6 @@ redirect_from:
 ## Visiting
 * **2020**: Guest Researcher, Department of Linguistics and Scandinavian Studies, Universitetet i Oslo (Norway).
 
-## Work experience
-* **Feb 2023-**: Research Software Engineer, *Digital scholarship @ Oxford* ([DiSc](https://digitalscholarship.web.ox.ac.uk/what-digital-scholarship-oxford), University of Oxford)
-* **Jan 2022-**: Research Associate in Corpus-Based Digital Humanities, *Living with Machines*, The Alan Turing Institute (London)
-* **2020-2021**: Research Assistant, International Multimodal Communication Centre (IMCC), Oxford School of Global and Area Studies (University of Oxford)
-* **2020**: Research Assistant, ReadOxford Research Group, Department of Experimental Psychology (University of Oxford)
-* **2018-2020**: IT/AV Support Assistant, Somerville College (University of Oxford)
-* **2014-2019**: Supervisor & Assistant Manager, Le Pain Quotidien (London & Oxford)
-* **2015**: Trainee Assistant Curator/Cataloguer, British Library (London)
 
 ## Teaching
   <ul>{% for post in site.teaching %}
