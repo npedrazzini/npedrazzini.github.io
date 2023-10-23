@@ -21,14 +21,15 @@ I'm a Turing Research Fellow at **The Alan Turing Institute** <a href="https://w
  <li><i class="fa-li fa fa-code-branch"></i><a href="researchareas/#open-scholarship-in-the-humanities">Open Scholarship in the Humanities</a></li>
 </ul>
 
-## Selected past work and projects
+## Selected past contributions in collaborative projects
 <ul class="fa-ul">
- <li><i class="fa-li fa fa-gem"></i><a href="researchareas/#selected-past-projects">ReadOxford</a></li>
- <li><i class="fa-li fa fa-gem"></i><a href="researchareas/#selected-past-projects">IMCC</a></li>
- <li><i class="fa-li fa fa-gem"></i><a href="researchareas/#selected-past-projects">British Library</a></li>
+ <li><i class="fa-li fa fa-gem"></i><a href="researchareas/#selected-past-projects">Living with Machines</a> (The Alan Turing Institute)</li>
+ <li><i class="fa-li fa fa-gem"></i><a href="researchareas/#selected-past-projects">Depictions of Post-COVID-19 Futures in Russian International Media: Multimodal Viewpoint Analysis</a> (University of Oxford, International Multimodal Communication Centre)</li>
+<li><i class="fa-li fa fa-gem"></i><a href="researchareas/#selected-past-projects">ReadOxford</a> (University of Oxford, Deptartment of Expiremental Psychology)</li>
+ <li><i class="fa-li fa fa-gem"></i><a href="researchareas/#selected-past-projects">Enhancing catalogue metadata of Slavonic early-printed Cyrillic books</a> (British Library)</li>
 </ul>
 
-## Check out some of my projects
+## Zoom in on some of my projects
 
 <i class="fa fa-angle-down fa-2x animated"></i>
 

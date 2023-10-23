@@ -21,7 +21,7 @@ The main areas I work on are:
 
 ## Digital Humanities
 
-It's hard to set Digital Humanities apart from my main areas of research, and that's often true for digital humanists at large: one tends to approach DH to answer questions in their research areas, and then may find themselves wondering about DH tools and techniques as such. The following are some of the areas I work most frequently in:
+It's hard to set Digital Humanities apart from my main areas of research, and that's often true for digital humanists at large: one tends to approach DH to answer questions in their research areas, and then may find themselves wondering about DH tools and techniques as such. The following are some of the areas I have worked in:
 
 <ul class="fa-ul">
     <li><i class="fa-li fa fa-code"></i>application of computational and/or digital methods from outside the humanities to humanities research (geostatistics, genetics, biology, you name it)</li>
@@ -39,7 +39,7 @@ Some of my recent contributions include:
 
 ## Open Scholarship in the Humanities
 
-I am Editorial Assistant for the Journal of Open Humanities Data ([JOHD](https://openhumanitiesdata.metajnl.com)) and Fellow at [RROx](https://ox.ukrn.org/people/#NiloPedrazzini), the Oxford 'branch' of the UK Reproducibility Network ([UKRN](https://www.ukrn.org)). 
+I am a Fellow at [RROx](https://ox.ukrn.org/people/#NiloPedrazzini), the Oxford 'branch' of the UK Reproducibility Network ([UKRN](https://www.ukrn.org)). I was previously also Editorial Assistant for the Journal of Open Humanities Data ([JOHD](https://openhumanitiesdata.metajnl.com)).
 
 I'm interested in the specific challenges faced by the Humanities in making research reproducible (also: I get a bit angry when I am not given the steps followed by another researcher to get to an interpretation or a result).
 
@@ -51,15 +51,19 @@ Some of my contributions to the discussion:
 </ul>
 
 
-## Selected past projects
-### ReadOxford
+## Selected past contributions in collaborative projects
+
+### Living with Machines (The Alan Turing Institute)
+Between January 2022 and July 2023 I was Research Associate in the Living with Machines (LwM) <a href="https://livingwithmachines.ac.uk/"><i class="fas fa-external-link-alt"></i></a> project at The Alan Turing Institute. The overarching goal of LwM was to investigate the impact of technology on the lives of ordinary people during the Industrial Revolution. My job consisted in analyzing a very large amount of (very noisy) historical British newspaper data computationally, with a focus on looking into how language use changed throughout the 19th century as an effect of the socio-political changes following the Industrial Revolution. See <a href="/langofmech/">here</a> for an example of results from my research.
+
+### Depictions of Post-COVID-19 Futures in Russian International Media: Multimodal Viewpoint Analysis (IMCC, University of Oxford)
+Starting from mid-2020, I was first Research Assistant <a href="https://imcc.web.ox.ac.uk/people/mr-nilo-pedrazzini"><i class="fas fa-external-link-alt"></i></a>, then collaborated with the International Multimodal Communication Centre (IMCC) <a href="https://imcc.web.ox.ac.uk"><i class="fas fa-external-link-alt"></i></a> based within the Oxford School of Global and Area Studies (OSGA) at the University of Oxford. I carried out annotation and correlation analyses of speech-gesture co-occurrences in Russian and American media, largely within the project <i>Depictions of Post-COVID-19 Futures in Russian International Media: Multimodal Viewpoint Analysis</i> <a href="https://imcc.web.ox.ac.uk/projects"><i class="fas fa-external-link-alt"></i></a>. 
+
+### ReadOxford (University of Oxford, Deptartment of Expiremental Psychology)
 In 2020 I spent two months as a Research Assistant at the ReadOxford <a href="https://readoxford.org/our-research"><i class="fas fa-external-link-alt"></i></a> research group, based at the Department of Experimental Psychology <a href="https://www.psy.ox.ac.uk"><i class="fas fa-external-link-alt"></i></a> of the University of Oxford. The aim of the group is to answer different questions related to child literacy development.
 I mainly dealt with data processing, developing R scripts to make corpus data reproducible and analysable for morphological complexity and lexical variation. My major contribution has been scripting an <a href="https://github.com/npedrazzini/averageReducedFrequency">R code</a> to automatically calculate the Average Reduced Frequency (ARF) of combined lemmata/parts of speech in the Oxford Children Corpus <a href="https://www.sketchengine.eu/oxford-childrens-corpus/"><i class="fas fa-external-link-alt"></i></a> and Childes <a href="https://childes.talkbank.org"><i class="fas fa-external-link-alt"></i></a> treebank.
 
-### IMCC
-Starting from mid-2020, I was first Research Assistant <a href="https://imcc.web.ox.ac.uk/people/mr-nilo-pedrazzini"><i class="fas fa-external-link-alt"></i></a>, then collaborated with the International Multimodal Communication Centre (IMCC) <a href="https://imcc.web.ox.ac.uk"><i class="fas fa-external-link-alt"></i></a> based within the Oxford School of Global and Area Studies (OSGA) at the University of Oxford. I carried out annotation and correlation analyses of speech-gesture co-occurrences in Russian and American media, largely within the project <i>Depictions of Post-COVID-19 Futures in Russian International Media: Multimodal Viewpoint Analysis</i> <a href="https://imcc.web.ox.ac.uk/projects"><i class="fas fa-external-link-alt"></i></a>. 
-
-### British Library
+### Enhancing catalogue metadata of Slavonic early-printed Cyrillic books (British Library)
 In 2015, I spent two months as a trainee Assistant Curator-Cataloguer for the Slavonic Collections at The British Library <a href="https://www.bl.uk/subjects/slavonic-studies#"><i class="fas fa-external-link-alt"></i></a>. During that time, I enhanced the online catalogue of all Slavonic early-printed Cyrillic books held at the British Library (and fuelled my interest for all-things data and pre-modern Slavic). Check out two posts I wrote for the British Library's European Studies Blog:
 
 <ul class="fa-ul">
@@ -68,7 +72,7 @@ In 2015, I spent two months as a trainee Assistant Curator-Cataloguer for the Sl
 </li>
 </ul>
 
-## Check out some of my projects
+## Zoom in on some of my projects
 
 <i class="fa fa-angle-down fa-2x animated"></i>
 
