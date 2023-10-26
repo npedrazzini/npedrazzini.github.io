@@ -1,10 +1,8 @@
 ---
+layout: archive
 permalink: /datasets/
 title: "Open datasets and software"
-excerpt: "Open datasets and software"
-redirect_from: 
-  - /datasets/
-  - /datasets.html
+author_profile: true
 ---
 
 <ul class="fa-ul">
