@@ -13,7 +13,7 @@ Born and raised in bleak [Sesto San Giovanni](https://www.google.com/maps/place/
 
 I'm a Turing Research Fellow at **The Alan Turing Institute** <a href="https://www.turing.ac.uk"><i class="fas fa-external-link-alt"></i></a> and a DPhil candidate in Linguistics at the **University of Oxford** <a href="https://www.ling-phil.ox.ac.uk/people/nilo-pedrazzini"><i class="fas fa-external-link-alt"></i></a>. I was previously a <a href="https://www.software.ac.uk/research-software-engineers">Research Software Engineer</a> at Oxford, within the **Digital Scholarship @ Oxford** project (DiSc) <a href="https://digitalscholarship.web.ox.ac.uk/people/nilo-pedrazzini"><i class="fas fa-external-link-alt"></i></a> and a Research Associate at the Turing Institute, within the **Living with Machines** project <a href="https://www.turing.ac.uk/research/research-projects/living-machines"><i class="fas fa-external-link-alt"></i></a> 
 
-## Current work and main project areas
+## Current work and main research areas
 
 <ul class="fa-ul">
  <li><i class="fa-li fa fa-sign-language"></i><a href="researchareas/#linguistics">Linguistics</a></li>
