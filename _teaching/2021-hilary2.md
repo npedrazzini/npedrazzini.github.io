@@ -1,10 +1,10 @@
 ---
-title: "Introduction to Historical Linguistics"
+title: Introduction to Semantics & Pragmatics
 collection: teaching
 type: "Undergraduate tutorials"
-permalink: /teaching/2021-trinity
+permalink: /teaching/2021-hilary2
 venue: "University of Oxford (Oriel College and Lady Margaret Hall)"
-date: 2021-03-01
+date: 2021-01-02
 location: "Oxford (UK)"
 ---
-(Trinity Term 2021).
+(Hilary Term 2021).
