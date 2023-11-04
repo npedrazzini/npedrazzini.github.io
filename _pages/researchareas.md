@@ -17,7 +17,7 @@ The main areas I work on are:
     <li><i class="fa-li fa fa-sign-language"></i>temporal semantics across sentences</li>
 </ul>
 
-<i class="fas fa-hand-point-right"></i> My <a href="https://www.granduniondtp.ac.uk/people/nilo-pedrazzini">doctoral project</a> looks (quantitatively, through treebank data) into the competition between finite and non-finite temporal subordinates in Early Slavic, and their position within the typology of <i>when</i>-clauses in 1400+ languages of the world.
+<i class="fas fa-hand-point-right"></i> My <a href="https://www.ling-phil.ox.ac.uk/people/nilo-pedrazzini" target="blank">doctoral project</a> looks (quantitatively, through treebank data) into the competition between finite and non-finite temporal subordinates in Early Slavic, and their position within the typology of <i>when</i>-clauses in 1400+ languages of the world.
 
 ## Digital Humanities
 

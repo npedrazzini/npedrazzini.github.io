@@ -8,7 +8,7 @@ author_profile: true
 <ul class="fa-ul">
 
 <li><i class="fa-li fa fa-question"></i> <h2>Question</h2> <br>
-How do the languages of the world encode situations which English expresses with <i>when</i>-subordinates? How do we explain cases in which both language <i>x</i> and language <i>y</i> have a literal translation for <i>when</i>, but it cannot <i>always</i> be used to translate the one in the other language? Can we find a finite number of 'patterns' among the world's (7000+!) languages within which variation in usage can occur? 
+How do the world's languages encode situations which English expresses with <i>when</i>-subordinates? How do we explain cases in which both language <i>x</i> and language <i>y</i> have a literal translation for <i>when</i>, but they cannot <i>always</i> use it to translate the <i>when</i>-counterpart in the other language? Can we find a finite number of 'patterns' among the world's (7000+!) languages within which variation in usage can occur? 
 </li>
 
 <li><i class="fa-li fa fa-bullseye"></i><h2>Challenge</h2><br>
@@ -23,12 +23,12 @@ Traditionally, we rely on a corpus of parallel sentences in <i>n</i> languages, 
 
 <li><i class="fa-li fa fa-table"></i><h2>Data</h2><br>
 
-The Bible is the most widely translated book in history. To scale up to as many languages as currently possible, I used <a href="#mayercysouw">Mayer & Cysouw</a>'s (2014) 'massively parallel' Bible corpus, which contains the New Testament in more than 1400 languages. To add some representativeness from ancient languages as well, I have also included the Latin, Classic Armenian, Gothic, and Old Church Slavonic translations of the New Testament from <a href="#haugjohndal">Haug & Jøhndal</a>'s (2008) <i>Pragmatic Resources in Old Indo-European Languages</i> (PROIEL <a href="https://github.com/proiel" target="_blank"><i class="fas fa-external-link-alt"></i></a>) treebank. 
-Several of the roughly 1400 languages in the corpus had multiple translations and some contain only (or predominantly) the Old Testament. Only languages that had at least some coverage for the New Testament were considered. The dataset creation process consisted of the following steps:
+The Bible is the most widely translated book in history. To scale up to as many languages as currently possible, we used <a href="#mayercysouw">Mayer & Cysouw</a>'s (2014) 'massively parallel' Bible corpus, which contains the New Testament in over 1400 languages. To add some representativeness from ancient languages as well, we also included the Latin, Classic Armenian, Gothic, and Old Church Slavonic translations of the New Testament from <a href="#haugjohndal">Haug & Jøhndal</a>'s (2008) <i>Pragmatic Resources in Old Indo-European Languages</i> (PROIEL <a href="https://github.com/proiel" target="_blank"><i class="fas fa-external-link-alt"></i></a>) treebanks. 
+Several of the 1400+ languages in the corpus had multiple translations and some contain only (or predominantly) the Old Testament. Only languages that had at least some coverage for the New Testament were considered. The dataset creation process consisted of the following steps:
 <ol>
   <li>Filter out languages that only have the Old Testament.</li>
   <li>Include all other languages with only one translation of the New Testament.</li>
-  <li> Of all languages with multiple New Testament versions, include the version with the broadest coverage (with a deviation of more than 2000 verses).  </li>
+  <li>Of all languages with multiple New Testament versions, include the version with the broadest coverage (with a deviation of more than 2000 verses).  </li>
   <li>If multiple versions with a similar coverage exist, then take the most recent one.</li>
 </ol>
 </li>
@@ -38,19 +38,17 @@ Several of the roughly 1400 languages in the corpus had multiple translations an
 </li>
 
 <li><i class="fa-li fa fa-flask"></i> <h2>Similarity matrix and dimensionality reduction</h2> <br>
-  After extracting <i>when</i> and its parallels in all the target languages, Hamming distance was used as a measure of similarity between pairs of contexts, leveraging the number of times a language uses two different linguistic means where English uses one. Multidimensional scaling (MDS) was then applied to the resulting matrix to visualize the distance between each occurrence of <i>when</i> two- and three-dimensionally. Below is the 3D example for Spanish. Toggle on/off individual words to include or exclude them from the map, hover the data points to see the English-Spanish parallel contexts, and drag the plot to see it from different perspectives:
+  After extracting <i>when</i> and its parallels in all the target languages, Hamming distance was used as a measure of similarity between pairs of contexts, leveraging the number of times a language uses two different linguistic means where English uses one. Multidimensional scaling (MDS) was then applied to the resulting matrix to visualize the distance between each occurrence of <i>when</i> two- and three-dimensionally. The further away two points in the map, the more different the usage/meaning of the respective <i>when</i>-clause can be assumed to be. Below is the 3D example for Spanish. Toggle on/off individual words to include or exclude them from the map, hover the data points to see the English-Spanish parallel contexts, and drag the plot to see it from different perspectives:
   <p align="center">
   <br><br>
   <iframe width="700" height="600" frameborder="2" scrolling="no" src="//plotly.com/~npedrazzini/1.embed"></iframe>
   <br><br>
   </p>
-  To see the map for more languages, in both 3D and 2D, you can visit the app I deployed with Plotly Dash via Heroku <a href="https://parallelbibles.herokuapp.com/" target="_blank">here</a> (NB: it builds on the fly, so it might take a while to load).
-
 </li>
 
 <li><i class="fa-li fa fa-code-branch"></i><h2>From individual data points to universals</h2> <br>
 
-<p>Clusters of semantically similar observations were identified in two main ways. First, by fitting Gaussian Mixture Model (GMM) to the MDS matrix, to identify clusters which are more likely to correspond to separate universal functions of <i>when</i>, regardless of how much variation a particular language shows within any of the clusters (which could go from no variation across the whole map or across one cluster, to several linguistic means in a single cluster):</p>
+<p>Clusters of semantically similar observations were identified in two main ways. First, by fitting Gaussian Mixture Model (GMM) to the MDS matrix, which help us identify clusters which are more likely to correspond to separate universal functions of <i>when</i>, regardless of how much variation a particular language shows within any of the clusters (which could go from no variation across the whole map or across one cluster, to several linguistic means in a single cluster):</p>
 
 <img src="/images/gmm.png" style="float: none; width: max-content; height: max-content;margin-left: auto; margin-right: auto;">
 
@@ -106,18 +104,27 @@ Several of the roughly 1400 languages in the corpus had multiple translations an
 
 </li>
 
+
+<li><i class="fa-li fa fa-bullhorn"></i><h2>More results</h2> <br>
+
+Curious about how maps such as the Norwegian and Kako ones above were used to analyse all the other languages in the corpus typologically? Check out the article <a href="#haugpedrazzini">The semantic map of <i>when</i> and its typological parallels</a> cowritten with Dag Haug.
+
+</li>
+
+
 <li><i class="fa-li fa fa-bullhorn"></i><h2>Credits</h2> <br>
 
-This is a project in collaboration with Prof. <a href="https://www.hf.uio.no/ifikk/english/people/aca/classics/tenured/daghaug/">Dag Haug</a> (Oslo).
+This is a project in collaboration with Prof. <a href="https://www.hf.uio.no/ifikk/english/people/aca/classics/tenured/daghaug/" target="_blank">Dag Haug</a> (Oslo).
 </li>
 
 
 <li><i class="fa-li fa fa-bookmark"></i><h2>References</h2> <br>
 
-
-<p id="mayercysouw">Thomas Mayer and Michael Cysouw. 2014. Creating a massively parallel Bible corpus. In Proceedings of the Ninth International Conference on Language Resources and Evaluation (LREC'14), pages 3158–3163, Reykjavik, Iceland. European Language Resources Association (ELRA).</p>
 <p id="haugjohndal">Haug, Dag T. T. & Marius L. Jøhndal. 2008. Creating a parallel treebank of the old Indo-European Bible translations. In ,<i>Proceedings of the Second Workshop on Language Technology for Cultural Heritage Data (LaTeCH 2008)</i>, 27–34.</p>
+<p id="haugpedrazzini">Haug, Dag & Nilo Pedrazzini. 2023. <a href='https://www.frontiersin.org/articles/10.3389/fcomm.2023.1163431/' target="_blank">The semantic map of <i>when</i> and its typological parallels</a>. Frontiers in Communication 8.</p>
 <p id="symgiza">Junczys-Dowmunt, Marcin & Arkadiusz Szał. 2012. <a href='http://emjotde.github.io/publications/pdf/mjd2011siis.pdf' target="_blank">Symgiza++: Symmetrized word alignment models for machine translation</a>. In Pascal Bouvry, Mieczyslaw A. Klopotek, Franck Leprévost, Malgorzata Marciniak, Agnieszka Mykowiecka & Henryk Rybinski (eds.), <i>Security and Intelligent Information Systems (SIIS) 7053</i> (Lecture Notes in Computer Science), 379–390. Warsaw, Poland: Springer.</p>
+<p id="mayercysouw">Mayer, Thomas and Michael Cysouw. 2014. Creating a massively parallel Bible corpus. In Proceedings of the Ninth International Conference on Language Resources and Evaluation (LREC'14), pages 3158–3163, Reykjavik, Iceland. European Language Resources Association (ELRA).</p>
+
 </li>
 
 
