@@ -55,7 +55,7 @@ redirect_from:
 * Cloud skills 
   * Microsoft Azure.
 * Data handling and NLP
-  * Extensive experience with Gensim, SpaCy, NLTK, Sci-kit Learn, Pandas, NumPy, BeautifulSoup.
+  * Extensive experience with Transformers, Gensim, SpaCy, NLTK, Sci-kit Learn, Pandas, NumPy, BeautifulSoup.
 * Web Development
   * Solid HTML/CSS, XML. 
   * Basic JavaScript, SQL and Django (for database management).
@@ -74,7 +74,7 @@ redirect_from:
   * German (Goethe-Zertifikat B1)
   * Norwegian (Bokmål) (A2-B1). 
   * Good reading knowledge of French and Bulgarian. 
-  * Basic reading skills in Korean and Te Reo Māori. 
+  * Basic reading skills in Arabic (MSA and Egyptian), Korean, and Te Reo Māori. 
   * Working knowledge of Ancient Greek, Latin, Hittite, Old Church Slavonic.
 * Misc.
   * Software sustainability. Collaborative software development (GitFlow). Corpus building and linguistic annotation. Linguistic Data Analysis. Development of digital and computational tools for historical languages. Teaching (Linguistics and Digital Humanities). Copyediting. TEX.

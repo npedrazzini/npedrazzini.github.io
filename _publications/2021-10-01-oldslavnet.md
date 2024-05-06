@@ -1,7 +1,7 @@
 ---
 title: "OldSlavNet: A scalable Early Slavic dependency parser trained on modern language data"
 collection: publications
-permalink: /publication/2021-10-01-oldslavnet
+permalink: /publications/2021-10-01-oldslavnet
 excerpt: '<SPAN STYLE="font-size: smaller">Historical languages are increasingly being modelled computationally. Syntactically annotated texts are often a sine-qua-non in their modelling, but parsing of pre-modern language varieties faces great data sparsity, intensified by high levels of orthographic variation. In this paper we present a good-quality Early Slavic dependency parser, attained via manipulation of modern Slavic data to resemble the orthography and morphosyntax of pre-modern varieties. The tool can be deployed to expand historical treebanks, which are crucial for data collection and quantification, and beneficial to downstream NLP tasks and historical text mining.</SPAN>'
 date: 2021-10-01
 venue: 'Software Impacts'

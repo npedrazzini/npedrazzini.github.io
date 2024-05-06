@@ -17,23 +17,24 @@ The main areas I work on are:
     <li><i class="fa-li fa fa-sign-language"></i>temporal semantics across sentences</li>
 </ul>
 
-<i class="fas fa-hand-point-right"></i> My <a href="https://www.ling-phil.ox.ac.uk/people/nilo-pedrazzini" target="blank">doctoral project</a> looks (quantitatively, through treebank data) into the competition between finite and non-finite temporal subordinates in Early Slavic, and their position within the typology of <i>when</i>-clauses in 1400+ languages of the world.
+<i class="fas fa-hand-point-right"></i> My <a href="https://www.ling-phil.ox.ac.uk/people/nilo-pedrazzini" target="blank">doctoral project</a> looked (quantitatively, through treebank data) into the competition between finite and non-finite temporal subordinates in Early Slavic, and their position within the typology of <i>when</i>-clauses in 1400+ languages of the world.
 
-## Digital Humanities
+## Computational Humanities
 
-It's hard to set Digital Humanities apart from my main areas of research, and that's often true for digital humanists at large: one tends to approach DH to answer questions in their research areas, and then may find themselves wondering about DH tools and techniques as such. The following are some of the areas I have worked in:
+It's hard to set Computational Humanities apart from my main areas of research, and that's often true for computational humanists at large: one tends to approach CH to answer questions in their research areas, and then may find themselves wondering about CH tools and techniques as such. The following are some of the areas I have worked in:
 
 <ul class="fa-ul">
-    <li><i class="fa-li fa fa-code"></i>application of computational and/or digital methods from outside the humanities to humanities research (geostatistics, genetics, biology, you name it)</li>
+    <li><i class="fa-li fa fa-code"></i>application of NLProc methods to answer humanities research questions (language modelling, causal analysis, topic modelling, automatic linguistic annotation)</li>
+    <li><i class="fa-li fa fa-code"></i>application of computational methods from outside the humanities to humanities research (geostatistics, genetics, biology, you name it)</li>
     <li><i class="fa-li fa fa-code"></i>visualization of (small and big) parallel language data</li>
-    <li><i class="fa-li fa fa-code"></i>application of NLProc methods to answer humanities research questions (word embeddings, causal analysis, topic modelling, automatic linguistic annotation)</li>
     <li><i class="fa-li fa fa-code"></i>corpus building, treebanking</li>
-    <li><i class="fa-li fa fa-code"></i>digitizations, handwritten text recognition, TEI-encoding</li>
 </ul>
 
 Some of my recent contributions include:
 <ul class="fa-ul">
-    <li><i class="fa-li fa fa-terminal"></i>Diachronic word embeddings from Big Historical Data (19th century English). See <a href="https://github.com/Living-with-machines/DiachronicEmb-BigHistData">here</a> - a case study on the language of mechanization will soon appear in the <a href="https://aclanthology.org/">ACL Anthology</a>.</li>
+    <li><i class="fa-li fa fa-terminal"></i>Mapping <i>when</i>-clauses in Latin American and Caribbean languages: an experiment in subtoken-based typology. Using character n-gram associations between English <i>when</i> and parallel texts in indigenous Latin American languages to understand the temporal subordination strategies used in the region. Preprint available <a href="https://doi.org/10.48550/arXiv.2404.18257">here</a></li>
+    <li><i class="fa-li fa fa-terminal"></i>Training and evaluation of distributional semantic models of Ancient Greek (collaborative project, led by Silvia Stopponi, and with Saskia Peels-Matthey, Barbara McGillivray, and Malvina Nissim). Read the paper <i>Evaluation of Distributional Semantic Models of Ancient Greek: Preliminary Results and a Road Map for Future Work</i> <a href="https://aclanthology.org/2023.alp-1.6"><i>here</i></a>, where I dealt with syntactic (graph-based) embeddings.</li>
+    <li><i class="fa-li fa fa-terminal"></i>Diachronic word embeddings from Big Historical Data (19th century English). See <a href="https://github.com/Living-with-machines/DiachronicEmb-BigHistData">here</a> for the tools. Also check out a case study using the diachronic embeddings in the article <a href="https://aclanthology.org/2022.nlp4dh-1.12/"><i>Machines in the media: semantic change in the lexical field of mechanization in 19th-century British newspapers</i> </a> (with Barbara McGillivray).</li>
     <li><i class="fa-li fa fa-terminal"></i>Early Slavic dependency parsing (see OldSlavNet <a href="https://npedrazzini.github.io/OldSlavNet/"><i class="fas fa-external-link-alt"></i></a> and <a href="https://npedrazzini.github.io/publications/">Publications</a>).</li>
 </ul>
 
@@ -55,6 +56,17 @@ Some of my contributions to the discussion:
 
 ### Living with Machines (The Alan Turing Institute)
 Between January 2022 and July 2023 I was Research Associate in the Living with Machines (LwM) <a href="https://livingwithmachines.ac.uk/"><i class="fas fa-external-link-alt"></i></a> project at The Alan Turing Institute. The overarching goal of LwM was to investigate the impact of technology on the lives of ordinary people during the Industrial Revolution. My job consisted in analyzing a very large amount of (very noisy) historical British newspaper data computationally, with a focus on looking into how language use changed throughout the 19th century as an effect of the socio-political changes following the Industrial Revolution. See <a href="/langofmech/">here</a> for an example of results from my research.
+
+Also, check out below two episodes of a docuseries on Living with Machines, where my colleages and I talk about collaboration in large interdisciplinary projects in the Humanities and the Language of Mechanization subprojects in which I was involved.
+
+On collaboration:
+
+<iframe style="width: 560px; max-width: 70%;" height="115" src="https://www.youtube.com/embed/A__ZJgw4_00?si=XsAB5ckQf6X09Ds0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+On the Language of Mechanization:
+
+<iframe style="width: 560px; max-width: 70%;" height="115" src="https://www.youtube.com/embed/qSciC6ymlK0?si=gvvZNRe2dJuwUGzF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 
 ### Depictions of Post-COVID-19 Futures in Russian International Media: Multimodal Viewpoint Analysis (IMCC, University of Oxford)
 Starting from mid-2020, I was first Research Assistant <a href="https://imcc.web.ox.ac.uk/people/mr-nilo-pedrazzini"><i class="fas fa-external-link-alt"></i></a>, then collaborated with the International Multimodal Communication Centre (IMCC) <a href="https://imcc.web.ox.ac.uk"><i class="fas fa-external-link-alt"></i></a> based within the Oxford School of Global and Area Studies (OSGA) at the University of Oxford. I carried out annotation and correlation analyses of speech-gesture co-occurrences in Russian and American media, largely within the project <i>Depictions of Post-COVID-19 Futures in Russian International Media: Multimodal Viewpoint Analysis</i> <a href="https://imcc.web.ox.ac.uk/projects"><i class="fas fa-external-link-alt"></i></a>. 

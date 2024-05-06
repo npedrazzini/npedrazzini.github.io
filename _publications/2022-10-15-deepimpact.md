@@ -1,7 +1,7 @@
 ---
 title: "Deep Impact: A Study on the Impact of Data Papers and Datasets in the Humanities and Social Sciences"
 collection: publications
-permalink: /publication/2022-10-15-deepimpact
+permalink: /publications/2022-10-15-deepimpact
 excerpt: '<SPAN STYLE="font-size: smaller">The humanities and social sciences (HSS) have recently witnessed an exponential growth in data-driven research. In response, attention has been afforded to datasets and accompanying data papers as outputs of the research and dissemination ecosystem. In 2015, two data journals dedicated to HSS disciplines appeared in this landscape: Journal of Open Humanities Data (JOHD) and Research Data Journal for the Humanities and Social Sciences (RDJ). In this paper, we analyse the state of the art in the landscape of data journals in HSS using JOHD and RDJ as exemplars by measuring performance and the deep impact of data-driven projects, including metrics (citation count; Altmetrics, views, downloads, tweets) of data papers in relation to associated research papers and the reuse of associated datasets. Our findings indicate: that data papers are published following the deposit of datasets in a repository and usually following research articles; that data papers have a positive impact on both the metrics of research papers associated with them and on data reuse; and that Twitter hashtags targeted at specific research campaigns can lead to increases in data papers’ views and downloads. HSS data papers improve the visibility of datasets they describe, support accompanying research articles, and add to transparency and the open research agenda.</SPAN>'
 date: 2022-10-15
 venue: 'Publications'
