@@ -9,7 +9,7 @@ redirect_from:
 
 {% include base_path %}
 
-<p><i> Updated 8-12-2023</i></p>
+<p><i> Updated 5-6-2024</i></p>
 
 <a href="/images/CV-Pedrazzini.pdf"><i class="fas fa-file-pdf"></i></a> Extended PDF version
 
