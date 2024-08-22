@@ -8,5 +8,4 @@ venue: "Grammar & Corpora International Conference"
 date: 2020-11-27
 location: "Kraków (Poland)"
 ---
-
-[Abstract](https://gac2020.ijp.pan.pl/GaC_2020_paper_25.pdf)
+<a href="/images/GaC_2020_paper_25.pdf"><i class="fas fa-file-pdf"></i></a> Download the abstract.
