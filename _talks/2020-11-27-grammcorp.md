@@ -1,6 +1,5 @@
 ---
-title: "Same question, different annotation depths: early Slavonic dative absolute in deeply versus shallowly
-annotated treebanks."
+title: "Same question, different annotation depths: early Slavonic dative absolute in deeply versus shallowly annotated treebanks"
 collection: talks
 type: "Conference talk"
 permalink: /talks/2020-11-27-grammcorp

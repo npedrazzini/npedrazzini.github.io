@@ -1,5 +1,5 @@
 ---
-title: "Historic machines from ‘prams’ to ’Parliament’: new avenues for collaborative linguistic research."
+title: "Historic machines from ‘prams’ to ’Parliament’: new avenues for collaborative linguistic research"
 collection: talks
 type: "Conference talk"
 permalink: /talks/2022-06-01-dhbelelux

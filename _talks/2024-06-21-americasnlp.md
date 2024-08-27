@@ -1,5 +1,5 @@
 ---
-title: "Mapping ‘when’-clauses in Latin American and Caribbean languages: an experiment in subtoken-based typology."
+title: "Mapping ‘when’-clauses in Latin American and Caribbean languages: an experiment in subtoken-based typology"
 collection: talks
 type: "Conference talk"
 permalink: /talks/2024-06-21-americasnlp
