@@ -13,7 +13,7 @@ Born and raised in bleak [Sesto San Giovanni](https://www.google.com/maps/place/
 
 I'm a Turing Research Fellow at <a href="https://www.turing.ac.uk">The Alan Turing Institute</a>. I recently obtained my PhD in Linguistics from the University of Oxford, with a <a href="https://dx.doi.org/10.5287/ora-8gv0b4qyoon">thesis</a> on Early Slavic participle clauses and temporal subordination in typological perspective. 
 
-I was previously a <a href="https://www.software.ac.uk/research-software-engineers">Research Software Engineer</a> at Oxford, within the <a href="https://digitalscholarship.web.ox.ac.uk/people/nilo-pedrazzini">Digital Scholarship @ Oxford</a> project (DiSc) and a Research Associate at the Turing Institute, within the <a href="https://www.turing.ac.uk/research/research-projects/living-machines">Living with Machines</a> project. 
+I was previously a <a href="https://www.software.ac.uk/research-software-engineers">Research Software Engineer</a> at Oxford, within the <a href="https://digitalscholarship.web.ox.ac.uk/">Digital Scholarship @ Oxford</a> project (DiSc), and a Research Associate at the Turing Institute, within the <a href="https://www.turing.ac.uk/research/research-projects/living-machines">Living with Machines</a> project. 
 
 ## Current work and main research areas
 
