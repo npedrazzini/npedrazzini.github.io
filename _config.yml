@@ -83,9 +83,9 @@ author:
   name             : "Nilo Pedrazzini"
   avatar           : "nilo-profile.jpeg"
   #bio              : ""
-  employer         : "Alan Turing Institute"
+  employer         : "The Alan Turing Institute"
   location         : "London, UK"
-  twitter          : "nilo_pedrazzini"
+  # twitter          : "nilo_pedrazzini"
   googlescholar    : "https://scholar.google.com/citations?user=oTcaDKsAAAAJ&hl=en"
   email            : "nilo.pedrazzini@ling-phil.ox.ac.uk"
   email            : "nilo.pedrazzini@gmail.com"
@@ -96,6 +96,7 @@ author:
   academia         : "https://turing.academia.edu/NiloPedrazzini"
   figshare         : "https://figshare.com/authors/Nilo_Pedrazzini/8860664"
   osf              : "https://osf.io/qzb4f/"
+  bluesky          : "https://bsky.app/profile/npedrazzini.bsky.social"
 
 # Reading Files
 include:

@@ -31,14 +31,14 @@
       {% if author.email %}
         <li><a href="mailto:{{ author.email }}"><i class="fas fa-fw fa-envelope" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].email_label | default: "Email" }}</a></li>
       {% endif %}
+      {% if author.bluesky %}
+        <li><a href="{{ author.bluesky }}"><i class="fab fa-fw fa-square-bluesky" aria-hidden="true"></i> Bluesky</a></li>
+      {% endif %}
       {% if author.twitter %}
       <li><a href="https://twitter.com/{{ author.twitter }}"><i class="fab fa-fw fa-twitter-square" style="color:black !important;" aria-hidden="true"></i> Twitter</a></li>
       {% endif %}
       {% if author.linkedin %}
       <li><a href="https://www.linkedin.com/in/{{ author.linkedin }}"><i class="fab fa-fw fa-linkedin" style="color:black !important;"  aria-hidden="true"></i> LinkedIn</a></li>
-      {% endif %}
-      {% if author.keybase %}
-        <li><a href="https://keybase.io/{{ author.keybase }}"><i class="fas fa-fw fa-key" aria-hidden="true"></i> Keybase</a></li>
       {% endif %}
       {% if author.github %}
       <li><a href="https://github.com/{{ author.github }}"><i class="fab fa-fw fa-github-square" aria-hidden="true"></i> Github</a></li>
@@ -55,6 +55,19 @@
       {% if author.academia %}
       <li><a href="{{ author.academia }}"><i class="ai ai-academia-square ai-fw"></i> Academia</a></li>
       {% endif %}
+      {% if author.figshare %}
+      <li><a href="{{ author.figshare }}"><i class="ai ai-figshare-square ai-fw"></i> Figshare</a></li>
+      {% endif %}
+      {% if author.osf %}
+      <li><a href="{{ author.osf }}"><i class="ai ai-osf-square ai-fw"></i> OSF</a></li>
+      {% endif %}
+
+  
+
+
+      {% if author.keybase %}
+        <li><a href="https://keybase.io/{{ author.keybase }}"><i class="fas fa-fw fa-key" aria-hidden="true"></i> Keybase</a></li>
+      {% endif %}
       {% if author.facebook %}
         <li><a href="https://www.facebook.com/{{ author.facebook }}"><i class="fab fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook</a></li>
       {% endif %}
@@ -67,6 +80,7 @@
       {% if author.instagram %}
         <li><a href="https://instagram.com/{{ author.instagram }}"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
       {% endif %}
+    
       {% if author.tumblr %}
         <li><a href="https://{{ author.tumblr }}.tumblr.com"><i class="fab fa-fw fa-tumblr-square" aria-hidden="true"></i> Tumblr</a></li>
       {% endif %}
@@ -115,12 +129,7 @@
       {% if author.impactstory %}
         <li><a href="{{ author.impactstory }}"><i class="ai ai-impactstory ai-fw"></i> Impactstory</a></li>
       {% endif %}
-      {% if author.osf %}
-      <li><a href="{{ author.osf }}"><i class="ai ai-osf-square ai-fw"></i> OSF</a></li>
-      {% endif %}
-      {% if author.figshare %}
-      <li><a href="{{ author.figshare }}"><i class="ai ai-figshare-square ai-fw"></i> Figshare</a></li>
-      {% endif %}
+      
       {% if author.wikipedia %}
       <li><a href="https://en.wikipedia.org/wiki/User:{{ author.wikipedia }}"><i class="fab fa-fw fa-wikipedia-w" aria-hidden="true"></i> Wikipedia</a></li>
       {% endif %}
