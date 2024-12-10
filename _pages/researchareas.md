@@ -17,7 +17,7 @@ The main areas I work on are:
     <li><i class="fa-li fa fa-sign-language"></i>temporal semantics across sentences</li>
 </ul>
 
-<i class="fas fa-hand-point-right"></i> My <a href="https://ora.ox.ac.uk/objects/uuid:27636bb4-efd0-47bf-8e28-dce5a2b2ca4d" target="blank">doctoral project</a> looked (quantitatively, through treebank data) into the competition between finite and non-finite temporal subordinates in Early Slavic, and their position within the typology of <i>when</i>-clauses in 1400+ languages of the world.
+<i class="fas fa-hand-point-right"></i> My <a href="https://dx.doi.org/10.5287/ora-8gv0b4qyoon" target="blank">doctoral project</a> looked (quantitatively, through treebank data) into the competition between finite and non-finite temporal subordinates in Early Slavic, and their position within the typology of <i>when</i>-clauses in 1400+ languages of the world.
 
 # Computational Humanities
 
