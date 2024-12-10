@@ -17,7 +17,7 @@ The main areas I work on are:
     <li><i class="fa-li fa fa-sign-language"></i>temporal semantics across sentences</li>
 </ul>
 
-<i class="fas fa-hand-point-right"></i> My <a href="https://www.ling-phil.ox.ac.uk/people/nilo-pedrazzini" target="blank">doctoral project</a> looked (quantitatively, through treebank data) into the competition between finite and non-finite temporal subordinates in Early Slavic, and their position within the typology of <i>when</i>-clauses in 1400+ languages of the world.
+<i class="fas fa-hand-point-right"></i> My <a href="https://ora.ox.ac.uk/objects/uuid:27636bb4-efd0-47bf-8e28-dce5a2b2ca4d" target="blank">doctoral project</a> looked (quantitatively, through treebank data) into the competition between finite and non-finite temporal subordinates in Early Slavic, and their position within the typology of <i>when</i>-clauses in 1400+ languages of the world.
 
 # Computational Humanities
 
@@ -69,7 +69,7 @@ On the Language of Mechanization:
 
 
 ## Depictions of Post-COVID-19 Futures in Russian International Media: Multimodal Viewpoint Analysis (IMCC, University of Oxford)
-Starting from mid-2020, I was first Research Assistant <a href="https://imcc.web.ox.ac.uk/people/mr-nilo-pedrazzini"><i class="fas fa-external-link-alt"></i></a>, then collaborated with the International Multimodal Communication Centre (IMCC) <a href="https://imcc.web.ox.ac.uk"><i class="fas fa-external-link-alt"></i></a> based within the Oxford School of Global and Area Studies (OSGA) at the University of Oxford. I carried out annotation and correlation analyses of speech-gesture co-occurrences in Russian and American media, largely within the project <i>Depictions of Post-COVID-19 Futures in Russian International Media: Multimodal Viewpoint Analysis</i> <a href="https://imcc.web.ox.ac.uk/projects"><i class="fas fa-external-link-alt"></i></a>. 
+Starting from mid-2020, I was a Research Assistant at the International Multimodal Communication Centre (IMCC) <a href="https://imcc.web.ox.ac.uk"><i class="fas fa-external-link-alt"></i></a> based within the Oxford School of Global and Area Studies (OSGA) at the University of Oxford. I carried out annotation and correlation analyses of speech-gesture co-occurrences in Russian and American media, largely within the project <i>Depictions of Post-COVID-19 Futures in Russian International Media: Multimodal Viewpoint Analysis</i> <a href="https://imcc.web.ox.ac.uk/projects"><i class="fas fa-external-link-alt"></i></a>. 
 
 ## ReadOxford (University of Oxford, Deptartment of Expiremental Psychology)
 In 2020 I spent two months as a Research Assistant at the ReadOxford <a href="https://readoxford.org/our-research"><i class="fas fa-external-link-alt"></i></a> research group, based at the Department of Experimental Psychology <a href="https://www.psy.ox.ac.uk"><i class="fas fa-external-link-alt"></i></a> of the University of Oxford. The aim of the group is to answer different questions related to child literacy development.
