@@ -40,19 +40,31 @@ Some of my recent contributions include:
 
 # Open Scholarship in the Humanities
 
-I am a Fellow at [RROx](https://ox.ukrn.org/people/#NiloPedrazzini), the Oxford 'branch' of the UK Reproducibility Network ([UKRN](https://www.ukrn.org)). I was previously also Editorial Assistant for the Journal of Open Humanities Data ([JOHD](https://openhumanitiesdata.metajnl.com)).
-
 I'm interested in the specific challenges faced by the Humanities in making research reproducible (also: I get a bit angry when I am not given the steps followed by another researcher to get to an interpretation or a result).
+
+Between 2020 and 2022 I was a Fellow at [RROx](https://rr.ox.ac.uk/), the Oxford 'branch' of the UK Reproducibility Network ([UKRN](https://www.ukrn.org)) and Editorial Assistant for the Journal of Open Humanities Data ([JOHD](https://openhumanitiesdata.metajnl.com)).
 
 Some of my contributions to the discussion: 
 <ul class="fa-ul">
     <li><i class="fa-li fa fa-code-branch"></i>The <a href="https://openhumanitiesseminar.github.io">Open Humanities Seminar Series (OHSS)</a>, a monthly event I organized and ran from January to April 2022, dedicated to different aspects of Open Humanities.</li>
     <li><i class="fa-li fa fa-code-branch"></i><i>Deep Impact: A study on the impact of data papers and datasets in the humanities and social sciences</i> (2022) with <a href="https://www.turing.ac.uk/people/researchers/barbara-mcgillivray">Barbara McGillivray</a>, <a href="https://www.surrey.ac.uk/people/marton-ribary">Marton Ribary</a>, <a href="https://www.languagesciences.cam.ac.uk/directory/mandy-wigdorowitz">Mandy Wigdorowitz</a> and Eleonora Zordan, presented at <a href="https://www.scidatacon.org/#">SciDatCon-IDW Seoul 2022</a> and published in <a href="https://doi.org/10.3390/publications10040039">Publications</a> (<b>Best Paper Award 2024</b>).</li>
-    <li><i class="fa-li fa fa-code-branch"></i><i>Le Journal of Open Humanities Data (JOHD): enjeux et défis dans la publication de data papers pour les sciences humaines</i> (2021), a paper written with <a href="https://www.unine.ch/isla/home/equipe/paola-marongiu.html">Paola Marongiu</a>, <a href="https://www.surrey.ac.uk/people/marton-ribary">Marton Ribary</a> and <a href="https://www.turing.ac.uk/people/researchers/barbara-mcgillivray">Barbara McGillivray</a>, and presented at DHNord <a href="https://www.meshs.fr/page/dhnord_2020"><i class="fas fa-external-link-alt"></i></a> (soon to be published by Presses Universitaires du Septentrion).</li>
+    <li><i class="fa-li fa fa-code-branch"></i><i>Le Journal of Open Humanities Data (JOHD): enjeux et défis dans la publication de data papers pour les sciences humaines</i>, a paper written with <a href="https://www.unine.ch/isla/home/equipe/paola-marongiu.html">Paola Marongiu</a>, <a href="https://www.surrey.ac.uk/people/marton-ribary">Marton Ribary</a> and <a href="https://www.turing.ac.uk/people/researchers/barbara-mcgillivray">Barbara McGillivray</a>, and presented at DHNord <a href="https://www.meshs.fr/page/dhnord_2020"><i class="fas fa-external-link-alt"></i></a> (soon to be published by Presses Universitaires du Septentrion).</li>
 </ul>
 
 
 # Selected past contributions in collaborative projects
+
+
+## Quartz Solar AI nowcasting (The Alan Turing Institute)
+
+As part of a secondment to the Research Engineering Group <a href="https://www.turing.ac.uk/work-turing/research/research-engineering-group"><i class="fas fa-external-link-alt"></i></a> at The Alan Turing Institute, between August 2024 and January 2025 I worked within the Quartz Solar AI Nowcasting <a href="https://www.turing.ac.uk/research/research-projects/quartz-solar-ai-nowcasting"><i class="fas fa-external-link-alt"></i></a> project in a research software engineering capacity. The project was a collaboration between the Turing Institute and the non-profit climate-tech company Open Climate Fix <a href="https://www.openclimatefix.org/"><i class="fas fa-external-link-alt"></i></a> and aimed to improve solar power forecasts and enable more efficient integration of solar energy into the electricity grid by using generative AI to increase the accuracy of short-term cloud cover prediction (‘nowcasting’), as part of a wider effort to reduce costs and carbon emissions.
+
+As part of this work, I trained a Transformer-based model (Earthformer <a href="https://www.amazon.science/publications/earthformer-exploring-space-time-transformers-for-earth-system-forecasting"><i class="fas fa-external-link-alt"></i></a>) that takes in 12 satellite images of cloud cover at 15-minute intervals and predicts the next 12, using data from 11 different spectral channels. While not intended as a novel architecture in itself, this model was one of several approaches the team implemented and compared as part of a broader suite of cloud nowcasting models. The animation below shows an example prediction from the model I trained.
+
+<figure style="max-width: 100%">
+  <img src="/images/cloudformerv2.gif" alt="Predicted vs actual cloud cover starting at 11:00 UTC, 10 June 2022 (VIS008 channel)" style="width: 100%; height: auto;">
+  <figcaption><strong>Predicted vs actual cloud cover starting at 11:00 UTC, 10 June 2022 (VIS008 channel)</strong><br><em>Left: model prediction | Middle: ground truth | Right: difference</em></figcaption>
+</figure>
 
 ## Living with Machines (The Alan Turing Institute)
 Between January 2022 and July 2023 I was Research Associate in the Living with Machines (LwM) <a href="https://livingwithmachines.ac.uk/"><i class="fas fa-external-link-alt"></i></a> project at The Alan Turing Institute. The overarching goal of LwM was to investigate the impact of technology on the lives of ordinary people during the Industrial Revolution. My job consisted in analyzing a very large amount of (very noisy) historical British newspaper data computationally, with a focus on looking into how language use changed throughout the 19th century as an effect of the socio-political changes following the Industrial Revolution. See <a href="/langofmech/">here</a> for an example of results from my research.
@@ -67,11 +79,10 @@ On the Language of Mechanization:
 
 <iframe style="width: 560px; max-width: 70%;" height="115" src="https://www.youtube.com/embed/qSciC6ymlK0?si=gvvZNRe2dJuwUGzF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-
 ## Depictions of Post-COVID-19 Futures in Russian International Media: Multimodal Viewpoint Analysis (IMCC, University of Oxford)
 Starting from mid-2020, I was a Research Assistant at the International Multimodal Communication Centre (IMCC) <a href="https://imcc.web.ox.ac.uk"><i class="fas fa-external-link-alt"></i></a> based within the Oxford School of Global and Area Studies (OSGA) at the University of Oxford. I carried out annotation and correlation analyses of speech-gesture co-occurrences in Russian and American media, largely within the project <i>Depictions of Post-COVID-19 Futures in Russian International Media: Multimodal Viewpoint Analysis</i> <a href="https://imcc.web.ox.ac.uk/projects"><i class="fas fa-external-link-alt"></i></a>. 
 
-## ReadOxford (University of Oxford, Deptartment of Expiremental Psychology)
+## ReadOxford (University of Oxford, Department of Experimental Psychology)
 In 2020 I spent two months as a Research Assistant at the ReadOxford <a href="https://readoxford.org/our-research"><i class="fas fa-external-link-alt"></i></a> research group, based at the Department of Experimental Psychology <a href="https://www.psy.ox.ac.uk"><i class="fas fa-external-link-alt"></i></a> of the University of Oxford. The aim of the group is to answer different questions related to child literacy development.
 I mainly dealt with data processing, developing R scripts to make corpus data reproducible and analysable for morphological complexity and lexical variation. My major contribution has been scripting an <a href="https://github.com/npedrazzini/averageReducedFrequency">R code</a> to automatically calculate the Average Reduced Frequency (ARF) of combined lemmata/parts of speech in the Oxford Children Corpus <a href="https://www.sketchengine.eu/oxford-childrens-corpus/"><i class="fas fa-external-link-alt"></i></a> and Childes <a href="https://childes.talkbank.org"><i class="fas fa-external-link-alt"></i></a> treebank.
 
