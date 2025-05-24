@@ -7,14 +7,13 @@ author_profile: true
 
 # Linguistics
 
-My linguistics training had a very strong [historical](https://www.britannica.com/science/historical-linguistics) component, with a focus on Slavic and wider Indo-European. I like experimental and computational approaches and get bored quickly when doing interpretative, close-reading work (which is my limit: I look up to traditional philologists). 
+My linguistics training had a strong [historical](https://www.britannica.com/science/historical-linguistics) component, with a focus on Slavic and wider Indo-European. I use experimental and computational approaches and get bored quickly when doing interpretative, close-reading work (which is my limit: I look up to traditional philologists). 
 
 The main areas I work on are:
 <ul class="fa-ul">
     <li><i class="fa-li fa fa-sign-language"></i>semantics of non-finite clauses</li>
-    <li><i class="fa-li fa fa-sign-language"></i>typology of temporal subordination</li>
-    <li><i class="fa-li fa fa-sign-language"></i>discourse representation theory</li>
-    <li><i class="fa-li fa fa-sign-language"></i>temporal semantics across sentences</li>
+    <li><i class="fa-li fa fa-sign-language"></i>typology of subordination</li>
+    <li><i class="fa-li fa fa-sign-language"></i>discourse representation</li>
 </ul>
 
 <i class="fas fa-hand-point-right"></i> My <a href="https://dx.doi.org/10.5287/ora-8gv0b4qyoon" target="blank">doctoral project</a> looked (quantitatively, through treebank data) into the competition between finite and non-finite temporal subordinates in Early Slavic, and their position within the typology of <i>when</i>-clauses in 1400+ languages.
@@ -32,7 +31,7 @@ It's hard to set Computational Humanities apart from my main areas of research, 
 
 Some of my recent contributions include:
 <ul class="fa-ul">
-    <li><i class="fa-li fa fa-terminal"></i>Mapping <i>when</i>-clauses in Latin American and Caribbean languages: an experiment in subtoken-based typology. Using character n-gram associations between English <i>when</i> and parallel texts in indigenous Latin American languages to understand the temporal subordination strategies used in the region. Preprint available <a href="https://doi.org/10.48550/arXiv.2404.18257">here</a></li>
+    <li><i class="fa-li fa fa-terminal"></i>Mapping <i>when</i>-clauses in Latin American and Caribbean languages: an experiment in subtoken-based typology. Using character n-gram associations between English <i>when</i> and parallel texts in indigenous Latin American languages to understand the temporal subordination strategies used in the region. Published in the ACL Anthology as part of the <a href="https://aclanthology.org/2024.americasnlp-1.4/">Proceedings of the Workshop on Natural Language Processing for Indigenous Languages of the Americas (AmericasNLP)</a>.</li>
     <li><i class="fa-li fa fa-terminal"></i>Training and evaluation of distributional semantic models of Ancient Greek (collaborative project, led by Silvia Stopponi, and with Saskia Peels-Matthey, Barbara McGillivray, and Malvina Nissim). Read the paper <i>Evaluation of Distributional Semantic Models of Ancient Greek: Preliminary Results and a Road Map for Future Work</i> <a href="https://aclanthology.org/2023.alp-1.6"><i>here</i></a>, where I dealt with syntactic (graph-based) embeddings.</li>
     <li><i class="fa-li fa fa-terminal"></i>Diachronic word embeddings from Big Historical Data (19th century English). See <a href="https://github.com/Living-with-machines/DiachronicEmb-BigHistData">here</a> for the tools. Also check out a case study using the diachronic embeddings in the article <a href="https://aclanthology.org/2022.nlp4dh-1.12/"><i>Machines in the media: semantic change in the lexical field of mechanization in 19th-century British newspapers</i> </a> (with Barbara McGillivray).</li>
     <li><i class="fa-li fa fa-terminal"></i>Early Slavic dependency parsing (see OldSlavNet <a href="https://npedrazzini.github.io/OldSlavNet/"><i class="fas fa-external-link-alt"></i></a> and <a href="https://npedrazzini.github.io/publications/">Publications</a>).</li>
