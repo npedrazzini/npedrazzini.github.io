@@ -42,7 +42,7 @@ I was previously a <a href="https://www.software.ac.uk/research-software-enginee
     <div class="container">
       <a href="/massparallelbibles/"><img src="/images/massparall.gif" width="500" height="600"></a>
       <a href="/massparallelbibles/"><div class="proj-title">Parallel Bibles</div></a>
-      <div class="proj-subtitle">Temporal subordination in 1400+ languages of the world</div>
+      <div class="proj-subtitle">Temporal subordination in 1400+ languages</div>
     </div>
   </div>
   <div class="column">
