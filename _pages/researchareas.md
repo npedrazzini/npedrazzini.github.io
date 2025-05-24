@@ -17,7 +17,7 @@ The main areas I work on are:
     <li><i class="fa-li fa fa-sign-language"></i>temporal semantics across sentences</li>
 </ul>
 
-<i class="fas fa-hand-point-right"></i> My <a href="https://dx.doi.org/10.5287/ora-8gv0b4qyoon" target="blank">doctoral project</a> looked (quantitatively, through treebank data) into the competition between finite and non-finite temporal subordinates in Early Slavic, and their position within the typology of <i>when</i>-clauses in 1400+ languages of the world.
+<i class="fas fa-hand-point-right"></i> My <a href="https://dx.doi.org/10.5287/ora-8gv0b4qyoon" target="blank">doctoral project</a> looked (quantitatively, through treebank data) into the competition between finite and non-finite temporal subordinates in Early Slavic, and their position within the typology of <i>when</i>-clauses in 1400+ languages.
 
 # Computational Humanities
 
@@ -104,7 +104,7 @@ In 2015, I spent two months as a trainee Assistant Curator-Cataloguer for the Sl
     <div class="container">
       <a href="/massparallelbibles/"><img src="/images/massparall.gif" width="500" height="600"></a>
       <a href="/massparallelbibles/"><div class="proj-title">Parallel Bibles</div></a>
-      <div class="proj-subtitle">Temporal subordination in 1400+ languages of the world</div>
+      <div class="proj-subtitle">Temporal subordination in 1400+ languages</div>
     </div>
   </div>
   <div class="column">
