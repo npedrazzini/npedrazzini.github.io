@@ -11,7 +11,7 @@ author_profile: true
 
 {% include base_path %}
 
-<p><i> Updated on 9-7-2024</i></p>
+<p><i> Updated on 18-8-2025</i></p>
 
 {% for post in site.publications reversed %}
   {% include archive-single.html %}
