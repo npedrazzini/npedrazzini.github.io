@@ -7,7 +7,7 @@ venue: "SciDataCon"
 date: 2022-06-20
 location: "Seoul, Korea"
 ---
-[Joint paper with Marton Ribary, Mandy Wigdorowitz, Eleonora Zordan, and Barbara McGillivray]
+Joint paper with Marton Ribary, Mandy Wigdorowitz, Eleonora Zordan, and Barbara McGillivray.
 
 Published in *Publications*. Cite as:
 
