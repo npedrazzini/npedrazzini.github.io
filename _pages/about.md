@@ -11,9 +11,11 @@ redirect_from:
 I'm **Nilo Pedrazzini** (IPA: [ˈniˑlo pedraˈtːsiˑni], or something like *knee-law pay-drah-tsee-knee*).
 Born and raised in bleak [Sesto San Giovanni](https://www.google.com/maps/place/20099+Sesto+San+Giovanni,+Metropolitan+City+of+Milan,+Italy/@45.5369555,9.2077295,13z/data=!3m1!4b1!4m5!3m4!1s0x4786b88493ceb911:0x62cf432476d2360!8m2!3d45.5328245!4d9.2256875), in Northern Italy, I've been living in the UK since 2014.
 
-I'm a currently a Turing Research Fellow at <a href="https://www.turing.ac.uk">The Alan Turing Institute</a> and a Guest Researcher at the University of Oslo. I obtained my PhD in Linguistics from the University of Oxford, with a <a href="https://dx.doi.org/10.5287/ora-8gv0b4qyoon">thesis</a> on Early Slavic participle clauses and temporal subordination in typological perspective. 
+I'm a currently a Postdoctoral Research Associate at Queen Mary University London within the <a href="https://github.com/Text-Machine"><i>Text Machine: Computing Literary Innovation</i></a> project, and a Guest Researcher at the University of Oslo.
 
-I was previously a <a href="https://www.software.ac.uk/research-software-engineers">Research Software Engineer</a> at Oxford, within the <a href="https://digitalscholarship.web.ox.ac.uk/">Digital Scholarship @ Oxford</a> project (DiSc), and a Research Associate at the Turing Institute, within the <a href="https://www.turing.ac.uk/research/research-projects/living-machines">Living with Machines</a> project. 
+I was previously a Turing Research Fellow at <a href="https://www.turing.ac.uk">The Alan Turing Institute</a>, <a href="https://www.software.ac.uk/research-software-engineers">Research Software Engineer</a> at Oxford, within the <a href="https://digitalscholarship.web.ox.ac.uk/">Digital Scholarship @ Oxford</a> project (DiSc), and a Research Associate at the Turing Institute, within the <a href="https://www.turing.ac.uk/research/research-projects/living-machines">Living with Machines</a> project. 
+
+I obtained my PhD in Linguistics from the University of Oxford, with a <a href="https://dx.doi.org/10.5287/ora-8gv0b4qyoon">thesis</a> on Early Slavic participle clauses and temporal subordination in typological perspective. 
 
 ## Current work and main research areas
 
