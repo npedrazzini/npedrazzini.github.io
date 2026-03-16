@@ -1,0 +1,148 @@
+---
+layout: archive
+title: "Detecting shifts in suicide discourse in 19th-century British news"
+permalink: /suicide-discourse/
+author_profile: true
+---
+
+<ul class="fa-ul">
+
+<li><i class="fa-li fa fa-bullseye"></i><h2>Background</h2><br>
+Public discourse around suicide underwent a significant shift 
+in 19th-century Britain. This involved moving away from moral, 
+religious and legal framings of suicide, 
+i.e., as <i>felo-de-se</i> (self-murder, a sin and a crime) and, 
+instead, towards a range of increasingly secular attitudes 
+(see <a href="#gates">Gates 1995</a>; <a href="#york">York 2009</a>).
+These included philosophical arguments in defence of personal autonomy, 
+as well as emerging medical, psychological and environmental accounts, 
+which shifted public discourse towards pathological and socio-economic 
+understandings of the issue. 
+</li>
+
+<li><i class="fa-li fa fa-bullseye"></i><h2>Goal</h2><br>
+In a pilot experiment with <a href="https://www.danielwilson.info/", target="_blank">Daniel C. S. Wilson</a>, 
+our goal was to explore for the first time whether such a shift could be detected and quantified in large-scale 
+historical newspaper data of the period.
+
+<p>We approached the question from the framing of suicide as felo-de-se, 
+as one of the earliest and most persistent framings of 
+suicide in this period. Murder reports provided a meaningful point 
+of comparison as the lemma <i>murder</i> itself arguably always encodes 
+some kind of explicit legal, religious, or moral responsibility being 
+placed on an individual. </p>
+</li>
+
+<li><i class="fa-li fa fa-cogs"></i><h2>Method</h2><br>
+We first extracted newspaper articles mentioning <i>suicid*</i> (suicide,
+    suicides, suicidal) and articles mentioning <i>murder</i> from the corpus.
+    Articles were then represented by crudely mean-pooled contextual token embeddings
+    extracted from a BERT model
+    (<a href="https://huggingface.co/npedrazzini/NewsBERT" target="_blank">NewsBERT</a>)
+    that we fine-tuned on 19th-century British newspaper data.
+    
+    <p>For each suicide article, we identified its 100 nearest neighbours in
+    the embedding space and measured how many of them were murder reports versus
+    other suicide reports. If suicide is framed as self-murder, we expect the local
+    neighbourhood to be dominated by murder reports. If suicide develops a more
+    distinct and complex framing over time, that influence should weaken, so the
+    neighbourhood should become progressively less murder-like.</p>
+    </li>
+
+    We finally averaged the murder ratio by year and plot the resulting time series.
+
+  <img src="/images/suicide_similarity.png" style="float: none; width: max-content; height: max-content; margin-left: auto; margin-right: auto;">
+
+<li><i class="fa-li fa fa-chart-line"></i><h2>Results</h2><br>
+The curve shows a clear and steady downward trend from 1800 to 1920, 
+where suicide and murder articles gradually drift apart in the embedding space. This 
+indicates a slow decoupling from religious, moral, and legal blame ('self-murder'), 
+possibly reflecting a broader public shift towards medical and environmental 
+understandings of suicide motives.
+    
+<p>The much higher number of articles (in grey in the Figure) 
+in the middle and later decades of the century simply reflects a steady 
+historical increase in newspaper production 
+(cf. <a href="beelenetal1">Beelen et al. 2022</a>, <a href="beelenetal2">2025</a>). 
+
+Note how the downward trend holds consistently despite this imbalance, which suggests
+ that our simple embedding-based method is relatively robust 
+ to such variation. Our proof of concept thus supports extending 
+ the approach to more representative and targeted sub-samples
+  based on enriched metadata (cf. <a href="#lwmd"> Westerling et al. </a>2025).</p>
+</li>
+
+
+<li><i class="fa-li fa fa-database"></i><h2>Resources</h2><br>
+
+This experiment was a proof of concept made possible by
+newly released open historical newspaper collections:
+
+<ul>
+<li>a href="https://bl.iro.bl.uk/concern/datasets/2800eb7d-8b49-4398-a6e9-c2c5692a1304">HMD14</a></li>
+
+<li><a href="https://bl.iro.bl.uk/concern/datasets/99dc570a-9460-48ac-baed-9d2b8c4c13c0">LwM</a></li>
+</ul>
+
+The models, code and data used in the experiment are also openly available:
+
+<ul>
+<li>Scripts and notebooks:  
+<a href="https://github.com/npedrazzini/BlameGame">github.com/npedrazzini/BlameGame</a></li>
+
+<li>Models, datasets and outputs (including NewsBERT):  
+<a href="https://huggingface.co/collections/npedrazzini/blamegame">
+huggingface.co/collections/npedrazzini/blamegame</a></li>
+</ul>
+
+</li>
+
+
+<li><i class="fa-li fa fa-users"></i><h2>Credits</h2><br>
+
+This work was developed as part of the 
+<a href="https://livingwithmachines.ac.uk/" target="_blank">Living with Machines</a> 
+and <a href="https://www.turing.ac.uk/research/research-projects/dataculture-building-sustainable-communities-around-arts-and-humanities" target="_blank">Data/Culture</a>
+projects.
+</li>
+
+
+<li><i class="fa-li fa fa-bookmark"></i><h2>References</h2> <br>
+  
+    <p id="gates">
+        B. T. Gates. 1995. 
+      <i>Victorian suicide: Mad crimes and sad histories</i>. 
+      Princeton: Princeton University Press.
+    </p>
+    
+
+    <p id="york">
+       S. H. York. 2009. 
+      <i> Suicide, lunacy and the asylum in nineteenth-century England</i>. 
+      University of Birmingham PhD Thesis.
+    </p>
+
+
+    <p id="lwmdb">
+        K. Westerling, K. Beelen, T. Hobson, K. McDonough, N. Pedrazzini, D. C. S. Wilson & R. Ahnert. 2025. <a href="https://doi.org/10.5334/johd.304" target="_blank">LwMDB: Open metadata for digitised historical newspapers from British Library collections</a>. <i>Journal of Open Humanities Data</i> 11, Article 32.
+    </p>
+        
+    <p id="simplifiedexp">
+        T. Hobson, K. Westerling, K. McDonough, D. C. S. Wilson, N. Pedrazzini & K. Beelen. 2024. <a href="https://doi.org/10.5281/zenodo.13745055" target="_blank">LwMDB simplified exports</a> [Dataset]. Zenodo.
+    </p>
+
+    <p id="beelenetal1">
+        Beelen, Kaspar, Jon Lawrence, Katherine McDonough & Daniel C. S. Wilson. 2025. Whose News? Critical methods for assessing bias in large historical datasets. Computational Humanities Research 1–21. https://doi.org/10.1017/chr.2025.10007.
+    </p>
+    <p id="beelenetal2">
+        Beelen, Kaspar, Jon Lawrence, Daniel C. S. Wilson & David Beavan. 2022. Bias and repre- sentativeness in digitized newspaper collections: Introducing the environmental scan. Digital Scholarship in the Humanities 38(1). 1–22. https://doi.org/10.1093/llc/fqac037.
+      </p>
+
+
+</li>
+
+
+</ul>
+
+<h2>Check out other projects</h2><br>
+{% include projects_footer.html %}

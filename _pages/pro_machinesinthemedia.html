@@ -1,0 +1,328 @@
+---
+layout: archive
+title: "Changing machines in the Victorian Press"
+permalink: /machinesinthemedia/
+author_profile: true
+---
+
+<p>
+This project explored semantic change in the vocabulary of mechanization 
+in nineteenth-century British newspapers using diachronic word embeddings 
+and change-point detection techniques.
+</p>
+
+<ul class="fa-ul">
+
+<li>
+<i class="fa-li fa fa-question"></i>
+<h2>Questions</h2>
+
+<p>
+Industrial mechanization began in eighteenth-century Great Britain 
+and accelerated dramatically in the nineteenth century. 
+English, unsurprisingly, reflects these transformations at several linguistic levels, 
+particularly in the lexicon, given the unprecedented pace of technological innovation.
+
+</p>
+
+<ol>
+<li>
+Given sufficiently large datasets, is it possible to automatically detect semantic change in words associated with mechanization?
+</li>
+
+<li>
+Do the changes detected align with findings in traditional scholarship (e.g. <a href="#gorlach">Görlach</a> 1999, <a href="#kayallan">Kay &amp; Allan</a> 2015, <a href="#kyto">Kytö et al.</a> 2006)?
+</li>
+</ol>
+
+</li>
+
+
+<li>
+<i class="fa-li fa fa-bullseye"></i>
+<h2>Challenge</h2>
+
+<p>
+Large-scale historical text data presents different challenges from those of contemporary datasets. 
+It is often messy, marked by orthographic variation, and OCR-derived noise. 
+This can make it difficult to train high-quality language models directly on the raw material.
+</p>
+<p>
+At the same time, the scale of the corpus limits how much preprocessing can realistically be applied. 
+Tasks such as lemmatization, PoS tagging, morphological analysis, or dependency parsing 
+may become computationally impractical unless the corpus is heavily subsampled. 
+In practice, even minimal preprocessing often requires combining pipelines 
+from multiple libraries together with bespoke methods rather than relying on a single NLP toolkit.
+</p>
+
+</li>
+
+
+<li>
+<i class="fa-li fa fa-table"></i>
+<h2>Data</h2>
+<p>
+The dataset consisted of a digitized nineteenth-century newspaper collection 
+comprising approximately 4.5 billion tokens, spanning the period 1800-1920. 
+Around half of the material comes from the Heritage Made Digital digitization project 
+and can be downloaded 
+<a href="https://bl.iro.bl.uk/concern/datasets/2800eb7d-8b49-4398-a6e9-c2c5692a1304">here</a>. 
+The other half was digitized as part of the 
+<a href="https://www.turing.ac.uk/research/research-projects/living-machines">Living with Machines</a> project 
+and can be downloaded <a href="https://bl.iro.bl.uk/concern/datasets/99dc570a-9460-48ac-baed-9d2b8c4c13c0">here</a>. 
+Also see <a href="#lwmdb">Westerling et al.</a> (2025) for more details about the metadata available on these collections.
+</p>
+</li>
+
+
+<li>
+<i class="fa-li fa fa-random"></i>
+<h2>(Pre-)processing</h2>
+<p>
+The corpus was divided into bins of ten years each 
+in order to obtain models representing individual decades of the nineteenth century. 
+Each bin was preprocessed by lowercasing the text, removing punctuation, 
+and filtering out tokens shorter than two characters.
+</p>
+
+</li>
+
+
+<li>
+<i class="fa-li fa fa-flask"></i>
+<h2>Training</h2>
+<p>
+The embeddings were trained using <samp>Word2Vec</samp> (<a href="#word2vec">Mikolov et al.</a> 2013) 
+as implemented in <samp>Gensim</samp> (<a href="#gensim">Řehůřek & Sojka</a> 2010). 
+After a grid search over the most important parameters, 
+the final models were trained with the following configuration:
+</p>
+
+<ul>
+<li><samp>sg</samp>: 1 (i.e. <i>Skip-Gram</i> rather than <i>Continuous Bag-of-Words</i>)</li>
+<li><samp>epochs</samp>: 5</li>
+<li><samp>vector_size</samp>: 200</li>
+<li><samp>window</samp>: 3</li>
+<li><samp>min_count</samp>: 1</li>
+</ul>
+
+</li>
+
+
+<li>
+<i class="fa-li fa fa-code-branch"></i>
+<h2>Alignment</h2>
+
+<p>
+In order for the semantic spaces to be comparable, 
+the models were aligned using Orthogonal Procrustes (<a href="#procrustes">Schönemann</a> 1966), 
+resulting in diachronic embeddings. The most recent decade (1910s) was kept fixed, 
+with all earlier decades aligned to it.
+</p>
+
+</li>
+
+
+<li>
+<i class="fa-li fa fa-chart-line"></i>
+<h2>Change point detection</h2>
+
+<p>
+Given a word (or set of words), we first calculate the cosine similarity between 
+the vector representing that word in the most recent time slice (here the 1910s) 
+and the corresponding vector in each earlier decade. 
+The resulting similarity scores can be structured in a dataframe like the following:
+</p>
+
+<style type="text/css">
+table.tableizer-table {
+font-size: 12px;
+border: 1px solid #CCC;
+font-family: 'Roboto Condensed', sans-serif;
+}
+.tableizer-table td {
+padding: 4px;
+margin: 3px;
+border: 1px solid #CCC;
+}
+.tableizer-table th {
+background-color: rgb(23, 117, 118);
+color: #FFF;
+font-weight: bold;
+}
+</style>
+<table class="tableizer-table">
+  <thead><tr class="tableizer-firstrow"><th>timeslice</th><th>traffic</th><th>train</th><th>coach</th><th>wheel</th><th>fellow</th><th>railway</th><th>match</th></tr></thead><tbody>
+   <tr><td>1800s</td><td>0.42065081000328100</td><td>0.3247864842414860</td><td>0.48939988017082200</td><td>0.40280336141586300</td><td>0.4793526530265810</td><td>0.45957744121551500</td><td>0.5546759963035580</td></tr>
+   <tr><td>1810s</td><td>0.44998985528945900</td><td>0.37257763743400600</td><td>0.4604988396167760</td><td>0.4593697786331180</td><td>0.5891557335853580</td><td>0.47077488899231000</td><td>0.527800440788269</td></tr>
+   <tr><td>1820s</td><td>0.4821169972419740</td><td>0.3287739157676700</td><td>0.4415084719657900</td><td>0.5199856162071230</td><td>0.5828660130500790</td><td>0.414533793926239</td><td>0.5771894454956060</td></tr>
+   <tr><td>1830s</td><td>0.5448930859565740</td><td>0.5837113261222840</td><td>0.6515539884567260</td><td>0.634568989276886</td><td>0.6111024618148800</td><td>0.5849509239196780</td><td>0.5492534637451170</td></tr>
+   <tr><td>1840s</td><td>0.6072453856468200</td><td>0.7486659288406370</td><td>0.6239444613456730</td><td>0.6725128889083860</td><td>0.623650848865509</td><td>0.5770826935768130</td><td>0.5812575817108150</td></tr>
+   <tr><td>1850s</td><td>0.6091518402099610</td><td>0.7796339988708500</td><td>0.5971360206604000</td><td>0.4985277056694030</td><td>0.6289939284324650</td><td>0.6734532713890080</td><td>0.5770257711410520</td></tr>
+   <tr><td>1860s</td><td>0.6446579694747930</td><td>0.7618392705917360</td><td>0.603736162185669</td><td>0.5436286926269530</td><td>0.6926408410072330</td><td>0.609641432762146</td><td>0.6728477478027340</td></tr>
+   <tr><td>1870s</td><td>0.7729555368423460</td><td>0.8115466833114620</td><td>0.6379809379577640</td><td>0.652446448802948</td><td>0.7293833494186400</td><td>0.7228521108627320</td><td>0.6857554316520690</td></tr>
+   <tr><td>1880s</td><td>0.7656214237213140</td><td>0.8313593864440920</td><td>0.6118263006210330</td><td>0.5638831257820130</td><td>0.7863538861274720</td><td>0.7955769300460820</td><td>0.757251501083374</td></tr>
+   <tr><td>1890s</td><td>0.8245968818664550</td><td>0.8599095344543460</td><td>0.6886460185050960</td><td>0.7133383750915530</td><td>0.8441230058670040</td><td>0.8329502940177920</td><td>0.8200661540031430</td></tr>
+   <tr><td>1900s</td><td>0.8344136476516720</td><td>0.854633092880249</td><td>0.7280615568161010</td><td>0.7398968935012820</td><td>0.8377308249473570</td><td>0.8479636907577520</td><td>0.9051868915557860</td></tr>
+   <tr><td>1910s</td><td>1.0</td><td>1.0</td><td>1.0</td><td>1.0</td><td>1.0</td><td>1.0</td><td>1.0</td></tr>
+  </tbody></table>
+
+<p>
+As expected, the cosine similarity between a word vector and itself is 1, 
+which is why the final row contains only 1s. 
+We can then detect potentially significant change points in each column, 
+that is, abrupt shifts in a word's semantic trajectory.
+</p>
+
+<p>
+For this task we apply the <i>PELT</i> algorithm, 
+as implemented in the 
+<a href="https://centre-borelli.github.io/ruptures-docs/user-guide/detection/pelt/"><samp>ruptures</samp></a> library. 
+In this example, change points are detected for <i>train</i> in the 1820s and <i>traffic</i> in the 1860s. 
+The detected change points can then be visualized (the vertical line marks the detected shift):
+</p>
+
+<img src="/images/cpdetection.png" style="float:none;width:100%;height:100%;margin-left:auto;margin-right:auto;">
+
+</li>
+
+
+<li>
+<i class="fa-li fa fa-chart-area"></i>
+<h2>Semantic trajectory visualization</h2>
+<p>
+Building on the change point detection results, 
+we can extract the <i>k</i>-nearest neighbours of a word for 
+the decades surrounding a detected shift and visualize its semantic trajectory. 
+For example, we can extract 30 neighbours across several decades for <i>train</i> and <i>traffic</i>.
+</p>
+
+<p>
+Only neighbours present in the vocabulary of the most recent model included 
+in the visualization are retained. 
+Before visualization, vectors corresponding to OCR errors are filtered out 
+or merged with the correctly spelled form (using the 
+<a href="https://pypi.org/project/pyspellchecker/"><samp>pyspellchecker</samp></a> package). 
+The vectors of the target word itself are also included for each decade. 
+Dimensionality reduction with 
+<a href="http://scikit-learn.org/stable/modules/generated/sklearn.manifold.TSNE.html"><samp>t-SNE</samp></a> 
+is then applied to visualize the vectors in two dimensions.
+</p>
+
+<div class="row">
+<div class="column">
+<div class="container">
+<img src="/images/train.png" width="500" height="600">
+</div>
+</div>
+
+<div class="column">
+<div class="container">
+<img src="/images/traffic.png" width="500" height="600">
+</div>
+</div>
+</div>
+
+</li>
+
+
+<li>
+<i class="fa-li fa fa-book-reader"></i>
+<h2>Evaluation</h2>
+<p>
+The results from change point detection were compared with semantic shifts 
+discussed in the traditional literature. 
+The comparison suggests that the diachronic models 
+capture many of the changes identified by earlier scholarship. 
+This indicates that models of this type can be used not only to confirm existing 
+observations but also to explore research questions that have not yet been addressed in the literature.
+</p>
+</li>
+
+
+<li>
+<i class="fa-li fa fa-bullhorn"></i>
+<h2>Credits</h2>
+
+<p>
+This project was carried out within the 
+<a href="https://www.turing.ac.uk/research/research-projects/living-machines">Living with Machines</a> 
+project at The Alan Turing Institute.
+</p>
+
+<p>
+See <a href="#machmedia">Pedrazzini & McGillivray</a> (2022) for the full case study and <a href="#pedrazzinidata">Pedrazzini & McGillivray</a> (2022), <a href="#pedrazzinidata">Pedrazzini</a> (2023), and <a href="#pedrazzinidata">Pedrazzini & McGillivray</a> (2023) for the released embeddings.
+</p>
+
+</li>
+
+
+<li>
+<i class="fa-li fa fa-bookmark"></i>
+<h2>References</h2>
+<p id="gorlach">
+  M. Görlach. 1999. <i>English in Nineteenth-Century England: An Introduction</i>. Cambridge: Cambridge University Press.
+  </p>
+  
+  <p id="kayallan">
+  C. Kay & K. Allan. 2015. <i>English Historical Semantics</i>. Edinburgh: Edinburgh University Press.
+  </p>
+  
+  <p id="kyto">
+  M. Kytö, M. Rydén & E. Smitterberg. 2006. <i>Nineteenth-Century English: Stability and Change</i>. Cambridge: Cambridge University Press.
+  </p>
+  
+  <p id="word2vec">
+  T. Mikolov, K. Chen, G. Corrado & J. Dean. 2013. <a href="https://arxiv.org/abs/1301.3781" target="_blank">Efficient estimation of word representations in vector space</a>.
+  </p>
+  
+  <p id="gensim">
+  R. Řehůřek & P. Sojka. 2010. Software framework for topic modelling with large corpora. In <i>Proceedings of the LREC Workshop on New Challenges for NLP Frameworks</i>, 45–50, Valletta, Malta.
+  </p>
+  
+  <p id="procrustes">
+  P. H. Schönemann. 1966. <a href="https://doi.org/10.1007/BF02289451" target="_blank">A generalized solution of the orthogonal Procrustes problem</a>. <i>Psychometrika</i> 31, 1–10.
+  </p>
+  
+  <p id="alghezi">
+  R. Al-Ghezi & M. Kurimo. 2020. Graph-based syntactic word embeddings. In <i>Proceedings of TextGraphs</i>.
+  </p>
+  
+  <p id="levygold">
+  O. Levy & Y. Goldberg. 2014. <a href="https://aclanthology.org/P14-2050/" target="_blank">Dependency-based word embeddings</a>. In <i>Proceedings of the 52nd Annual Meeting of the Association for Computational Linguistics</i>, pages 302–308.
+  </p>
+  
+  <p id="machmedia">
+  N. Pedrazzini & B. McGillivray. 2022. <a href="https://doi.org/10.18653/v1/2022.nlp4dh-1.12" target="_blank">Machines in the media: semantic change in the lexicon of mechanization in 19th-century British newspapers</a>. In <i>Proceedings of the 2nd International Workshop on Natural Language Processing for Digital Humanities</i>, pages 85–95. Taipei, Taiwan: Association for Computational Linguistics.
+  </p>
+  
+  <p id="lwmbook">
+  B. McGillivray, N. Pedrazzini, A. Ciula, J. Lawrence, T. H. Ong, M. Ridge & J. Monteiro Vieira. 2025. Analysing the language of mechanisation in nineteenth-century British newspapers. In R. Ahnert, E. Griffin & J. Lawrence (eds.), <i>Living with Machines: Computational Histories of the Age of Industry</i>. London: University of London Press.
+  </p>
+  
+  <p id="pedrazzinidata">
+  N. Pedrazzini & B. McGillivray. 2022. <a href="https://doi.org/10.5281/zenodo.7181682" target="_blank">Diachronic word embeddings from 19th-century newspapers digitised by the British Library (1800–1919)</a> [Dataset]. Zenodo.
+  </p>
+  
+  <p id="pedrazzinidata2">
+  N. Pedrazzini. 2023. <a href="https://doi.org/10.5281/zenodo.7887305" target="_blank">Decade-level Word2Vec models from automatically transcribed 19th-century newspapers digitised by the British Library (1800–1919)</a> [Dataset]. Zenodo.
+  </p>
+  
+  <p id="pedrazzinidata3">
+  N. Pedrazzini & B. McGillivray. 2023. <a href="https://doi.org/10.5281/zenodo.7892460" target="_blank">Diachronic and diatopic word embeddings from newspapers digitised by the British Library (1830–1889): North and South England</a> [Dataset]. Zenodo.
+  </p>
+  
+  <p id="lwmdb">
+  K. Westerling, K. Beelen, T. Hobson, K. McDonough, N. Pedrazzini, D. C. S. Wilson & R. Ahnert. 2025. <a href="https://doi.org/10.5334/johd.304" target="_blank">LwMDB: Open metadata for digitised historical newspapers from British Library collections</a>. <i>Journal of Open Humanities Data</i> 11, Article 32.
+  </p>
+  
+  <p id="simplifiedexp">
+  T. Hobson, K. Westerling, K. McDonough, D. C. S. Wilson, N. Pedrazzini & K. Beelen. 2024. <a href="https://doi.org/10.5281/zenodo.13745055" target="_blank">LwMDB simplified exports</a> [Dataset]. Zenodo.
+  </p>
+
+</li>
+
+</ul>
+
+<h2>Check out other projects</h2><br>
+{% include projects_footer.html %}

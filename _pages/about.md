@@ -34,39 +34,4 @@ I was previously a <a href="https://www.software.ac.uk/research-software-enginee
 
 
 ## Zoom in on some of my projects
-
-<i class="fa fa-angle-down fa-2x animated"></i>
-
-<div class="row">
-  <div class="column">
-    <div class="container">
-      <a href="/massparallelbibles/"><img src="/images/massparall.gif" width="500" height="600"></a>
-      <a href="/massparallelbibles/"><div class="proj-title">Parallel Bibles</div></a>
-      <div class="proj-subtitle">Temporal subordination in 1400+ languages</div>
-    </div>
-  </div>
-  <div class="column">
-    <div class="container">
-      <a href="/langofmech/"><img src="/images/machine.gif" width="500" height="600"></a>
-      <a href="/langofmech/"><div class="proj-title">Machines in the media</div></a>
-      <div class="proj-subtitle">Semantic change in the era of mechanization</div>
-    </div>
-  </div>
-</div>
-
-<div class="row">
-  <div class="column">
-    <div class="container">
-      <a href="/oldslavnet/"><img src="/images/oldslavnet.gif" width="500" height="600"></a>
-      <a href="/oldslavnet/"><div class="proj-title">OldSlavNet</div></a>
-      <div class="proj-subtitle">A scalable dependency parser for pre-modern Slavic</div>
-    </div>
-  </div>
-  <div class="column">
-    <div class="container">
-      <a href="/agwemb/"><img src="/images/supergrc.gif" width="500" height="600"></a>
-      <a href="/agwemb/"><div class="proj-title">Ancient Greek graph-based syntactic embeddings</div></a>
-      <div class="proj-subtitle">Syntactic word representations for Ancient Greek</div>
-    </div>
-  </div>
-</div>
+{% include projects_footer.html %}

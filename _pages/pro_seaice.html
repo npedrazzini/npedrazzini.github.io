@@ -1,0 +1,153 @@
+---
+layout: archive
+title: "Generating synthetic off-grid observations for multimodal sea-ice forecasting models"
+permalink: /seaice/
+author_profile: true
+---
+
+<ul class="fa-ul">
+
+<li><i class="fa-li fa fa-bullseye"></i><h2>Background</h2><br>
+
+Around 2025, several research efforts were investigating machine-learning-based
+approaches to environmental forecasting that could complement or replace parts
+of traditional physics-based numerical climate and weather models. Systems such
+as <i>Aardvark Weather</i> and <i>IceNet</i> demonstrated that forecasting models
+could be trained directly from observational data rather than relying on complex
+and computationally expensive physics-based models.
+
+A project at the Alan Turing Institute aimed to develop a multimodal,
+fully machine-learning-based forecasting model for sea ice, inspired by the
+architectural ideas behind Aardvark while building on the progress already
+achieved by IceNet for sea-ice concentration prediction.
+
+</li>
+
+
+<li><i class="fa-li fa fa-lightbulb"></i><h2>Challenge</h2><br>
+
+One of the goals of the new pipeline was the ability to ingest heterogeneous
+data sources, including not only gridded climate fields but also irregular
+off-grid observations such as stations or drifting buoys, which introduce
+additional spatial and temporal complexity.
+
+Rather than immediately integrating heterogeneous observational datasets,
+the team first explored whether the modelling pipeline could ingest such data
+structures at all.
+
+</li>
+
+
+<li><i class="fa-li fa fa-user"></i><h2>Contribution</h2><br>
+
+As I worked on this project in its initial phases (as part of a one-year
+research software engineering placement with the
+Research Engineering Group at the Alan Turing Institute),
+one of my contributions was to generate synthetic off-grid observations
+from gridded climate anomaly fields, simulating station and drifting-buoy
+measurements.
+
+This allowed the team to develop and test a pipeline able to ingest irregular
+observational data before integrating heterogeneous real-world sources, which
+would involve additional data engineering challenges.
+
+</li>
+
+
+<li><i class="fa-li fa fa-database"></i><h2>Data</h2><br>
+
+The first set of synthetic off-grid data was generated from gridded NetCDF files
+containing <b>mean sea level pressure anomalies</b>. This variable was chosen
+because recent ablation studies in IceNet had identified it as a useful
+predictor for sea-ice concentration, making it a sensible variable with which
+to test the pipeline on synthetic off-grid data.
+
+</li>
+
+
+<li><i class="fa-li fa fa-cogs"></i><h2>Method</h2><br>
+
+Two scenarios were simulated:
+
+<ol>
+
+<li><b>Fixed stations</b><br>
+A set of random latitude-longitude coordinates was sampled within the spatial
+domain of the original grid. For each timestamp, the value of the anomaly
+field at each synthetic station location was obtained by linearly interpolating
+from the surrounding grid cells. Repeating this operation across all timestamps
+produced a non-gridded time series for each station.
+
+<br><br>
+<em>Example of synthetic fixed stations sampling mean sea level pressure anomalies.</em><br><br>
+
+<img src="/images/stations.gif" style="float: none; width: max-content; height: max-content; margin-left: auto; margin-right: auto;">
+
+<br><br>
+This visualisation was used only as a sanity check that the transformed data
+had the expected spatial distribution.
+</li>
+
+<br>
+
+<li><b>Drifting buoys</b><br>
+
+To simulate moving sensors, each buoy was assigned an initial random location
+within the spatial domain and an initial random direction of travel.
+
+At each timestamp, the buoy's position was updated by combining:
+
+<ul>
+<li>a fixed movement step in the current direction,</li>
+<li>a small random change in heading, and</li>
+<li>an additional random spatial perturbation (jitter).</li>
+</ul>
+
+This produced trajectories with directional persistence rather than purely
+random jumps. At each timestamp, the value of the mean sea level pressure
+anomaly field at the buoy's current position was obtained by linear
+interpolation from the surrounding grid cells.
+
+If a buoy drifted outside the domain, its trajectory was stopped. Because
+different buoys could therefore have different track lengths, the output
+arrays were padded with missing values to produce a rectangular time-by-buoy
+dataset.
+
+<br><br>
+<em>Example of synthetic drifting buoys sampling the same anomaly field.</em><br><br>
+
+<img src="/images/buoys.gif" style="float: none; width: max-content; height: max-content; margin-left: auto; margin-right: auto;">
+
+<br><br>
+Again, the visualisation served only to check that the simulated trajectories
+and sampled values behaved as intended.
+</li>
+
+</ol>
+
+The resulting datasets store the sampled values together with time stamps and
+the corresponding station or buoy coordinates. For stations, latitude and
+longitude are fixed per observation point; for buoys, they vary through time.
+
+</li>
+
+
+<li><i class="fa-li fa fa-users"></i><h2>Credits</h2><br>
+
+The generation of synthetic off-grid observations from gridded climate data
+presented on this page was developed by me as part of my work during a
+research software engineering placement with the
+Research Engineering Group at the
+Alan Turing Institute.
+
+This work took place within a broader collaborative effort involving several
+researchers, research software engineers and data scientists working on
+different aspects of an AI-based sea-ice forecasting pipeline as part of the
+Turing's Environment & Sustainability research area.
+
+</li>
+
+</ul>
+
+<h2>Check out other projects</h2><br>
+{% include projects_footer.html %}

@@ -1,0 +1,195 @@
+---
+layout: archive
+title: "Cross-Variety Dependency Parsing for Early Slavic"
+permalink: /premodslavparsing/
+author_profile: true
+---
+
+<ul class="fa-ul">
+  <li><i class="fa-li fa fa-bullseye"></i><h2>Challenge</h2><br>
+
+    Pre-modern Slavic presents particular challenges for NLP. What is often treated
+    computationally as single languages (e.g. 'Church Slavonic' or 'Old East Slavic') actually
+    consists of multiple written varieties with different orthographic conventions,
+    scribal practices, and regional norms. The cultural sphere of <i>Slavia Orthodoxa</i>
+    was characterized for centuries by diglossia between Church
+    Slavonic and local Slavic varieties, which led to most pre-modern texts 
+    containing features of both to varying degrees.
+    
+    This 'hybrid' nature of early Slavic introduces substantial
+    variation and data sparsity, posing challenges for machine learning models trained
+    on relatively small annotated corpora (see <a href="#earlyslavic">Schenker</a> 1995
+    for an overview of early Slavic).
+    </li>
+
+  
+  <li><i class="fa-li fa fa-question"></i> <h2>Research questions</h2> <br>
+    <ol>
+    <li>Can the performance of variety-specific dependency parsers for Early Slavic 
+      be improved by incorporating training data from related written varieties?</li>
+    
+    <li>Is it possible to obtain a more robust 'generic' parser capable of handling 
+      the variation found across Early Slavic textual traditions?</li>
+    
+    <li>Given expert knowledge about the historical development of Slavic 
+      languages, can modern Slavic data be leveraged by normalizing their 
+      orthography and morphology so as to approximate pre-modern Slavic varieties?</li>
+    </ol>
+    </li>
+
+  <li><i class="fa-li fa fa-table"></i><h2>Data</h2><br>
+
+    Early Slavic and Modern Russian data were obtained from the
+    <a href="#torot">Tromsø Old Church Slavonic and Old Russian Treebanks</a> (TOROT),
+    including the full Church Slavonic and Old Russian subcorpora and part of the
+    <a href="#syntagrus">SynTagRus</a> Modern Russian treebank.
+    
+    Modern Serbian data were taken from the Universal Dependencies
+    <a href="#serbianset">Serbian-SET treebank</a>.
+    
+    A detailed breakdown of token counts for each subvariety in the corpus is available
+    <a href="https://npedrazzini.github.io/OldSlavNet/data/">here</a>.
+    </li>
+
+  <li><i class="fa-li fa fa-tree"></i><h2>Parser architecture</h2><br>
+
+    The parser was trained on CoNLL-U files within the Universal Dependencies framework.
+    Its architecture is based on the neural joint parser of <a href="#nguyen">Nguyen et al.</a> (2017), designed
+    for morphology-rich languages such as Early Slavic.
+    
+    Only minor modifications were introduced:
+    
+    <ol>
+    <li><samp>ArgParse</samp> replaced the deprecated <samp>OptParse</samp>.</li>
+    <li><samp>RMSProp</samp> was used instead of <samp>Adam</samp> to improve training stability.</li>
+    <li>The initial learning rate was fixed at <samp>0.1</samp>.</li>
+    </ol>
+    
+    </li>
+
+  <li><i class="fa-li fa fa-random"></i> <h2>Preprocessing and data split</h2> <br>
+
+    <ol>
+    
+    <li>Each text was divided into training (80%), development (10%), and test (10%) data.
+    Texts shorter than 400 tokens were used only for training.</li>
+    
+    <li>TOROT treebanks are distributed both in PROIEL XML and CoNLL formats.
+    The datasets were converted to CoNLL-U using the <samp>proiel-cli</samp> utility.</li>
+    
+    <li>Modern Russian and Serbian data were orthographically and morphologically
+    normalized to approximate Early Slavic forms using scripts provided
+    <a href="">here</a>.</li>
+    
+    </ol>
+    
+    </li>
+  
+
+  <li><i class="fa-li fa fa-clipboard-list"></i> <h2>Models trained</h2> <br>
+
+    Three models were trained in order to evaluate whether variety-specific
+    parsers outperform a mixed model:
+    
+    <ol>
+    <li>An East Slavic model trained exclusively on East Slavic texts.</li>
+    <li>A South Slavic model trained exclusively on South Slavic texts.</li>
+    <li>A generic model trained on mixed data from both varieties,
+    including normalized modern Slavic texts.</li>
+    </ol>
+    
+    </li>
+  
+  
+  <li><i class="fa-li fa fa-location-arrow"></i><h2>Results</h2> <br>
+
+    The generic model performs best overall, suggesting that pre-modern Slavic dependency
+    parsing benefits from training on heterogeneous data rather than
+    variety-specific models.
+    
+    In East Slavic texts, the generic parser surpassed the specialized
+    model only after the addition of normalized modern Slavic data.
+    
+    A detailed discussion of the experiments can be found in
+    <a href="#pedrazzini1">Pedrazzini</a> (2020) and
+    <a href="#pedrazzini2">Pedrazzini & Eckhoff</a> (2021).
+    
+    </li>
+
+
+  
+  <li><i class="fa-li fa fa-bullhorn"></i><h2>Credits</h2> <br>
+
+    The normalization scripts used to map Modern Russian and Serbian data
+    to pre-modern Slavic forms were developed in collaboration with
+    <a href="https://www.lmh.ox.ac.uk/our-academics/fellows/dr-hanne-eckhoff">Dr Hanne Eckhoff</a> (Oxford).
+    
+    </li>
+  
+  <li><i class="fa-li fa fa-bookmark"></i><h2>References</h2> <br>
+  
+    <p id="earlyslavic">
+      A. M. Schenker. 1995. 
+      <i>The Dawn of Slavic: An Introduction to Slavic Philology</i>. 
+      New Haven, CT: Yale University Press.
+      </p>
+      
+      <p id="torot">
+      H. M. Eckhoff & A. Berdicevskis. 2015. 
+      Linguistics vs. digital editions: The Tromsø Old Russian and OCS treebank. 
+      <i>Scripta & e-Scripta</i>, 14–15, pages 9–25.
+      </p>
+      
+      <p id="syntagrus">
+      A. Berdičevskis & H. M. Eckhoff. 2020. 
+      A diachronic treebank of Russian spanning more than a thousand years. 
+      In <i>Proceedings of the 12th Language Resources and Evaluation Conference</i>, 
+      pages 5251–5256. Marseille, France: European Language Resources Association.
+      </p>
+      
+      <p id="serbianset">
+      T. Samardžić, M. Starović, Ž. Agić & N. Ljubešić. 2017. 
+      Universal Dependencies for Serbian in comparison with Croatian and other Slavic languages. 
+      In <i>Proceedings of the 6th Workshop on Balto-Slavic Natural Language Processing</i>, 
+      pages 39–44. Valencia, Spain: Association for Computational Linguistics.
+      </p>
+      
+      <p id="nguyen">
+      D. Q. Nguyen, M. Dras & M. Johnson. 2017. 
+      A novel neural network model for joint POS tagging and graph-based dependency parsing. 
+      In <i>Proceedings of the CoNLL 2017 Shared Task: Multilingual Parsing from Raw Text to Universal Dependencies</i>, 
+      pages 134–142. Vancouver, Canada: Association for Computational Linguistics.
+      </p>
+      
+      <p id="pedrazzini1">
+      N. Pedrazzini. 2020. 
+      <a href="https://ceur-ws.org/Vol-2723/short48.pdf" target="_blank">
+      Exploiting cross-dialectal gold syntax for low-resource historical languages: Towards a generic parser for pre-modern Slavic
+      </a>. 
+      In F. Karsdorp, B. McGillivray, A. Nerghes & M. Wevers (eds.), 
+      <i>Proceedings of the Workshop on Computational Humanities Research (CHR 2020)</i>, 
+      Vol. 2723, pages 237–247. Amsterdam, Netherlands: CEUR Workshop Proceedings.
+      </p>
+      
+      <p id="pedrazzini2">
+      N. Pedrazzini & H. M. Eckhoff. 2021. 
+      <a href="https://doi.org/10.1016/j.simpa.2021.100063" target="_blank">
+      OldSlavNet: A scalable Early Slavic dependency parser trained on modern language data
+      </a>. 
+      <i>Software Impacts</i>, 100063.
+      </p>
+      
+      <p id="pedrazzinimodels">
+      N. Pedrazzini. 2023. 
+      <a href="https://doi.org/10.5281/zenodo.8414137" target="_blank">
+      Early Slavic word embeddings
+      </a> [Dataset]. Zenodo.
+      </p>
+    
+    </li>
+  
+  
+  </ul>
+    
+  <h2>Check out other projects</h2><br>
+  {% include projects_footer.html %}

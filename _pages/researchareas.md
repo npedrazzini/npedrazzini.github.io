@@ -1,15 +1,14 @@
 ---
 layout: archive
-title: "Research Areas"
+title: "Projects and Research Areas"
 permalink: /researchareas/
 author_profile: true
 ---
 
 # Linguistics
 
-My linguistics training had a strong [historical](https://www.britannica.com/science/historical-linguistics) component, with a focus on Slavic and wider Indo-European. I use experimental and computational approaches and get bored quickly when doing interpretative, close-reading work (which is my limit: I look up to traditional philologists). 
+My linguistics training had a strong [historical](https://www.britannica.com/science/historical-linguistics) component, with a focus on Slavic and wider Indo-European. I use quantitative and computational approaches to investigate linguistic phenomena with a focus on:
 
-The main areas I work on are:
 <ul class="fa-ul">
     <li><i class="fa-li fa fa-sign-language"></i>semantics of non-finite clauses</li>
     <li><i class="fa-li fa fa-sign-language"></i>typology of subordination</li>
@@ -23,31 +22,29 @@ The main areas I work on are:
 It's hard to set Computational Humanities apart from my main areas of research, and that's often true for computational humanists at large: one tends to approach CH to answer questions in their research areas, and then may find themselves wondering about CH tools and techniques as such. The following are some of the areas I have worked in:
 
 <ul class="fa-ul">
-    <li><i class="fa-li fa fa-code"></i>application of NLProc methods to answer humanities research questions (language modelling, causal analysis, topic modelling, automatic linguistic annotation)</li>
+    <li><i class="fa-li fa fa-code"></i>application of NLProc methods to answer humanities research questions (language modelling, causal analysis, automatic linguistic annotation)</li>
     <li><i class="fa-li fa fa-code"></i>application of computational methods from outside the humanities to humanities research (geostatistics, genetics, biology, you name it)</li>
     <li><i class="fa-li fa fa-code"></i>visualization of (small and big) parallel language data</li>
     <li><i class="fa-li fa fa-code"></i>corpus building, treebanking</li>
 </ul>
 
-Some of my recent contributions include:
+Some of my contributions include:
 <ul class="fa-ul">
     <li><i class="fa-li fa fa-terminal"></i>Mapping <i>when</i>-clauses in Latin American and Caribbean languages: an experiment in subtoken-based typology. Using character n-gram associations between English <i>when</i> and parallel texts in indigenous Latin American languages to understand the temporal subordination strategies used in the region. Published in the ACL Anthology as part of the <a href="https://aclanthology.org/2024.americasnlp-1.4/">Proceedings of the Workshop on Natural Language Processing for Indigenous Languages of the Americas (AmericasNLP)</a>.</li>
-    <li><i class="fa-li fa fa-terminal"></i>Training and evaluation of distributional semantic models of Ancient Greek (collaborative project, led by Silvia Stopponi, and with Saskia Peels-Matthey, Barbara McGillivray, and Malvina Nissim). Read the paper <i>Evaluation of Distributional Semantic Models of Ancient Greek: Preliminary Results and a Road Map for Future Work</i> <a href="https://aclanthology.org/2023.alp-1.6"><i>here</i></a>, where I dealt with syntactic (graph-based) embeddings.</li>
-    <li><i class="fa-li fa fa-terminal"></i>Diachronic word embeddings from Big Historical Data (19th century English). See <a href="https://github.com/Living-with-machines/DiachronicEmb-BigHistData">here</a> for the tools. Also check out a case study using the diachronic embeddings in the article <a href="https://aclanthology.org/2022.nlp4dh-1.12/"><i>Machines in the media: semantic change in the lexical field of mechanization in 19th-century British newspapers</i> </a> (with Barbara McGillivray).</li>
+    <li><i class="fa-li fa fa-terminal"></i>Training and evaluation of distributional semantic models of Ancient Greek (collaborative project, led by Silvia Stopponi, and with Saskia Peels-Matthey, Barbara McGillivray, and Malvina Nissim). Check out the papers <a href="https://aclanthology.org/2023.alp-1.6"><i>Natural language processing for Ancient Greek: Design, advantages and challenges of language models</i></a> (2024) and <a href="https://aclanthology.org/2023.alp-1.6"><i>Evaluation of Distributional Semantic Models of Ancient Greek: Preliminary Results and a Road Map for Future Work</i></a> (2023) (both with Silvia Stopponi, Saskia Peels-Matthey, Barbara McGillivray ad Malvina Nissim), where I dealt with syntactic (graph-based) embeddings.</li>
+    <li><i class="fa-li fa fa-terminal"></i>Diachronic word embeddings from large-scale digitized historical data (19th century English). See <a href="https://github.com/Living-with-machines/DiachronicEmb-BigHistData">here</a> for the tools. Also check out a case study using the diachronic embeddings in the article <a href="https://aclanthology.org/2022.nlp4dh-1.12/"><i>Machines in the media: semantic change in the lexical field of mechanization in 19th-century British newspapers</i> </a> (with Barbara McGillivray).</li>
     <li><i class="fa-li fa fa-terminal"></i>Early Slavic dependency parsing (see OldSlavNet <a href="https://npedrazzini.github.io/OldSlavNet/"><i class="fas fa-external-link-alt"></i></a> and <a href="https://npedrazzini.github.io/publications/">Publications</a>).</li>
 </ul>
 
 # Open Scholarship in the Humanities
 
-I'm interested in the specific challenges faced by the Humanities in making research reproducible (also: I get a bit angry when I am not given the steps followed by another researcher to get to an interpretation or a result).
-
-Between 2020 and 2022 I was a Fellow at [RROx](https://rr.ox.ac.uk/), the Oxford 'branch' of the UK Reproducibility Network ([UKRN](https://www.ukrn.org)) and Editorial Assistant for the Journal of Open Humanities Data ([JOHD](https://openhumanitiesdata.metajnl.com)).
+I'm interested in the specific challenges faced by the Humanities in making research reproducible. Between 2020 and 2022 I was a Fellow at [RROx](https://rr.ox.ac.uk/), the Oxford 'branch' of the UK Reproducibility Network ([UKRN](https://www.ukrn.org)) and Editorial Assistant for the Journal of Open Humanities Data ([JOHD](https://openhumanitiesdata.metajnl.com)).
 
 Some of my contributions to the discussion: 
 <ul class="fa-ul">
+    <li><i class="fa-li fa fa-code-branch"></i>The 2025 article <a href="https://www.researchgate.net/publication/393704642_Le_Journal_of_Open_Humanities_Data_JOHD_enjeux_et_defis_dans_la_publication_de_data_papers_pour_les_sciences_humaines_et_sociales_SHS"><i>Le Journal of Open Humanities Data (JOHD) : enjeux et défis dans la publication de data papers pour les sciences humaines et sociales (SHS)</i></a>, coauthored with Paola Marongiu (main author), Marton Ribary & Barbara McGillivray, based on work presented at DHord in 2020.</li>
     <li><i class="fa-li fa fa-code-branch"></i>The <a href="https://openhumanitiesseminar.github.io">Open Humanities Seminar Series (OHSS)</a>, a monthly event I organized and ran from January to April 2022, dedicated to different aspects of Open Humanities.</li>
     <li><i class="fa-li fa fa-code-branch"></i><i>Deep Impact: A study on the impact of data papers and datasets in the humanities and social sciences</i> (2022) with <a href="https://www.turing.ac.uk/people/researchers/barbara-mcgillivray">Barbara McGillivray</a>, <a href="https://www.surrey.ac.uk/people/marton-ribary">Marton Ribary</a>, <a href="https://www.languagesciences.cam.ac.uk/directory/mandy-wigdorowitz">Mandy Wigdorowitz</a> and Eleonora Zordan, presented at <a href="https://www.scidatacon.org/#">SciDatCon-IDW Seoul 2022</a> and published in <a href="https://doi.org/10.3390/publications10040039">Publications</a> (<b>Best Paper Award 2024</b>).</li>
-    <li><i class="fa-li fa fa-code-branch"></i><i>Le Journal of Open Humanities Data (JOHD): enjeux et défis dans la publication de data papers pour les sciences humaines</i>, a paper written with <a href="https://www.unine.ch/isla/home/equipe/paola-marongiu.html">Paola Marongiu</a>, <a href="https://www.surrey.ac.uk/people/marton-ribary">Marton Ribary</a> and <a href="https://www.turing.ac.uk/people/researchers/barbara-mcgillivray">Barbara McGillivray</a>, and presented at DHNord <a href="https://www.meshs.fr/page/dhnord_2020"><i class="fas fa-external-link-alt"></i></a> (soon to be published by Presses Universitaires du Septentrion).</li>
 </ul>
 
 
@@ -66,9 +63,9 @@ As part of this work, I trained a Transformer-based model (Earthformer <a href="
 </figure>
 
 ## Living with Machines (The Alan Turing Institute)
-Between January 2022 and July 2023 I was Research Associate in the Living with Machines (LwM) <a href="https://livingwithmachines.ac.uk/"><i class="fas fa-external-link-alt"></i></a> project at The Alan Turing Institute. The overarching goal of LwM was to investigate the impact of technology on the lives of ordinary people during the Industrial Revolution. My job consisted in analyzing a very large amount of (very noisy) historical British newspaper data computationally, with a focus on looking into how language use changed throughout the 19th century as an effect of the socio-political changes following the Industrial Revolution. See <a href="/langofmech/">here</a> for an example of results from my research.
+Between January 2022 and July 2023 I was Research Associate in the Living with Machines (LwM) <a href="https://livingwithmachines.ac.uk/"><i class="fas fa-external-link-alt"></i></a> project at The Alan Turing Institute. The overarching goal of LwM was to investigate the impact of technology on the lives of ordinary people during the Industrial Revolution. My job consisted in analyzing a very large amount of (very noisy) historical British newspaper data computationally, with a focus on looking into how language use changed throughout the 19th century as an effect of the socio-political changes following the Industrial Revolution. See <a href="/machinesinthemedia/">here</a> for an example of results from my research.
 
-Also, check out below two episodes of a docuseries on Living with Machines, where my colleages and I talk about collaboration in large interdisciplinary projects in the Humanities and the Language of Mechanization subprojects in which I was involved.
+Also check out below two episodes of a docuseries on Living with Machines, where my colleages and I talk about collaboration in large interdisciplinary projects in the Humanities and the Language of Mechanization subprojects in which I was involved.
 
 On collaboration:
 
@@ -94,40 +91,7 @@ In 2015, I spent two months as a trainee Assistant Curator-Cataloguer for the Sl
 </li>
 </ul>
 
-# Zoom in on some of my projects
 
-<i class="fa fa-angle-down fa-2x animated"></i>
+<h2>Zoom in on some of my projects</h2><br>
 
-<div class="row">
-  <div class="column">
-    <div class="container">
-      <a href="/massparallelbibles/"><img src="/images/massparall.gif" width="500" height="600"></a>
-      <a href="/massparallelbibles/"><div class="proj-title">Parallel Bibles</div></a>
-      <div class="proj-subtitle">Temporal subordination in 1400+ languages</div>
-    </div>
-  </div>
-  <div class="column">
-    <div class="container">
-      <a href="/langofmech/"><img src="/images/machine.gif" width="500" height="600"></a>
-      <a href="/langofmech/"><div class="proj-title">Machines in the media</div></a>
-      <div class="proj-subtitle">Semantic change in the era of mechanization</div>
-    </div>
-  </div>
-</div>
-
-<div class="row">
-  <div class="column">
-    <div class="container">
-      <a href="/oldslavnet/"><img src="/images/oldslavnet.gif" width="500" height="600"></a>
-      <a href="/oldslavnet/"><div class="proj-title">OldSlavNet</div></a>
-      <div class="proj-subtitle">A scalable dependency parser for pre-modern Slavic</div>
-    </div>
-  </div>
-  <div class="column">
-    <div class="container">
-      <a href="/agwemb/"><img src="/images/supergrc.gif" width="500" height="600"></a>
-      <a href="/agwemb/"><div class="proj-title">Ancient Greek graph-based syntactic embeddings</div></a>
-      <div class="proj-subtitle">Syntactic word representations for Ancient Greek</div>
-    </div>
-  </div>
-</div>
+{% include projects_footer.html %}
