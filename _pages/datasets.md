@@ -12,7 +12,7 @@ author_profile: true
 
   <li><i class="fa-li fa fa-file"></i><a target="_blank" href="https://huggingface.co/npedrazzini/HistoroBERTa-SuicideIncidentClassifier?not-for-all-audiences=true">[HuggingFace] Binary RoBERTa-based classifier fine-tuned on historical British newspaper articles reporting of suicide, to distinguish between (confirmed or speculated) suicide cases, investigations, or court cases</a></li>
 
-  <li><i class="fa-li fa fa-file"></i><a target="_blank" href="https://doi.org/10.6084/m9.figshare.25431814.v1">[Figshare] Replication data and code for: Mapping ‘when’-clauses in Latin American and Caribbean languages: an experiment in subtoken-based typology</a></li>
+  <li><i class="fa-li fa fa-file"></i><a target="_blank" href="https://doi.org/10.6084/m9.figshare.25431814.v1">[Figshare] Replication data and code for: Mapping 'when'-clauses in Latin American and Caribbean languages: an experiment in subtoken-based typology</a></li>
 
   <li><i class="fa-li fa fa-file"></i><a target="_blank" href="https://doi.org/10.5281/zenodo.8414137">[Zenodo] Early Slavic language models</a></li>
   <li><i class="fa-li fa fa-file"></i><a target="_blank" href="https://doi.org/10.5281/zenodo.8369516">[Zenodo] Ancient Greek language models</a></li>
