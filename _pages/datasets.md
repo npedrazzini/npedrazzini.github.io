@@ -6,6 +6,11 @@ author_profile: true
 ---
 
 <ul class="fa-ul">
+
+  <li><i class="fa-li fa fa-file"></i><a target="_blank" href="https://huggingface.co/TextMachineProject/NewsBERT_1800-1920-Temporal">[HuggingFace] NewsBERT_1800-1920-Temporal: BERT model fine-tuned with year-conditioned embeddings for diachronic analysis of 1800-1920 newspaper text.</a></li>
+
+ <li><i class="fa-li fa fa-file"></i><a target="_blank" href="https://huggingface.co/TextMachineProject/NewsBERT_1800-1920">[HuggingFace] NewsBERT_1800-1920: masked language model domain adapted to historical English newspaper text (1800-1920)</a></li>
+
   <li><i class="fa-li fa fa-file"></i><a target="_blank" href="https://huggingface.co/npedrazzini/BERTislav">[HuggingFace] BERTislav: a BERT-based fill-mask Early Slavic language model</a></li>
 
   <li><i class="fa-li fa fa-file"></i><a target="_blank" href="https://huggingface.co/datasets/npedrazzini/OldSlavNet_model_and_data/tree/main">[HuggingFace] OldSlavNet: model and data</a></li>
@@ -14,9 +19,11 @@ author_profile: true
 
   <li><i class="fa-li fa fa-file"></i><a target="_blank" href="https://doi.org/10.6084/m9.figshare.25431814.v1">[Figshare] Replication data and code for: Mapping 'when'-clauses in Latin American and Caribbean languages: an experiment in subtoken-based typology</a></li>
 
-  <li><i class="fa-li fa fa-file"></i><a target="_blank" href="https://doi.org/10.5281/zenodo.8414137">[Zenodo] Early Slavic language models</a></li>
+  <li><i class="fa-li fa fa-file"></i><a target="_blank" href="https://doi.org/10.5281/zenodo.8414137">[Zenodo] Early Slavic word embeddings</a> <a target="_blank" href="/images/Early_Slavic_word_embeddings.pdf"><i class="fa fa-file-pdf"></i></a></li>
+  
   <li><i class="fa-li fa fa-file"></i><a target="_blank" href="https://doi.org/10.5281/zenodo.8369516">[Zenodo] Ancient Greek language models</a></li>
   <li><i class="fa-li fa fa-file"></i><a target="_blank" href="https://doi.org/10.6084/m9.figshare.24166254.v1">[Figshare] Replication data for: A quantitative and typological study of Early Slavic participle clauses and their competition (University of Oxford, DPhil Thesis)</a></li>
+
   <li><i class="fa-li fa fa-file"></i><a target="_blank" href="https://doi.org/10.6084/m9.figshare.22072169.v1">[Figshare] Code and data for The Semantic Map of When and its Typological Parallels</a></li>
 
   <li><i class="fa-li fa fa-file"></i><a target="_blank" href="https://github.com/Living-with-machines/DiachronicEmb-BigHistData">[GitHub] DiachronicEmb-BigHistData: Tools to train and explore diachronic word embeddings from Big Historical Data</a></li>
